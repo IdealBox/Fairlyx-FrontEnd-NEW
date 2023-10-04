@@ -1,12 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-export const content = ['./src/**/*.{js,jsx,ts,tsx}'];
-export const theme = {
-	extend: {
-		fontFamily: {
-			poppins: ['Poppins'],
-			inter: ['Inter'],
+module.exports = {
+	content: ['./src/**/*.{js,jsx,ts,tsx}'],
+	theme: {
+		extend: {
+			fontFamily: {
+				poppins: ['Poppins'],
+				inter: ['Inter'],
+			},
+			colors: {},
 		},
-		colors: {},
 	},
+	plugins: [],
+	darkMode: 'class',
 };
-export const plugins = [];
