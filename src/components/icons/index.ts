@@ -13,4 +13,6 @@ import NotificationIcon from "./notification_icon";
 import MessageIcon from "./message_icon";
 import SearchIcon from "./search_icon";
 import QuestionIcon from "./question_icon";
-export {HomeIcon,PlusIcon, ShopIcon,UserIcon,MessageIcon,NotificationIcon,DiamondIcon,SearchIcon,ChevronDownIcon,IncomeIcon,ChevronUpIcon,PromoteIcon, QuestionIcon, SunIcon, MoonIcon };
+import MenuIcon from "./menu_icon";
+import CloseIcon from "./close_icon";
+export {HomeIcon,PlusIcon,MenuIcon,CloseIcon, ShopIcon,UserIcon,MessageIcon,NotificationIcon,DiamondIcon,SearchIcon,ChevronDownIcon,IncomeIcon,ChevronUpIcon,PromoteIcon, QuestionIcon, SunIcon, MoonIcon };

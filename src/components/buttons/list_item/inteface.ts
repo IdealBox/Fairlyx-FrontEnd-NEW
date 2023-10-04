@@ -8,4 +8,5 @@ interface ListItemTypes {
     selectedItem?:string;
     onClick:Function;
     isDropdown?:boolean;
+    isMobile?:boolean;
 }

@@ -1,15 +1,25 @@
+import { useState } from "react"
 import { MessageIcon, NotificationIcon, PlusIcon, SearchIcon } from "../icons"
+import MenuIcon from "../icons/menu_icon"
+import DashboardMobileSideBar from "../vendor_mobile_sidebar"
 
 function VendorNavbar() {
+    const [mobileNav, setMobileNav] = useState(false)
     return (
-        <div className='flex w-full bg-white justify-between px-7 py-3'>
-            <div className="bg-gray-100 flex items-center rounded-lg p-2">
+        <div className='flex w-full bg-white items-center justify-between px-7 py-3'>
+            {mobileNav && <DashboardMobileSideBar  onClick={() => {
+                setMobileNav(!mobileNav)
+            }} />}
+            <MenuIcon onClick={() => {
+                setMobileNav(!mobileNav)
+            }} className="flex sm:hidden cursor-pointer" />
+            <div className="sm:bg-gray-100 flex items-center rounded-lg p-2">
                 <SearchIcon className="text-gray-500 mx-2" />
-                <input type="text" className="bg-transparent w-[250px] outline-none" placeholder="Search or type a command" />
-                <div className="font-[700] bg-white rounded-lg px-6 py-[5px]">F</div>
+                <input type="text" className="bg-transparent hidden sm:flex w-[250px] outline-none" placeholder="Search or type a command" />
+                <div className="font-[700] bg-white hidden sm:flex rounded-lg px-6 py-[5px]">F</div>
             </div>
             <div className="flex items-center gap-6">
-                <button className="flex text-white bg-blue-600 gap-1 rounded-lg px-3 py-3 items-center border-none justify-between">
+                <button className="hidden lg:flex text-white bg-blue-600 gap-1 rounded-lg px-3 py-3 items-center border-none justify-between">
                     <PlusIcon />
                     Create
                 </button>
