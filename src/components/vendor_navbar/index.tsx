@@ -1,0 +1,31 @@
+import { MessageIcon, NotificationIcon, PlusIcon, SearchIcon } from "../icons"
+
+function VendorNavbar() {
+    return (
+        <div className='flex w-full bg-white justify-between px-7 py-3'>
+            <div className="bg-gray-100 flex items-center rounded-lg p-2">
+                <SearchIcon className="text-gray-500 mx-2" />
+                <input type="text" className="bg-transparent w-[250px] outline-none" placeholder="Search or type a command" />
+                <div className="font-[700] bg-white rounded-lg px-6 py-[5px]">F</div>
+            </div>
+            <div className="flex items-center gap-6">
+                <button className="flex text-white bg-blue-600 gap-1 rounded-lg px-3 py-3 items-center border-none justify-between">
+                    <PlusIcon />
+                    Create
+                </button>
+                <div className="flex">
+                    <div className="w-3 h-3 absolute border-2 ml-3 border-white rounded-full bg-orange-600"></div>
+                    <MessageIcon />
+                </div>
+                <div className="flex">
+                    <div className="w-3 h-3 absolute border-2 ml-3 border-white rounded-full bg-orange-600"></div>
+                    <NotificationIcon />
+                </div>
+
+                <div className="w-10 h-10 rounded-full bg-gray-500 "></div>
+            </div>
+        </div>
+    )
+}
+
+export default VendorNavbar

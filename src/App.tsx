@@ -1,6 +1,7 @@
 import React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useAppSelector } from './store/hooks';
+import { DashboardHome } from './screens';
 
 const MyApp = () => {
 	const isAuthenticated = useAppSelector(
@@ -25,9 +26,13 @@ const routes = createBrowserRouter([
 		path: '/',
 		element: <MyApp />,
 		children: [
-			// All route configurations go here
+
 		],
-	},
+	}, {
+		path: '/dashboard',
+		element: <DashboardHome />,
+		children: []
+	}
 ]);
 
 const App = () => {
