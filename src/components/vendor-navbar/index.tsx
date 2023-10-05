@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { MessageIcon, NotificationIcon, PlusIcon, SearchIcon } from "../icons"
-import MenuIcon from "../icons/menu_icon"
-import DashboardMobileSideBar from "../vendor_mobile_sidebar"
+import MenuIcon from "../icons/menu-icon"
+import DashboardMobileSideBar from "../vendor-mobile-sidebar"
 
 function VendorNavbar() {
     const [mobileNav, setMobileNav] = useState(false)

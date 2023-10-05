@@ -1,3 +1,3 @@
-import ListItem from "./list_item";
+import ListItem from "./list-item";
 
 export {ListItem}

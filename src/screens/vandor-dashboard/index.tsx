@@ -1,6 +1,4 @@
-import React from 'react'
 import { VendorNavbar, DashboardSideBar } from '../../components'
-
 function DashboardHome() {
   return (
     <div className='flex bg-gray-100 w-full h-screen'>
@@ -11,5 +9,4 @@ function DashboardHome() {
     </div>
   )
 }
-
 export default DashboardHome
