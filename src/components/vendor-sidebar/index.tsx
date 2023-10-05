@@ -6,7 +6,7 @@ import ToggleLightDarkMode from '../buttons/toggle-light-dark-mode'
 function DashboardSideBar() {
     const [selectedItem, setSelected] = useState("home")
     return (
-        <div className='sm:flex h-full bg-white lg:min-w-[340px] hidden lg:max-w-[340px] p-6 gap-1 flex-col'>
+        <div className='sm:flex h-full bg-white dark:bg-neutral-700 lg:min-w-[340px] hidden lg:max-w-[340px] p-6 gap-1 flex-col'>
             <img src='logo.svg' className='w-14' />
             <ListItem onClick={() => {
                 setSelected("home")
