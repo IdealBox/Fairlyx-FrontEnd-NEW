@@ -6,7 +6,6 @@ function ToggleLightDarkMode({ isSmallScreen }: ToggleLightDarkModeType) {
     const dispatch = useAppDispatch();
     const isDarkMode = useAppSelector((state) => state.theme.darkMode)
     console.log(isDarkMode);
-
     return (
         !isSmallScreen ?
             <div className='lg:grid lg:grid-cols-2 rounded-full bg-gray-100 lg:p-2 lg:gap-2'>
