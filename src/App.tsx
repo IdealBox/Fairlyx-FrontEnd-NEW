@@ -16,9 +16,9 @@ const MyApp = () => {
 			(!('theme' in localStorage) &&
 				window.matchMedia('(prefers-color-scheme: dark)').matches)
 		) {
-			dispatch(setToDarkMode);
+			dispatch(setToDarkMode());
 		} else {
-			dispatch(setToLightMode);
+			dispatch(setToLightMode());
 		}
 	}, [dispatch]);
 

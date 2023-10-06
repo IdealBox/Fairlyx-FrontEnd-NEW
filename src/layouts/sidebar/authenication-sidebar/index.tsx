@@ -2,7 +2,7 @@ import { CircleTickIcon, HomeIcon } from '../../../components/icons'
 
 function AuthenticationSideBar({ onClick }: any) {
     return (
-        <div className='md:flex h-screen hidden w-full justify-between p-8 bg-white sm:min-w-[340px] sm:max-w-[340px] flex-col'>
+        <div className='md:flex h-screen hidden w-full justify-between p-5 bg-white sm:min-w-[340px] sm:max-w-[340px] flex-col'>
             <img src='logo.svg' className='w-14' />
             <div className='flex flex-col gap-2 w-[200px] mx-auto'>
             <img src='illustration.svg' className='w-32 mx-auto my-5' />

@@ -1,1 +1,3 @@
-// interface 
+interface AuthScreenTypes {
+    setAuthScreen?: any;
+}

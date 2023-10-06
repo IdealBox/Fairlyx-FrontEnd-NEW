@@ -15,6 +15,7 @@ import SearchIcon from "./search-icon";
 import QuestionIcon from "./question-icon";
 import MenuIcon from "./menu-icon";
 import CloseIcon from "./close-icon";
+import LockIcon from "./lock-icon";
 import CircleTickIcon from "./circle-tick-icon";
 import EmailIcon from "./email-icon";
-export {HomeIcon,PlusIcon,MenuIcon,CloseIcon,CircleTickIcon,EmailIcon, ShopIcon,UserIcon,MessageIcon,NotificationIcon,DiamondIcon,SearchIcon,ChevronDownIcon,IncomeIcon,ChevronUpIcon,PromoteIcon, QuestionIcon, SunIcon, MoonIcon };
+export {HomeIcon,PlusIcon,MenuIcon,CloseIcon,LockIcon,CircleTickIcon,EmailIcon, ShopIcon,UserIcon,MessageIcon,NotificationIcon,DiamondIcon,SearchIcon,ChevronDownIcon,IncomeIcon,ChevronUpIcon,PromoteIcon, QuestionIcon, SunIcon, MoonIcon };
