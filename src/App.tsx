@@ -4,38 +4,6 @@ import { setToDarkMode, setToLightMode } from './store/slices/appThemeSlice';
 import { DashboardHome } from './screens';
 import Authentication from './screens/authentication';
 import PopularProducts from './components/PopularProducts';
-import { PopularProductType } from './interfaces/productInterfaces';
-
-const popularProducts: PopularProductType[] = [
-	{
-		title: 'Crypter NFT',
-		type: 'UI kit',
-		status: 'active',
-		imageUrl: '',
-		price: '345.54',
-	},
-	{
-		title: 'Bento matte 3D',
-		type: 'illustration 1.0',
-		status: 'inactive',
-		imageUrl: '',
-		price: '445.54',
-	},
-	{
-		title: 'Excellent material',
-		type: '3D chair',
-		status: 'active',
-		imageUrl: '',
-		price: '345.54',
-	},
-	{
-		title: 'Fleet-travel',
-		type: 'shopping kit',
-		status: 'active',
-		imageUrl: '',
-		price: '345.54',
-	},
-];
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -58,9 +26,7 @@ const MyApp = () => {
 
 	return (
 		<main className={`font-inter ${isDarkMode ? 'dark' : ''}`}>
-			<div className="bg-app-neutral-100 dark:bg-app-neutral-800 min-h-screen">
-				<PopularProducts products={popularProducts} />
-			</div>
+			<div className="bg-app-neutral-100 dark:bg-app-neutral-800 min-h-screen"></div>
 		</main>
 	);
 };
