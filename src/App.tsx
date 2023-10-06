@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setToDarkMode, setToLightMode } from './store/slices/appThemeSlice';
@@ -8,24 +7,24 @@ const MyApp = () => {
 	const isAuthenticated = useAppSelector(
 		(state) => state.user.isAuthenticated
 	);
-	useEffect(() => {
-		if (
-			localStorage.theme === 'dark' ||
-			(!('theme' in localStorage) &&
-				window.matchMedia('(prefers-color-scheme: dark)').matches)
-		) {
-			dispatch(setToDarkMode);
-		} else {
-			dispatch(setToLightMode);
-		}
-	}, [dispatch]);
 
+	// match system light/dark mode base on the system theme
+	const matchDark = window.matchMedia('(prefers-color-scheme: dark)');
+	matchDark.addEventListener('change', (e) => {
+		if (e.matches) {
+			dispatch(setToDarkMode());
+		} else {
+			dispatch(setToLightMode());
+		}
+	});
+
+	// get current app theme from redux store
 	const isDarkMode = useAppSelector((state) => state.theme.darkMode);
 
 	return (
-		<div className={isDarkMode ? 'dark' : ''}>
-			<h1>It's working</h1>
-		</div>
+		<main className={`font-inter ${isDarkMode ? 'dark' : ''}`}>
+			<div className="dark:bg-app-neutral-800 min-h-screen"></div>
+		</main>
 	);
 };
 
