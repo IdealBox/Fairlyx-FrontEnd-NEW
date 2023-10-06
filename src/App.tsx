@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setToDarkMode, setToLightMode } from './store/slices/appThemeSlice';
+import { DashboardHome } from './screens';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -33,9 +34,13 @@ const routes = createBrowserRouter([
 		path: '/',
 		element: <MyApp />,
 		children: [
-			// All route configurations go here
+
 		],
-	},
+	}, {
+		path: '/dashboard',
+		element: <DashboardHome />,
+		children: []
+	}
 ]);
 
 const App = () => {
