@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { EmailIcon } from "../../components/icons"
-import validateEmail from "../../utils/functions/form-validation"
 import LoaderIcon from "../../components/icons/loader-icon"
+import validateEmail from "../../utils/functions/form-validation"
 function SignUp({ setAuthScreen }: AuthScreenTypes) {
   const [validEmail, setValidEmail] = useState(false)
   const [loading, setLoading] = useState(false)
