@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setToDarkMode, setToLightMode } from './store/slices/appThemeSlice';
 import { DashboardHome } from './screens';
 import Authentication from './screens/authentication';
+import PopularProducts from './components/PopularProducts';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -25,7 +26,7 @@ const MyApp = () => {
 
 	return (
 		<main className={`font-inter ${isDarkMode ? 'dark' : ''}`}>
-			<div className="dark:bg-app-neutral-800 min-h-screen"></div>
+			<div className="bg-app-neutral-100 dark:bg-app-neutral-800 min-h-screen"></div>
 		</main>
 	);
 };
@@ -34,18 +35,18 @@ const routes = createBrowserRouter([
 	{
 		path: '/',
 		element: <MyApp />,
-		children: [
-
-		],
-	}, {
+		children: [],
+	},
+	{
 		path: '/dashboard',
 		element: <DashboardHome />,
-		children: []
-	}, {
+		children: [],
+	},
+	{
 		path: '/authentication',
 		element: <Authentication />,
-		children: []
-	}
+		children: [],
+	},
 ]);
 
 const App = () => {
