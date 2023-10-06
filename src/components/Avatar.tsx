@@ -14,7 +14,7 @@ const Avatar = ({ image, title, size }: AvatarProps) => {
 					src={image}
 					style={{ height: size, width: size }}
 					alt={title}
-					className="min-h-[50px] max-h-32 aspect-square object-cover object-center rounded-full border shadow"
+					className="min-h-[50px] max-h-32 aspect-square object-cover object-center rounded-full shadow"
 				/>
 			) : (
 				<div>{image.split('').slice(0, 2)}</div>

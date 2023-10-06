@@ -24,7 +24,7 @@ const MyApp = () => {
 
 	return (
 		<main className={`font-inter ${isDarkMode ? 'dark' : ''}`}>
-			<div className="dark:bg-neutral-950 min-h-screen">
+			<div className="dark:bg-app-neutral-800 min-h-screen">
 				<Home />
 			</div>
 		</main>

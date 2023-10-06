@@ -8,26 +8,26 @@ module.exports = {
 				inter: ['Inter'],
 			},
 			colors: {
-				shade: {
+				'shade': {
 					100: '#9A9FA5',
 					200: '#6F767E',
 					300: '#6F767E66',
 					400: '#33383F',
 				},
-				primary: {
+				'primary': {
 					1: '#2A85FF',
 					2: '#83BF6E',
 					3: '#FF6A55',
 					4: '#8E59FF',
 				},
-				secondary: {
+				'secondary': {
 					1: '#FFBC99',
 					2: '#CABDFF',
 					3: '#B1E5FC',
 					4: '#B5E4CA',
 					5: '#FFD88D',
 				},
-				neutral: {
+				'app-neutral': {
 					50: '#F4F4F4',
 					100: '#EFEFEF',
 					200: '#F4F4F4',
