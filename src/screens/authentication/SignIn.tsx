@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { EmailIcon, LockIcon } from "../../components/icons"
-import validateEmail from "../../utils/funtions/form-validation"
+import validateEmail from "../../utils/functions/form-validation"
 import LoaderIcon from "../../components/icons/loader-icon"
 function SignIn({ setAuthScreen }: AuthScreenTypes) {
   const [validEmail, setValidEmail] = useState(false)
@@ -35,8 +35,8 @@ function SignIn({ setAuthScreen }: AuthScreenTypes) {
           setAuthScreen("otp")
         }, 1000)
         setLoading(true)
-      }} className={`bg-primary-01 p-3 font-[600] flex items-center justify-center gap-3 rounded-xl text-white w-full`}>{loading && <LoaderIcon className="animate-spin" />}Continue</button> :
-        <button className={`bg-[#2A85FF80] p-3 font-[600] rounded-xl text-white w-full`}>Continue</button>}
+      }} className={`bg-primary-1 p-3 font-[600] flex items-center justify-center gap-3 rounded-xl text-white w-full`}>{loading && <LoaderIcon className="animate-spin" />}Continue</button> :
+        <button className={`bg-secondary-3 p-3 font-[600] rounded-xl text-white w-full`}>Continue</button>}
       <div className='text-gray-400'>This site is protected by reCAPTCHA and the google pricy policy</div>
     </div>
   )

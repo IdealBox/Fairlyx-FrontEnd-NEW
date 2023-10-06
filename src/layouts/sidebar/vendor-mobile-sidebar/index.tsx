@@ -6,7 +6,7 @@ import ToggleLightDarkMode from '../../../components/buttons/toggle-light-dark-m
 function DashboardMobileSideBar({onClick}:any) {
     const [selectedItem, setSelected] = useState("home")
     return (
-        <div className='flex h-screen w-full  bg-white sm:min-w-[340px] absolute top-0 left-0 z-10 sm:max-w-[340px] p-6 gap-1 flex-col'>
+        <div className='flex h-screen w-full bg-white sm:min-w-[340px] absolute top-0 left-0 z-10 sm:max-w-[340px] p-6 gap-1 flex-col'>
             <div className='flex w-full justify-between' onClick={()=>{
                 onClick()
             }}>
