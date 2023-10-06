@@ -1,4 +1,4 @@
-import { VendorNavbar, DashboardSideBar } from '../../components'
+import { VendorNavbar, DashboardSideBar, ProTips } from '../../components'
 function DashboardHome() {
   return (
     <div className='flex bg-gray-100 dark:bg-neutral-700 w-full h-screen'>
@@ -6,6 +6,7 @@ function DashboardHome() {
         <div className='flex flex-col w-full'>
             <VendorNavbar />
             <div>
+              <ProTips />
               {/* all other components */}
             </div>
         </div>
