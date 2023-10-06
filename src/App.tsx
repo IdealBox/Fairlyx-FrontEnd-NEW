@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setToDarkMode, setToLightMode } from './store/slices/appThemeSlice';
 import { DashboardHome } from './screens';
+import Authentication from './screens/authentication';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -25,7 +26,7 @@ const MyApp = () => {
 
 	return (
 		<div className={isDarkMode ? 'dark' : ''}>
-			<h1>It's working</h1>
+			<h1 className='text-blue-500 dark:text-red-500'>It's working</h1>
 		</div>
 	);
 };
@@ -40,6 +41,10 @@ const routes = createBrowserRouter([
 	}, {
 		path: '/dashboard',
 		element: <DashboardHome />,
+		children: []
+	}, {
+		path: '/authentication',
+		element: <Authentication />,
 		children: []
 	}
 ]);

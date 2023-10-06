@@ -21,9 +21,9 @@ module.exports = {
 				shade2: "#11131580",
 				shade3: "#9A9FA5",
 			  },
-			  grey: {
-				W0: "#FFFFFF",
-				W50: "#FBFAFA",
+			  primary: {
+				"01": "#2A85FF",
+				"02": "#83BF6E",
 				W75: "#EDE9E9",
 				W100: "#E6E0E0",
 				W200: "#DBD3D3",

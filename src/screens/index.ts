@@ -1,3 +1,3 @@
-import DashboardHome from "./vandor-dashboard";
+import DashboardHome from "./vendor-dashboard";
 
 export {DashboardHome}
