@@ -1,7 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setToDarkMode, setToLightMode } from './store/slices/appThemeSlice';
-import Home from './screens/vendor/home/Home';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -24,9 +23,7 @@ const MyApp = () => {
 
 	return (
 		<main className={`font-inter ${isDarkMode ? 'dark' : ''}`}>
-			<div className="dark:bg-app-neutral-800 min-h-screen">
-				<Home />
-			</div>
+			<div className="dark:bg-app-neutral-800 min-h-screen"></div>
 		</main>
 	);
 };
