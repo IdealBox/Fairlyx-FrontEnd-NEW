@@ -1,23 +1,32 @@
-import React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { useAppSelector } from './store/hooks';
+import { useAppDispatch, useAppSelector } from './store/hooks';
+import { setToDarkMode, setToLightMode } from './store/slices/appThemeSlice';
 import { DashboardHome } from './screens';
+import Authentication from './screens/authentication';
 
 const MyApp = () => {
+	const dispatch = useAppDispatch();
 	const isAuthenticated = useAppSelector(
 		(state) => state.user.isAuthenticated
 	);
+
+	// match system light/dark mode base on the system theme
+	const matchDark = window.matchMedia('(prefers-color-scheme: dark)');
+	matchDark.addEventListener('change', (e) => {
+		if (e.matches) {
+			dispatch(setToDarkMode());
+		} else {
+			dispatch(setToLightMode());
+		}
+	});
+
+	// get current app theme from redux store
+	const isDarkMode = useAppSelector((state) => state.theme.darkMode);
+
 	return (
-		<div>
-			{isAuthenticated ? (
-				<p className="text-green-400">Authenticated</p>
-			) : (
-				<p className="text-red-400">Not authenticated</p>
-			)}
-			<h1 className="text-blue-500 font-bold font-inter text-4xl">
-				Welcome to fairlyx
-			</h1>
-		</div>
+		<main className={`font-inter ${isDarkMode ? 'dark' : ''}`}>
+			<div className="bg-app-neutral-100 dark:bg-app-neutral-800 min-h-screen"></div>
+		</main>
 	);
 };
 
@@ -25,14 +34,18 @@ const routes = createBrowserRouter([
 	{
 		path: '/',
 		element: <MyApp />,
-		children: [
-
-		],
-	}, {
+		children: [],
+	},
+	{
 		path: '/dashboard',
 		element: <DashboardHome />,
-		children: []
-	}
+		children: [],
+	},
+	{
+		path: '/authentication',
+		element: <Authentication />,
+		children: [],
+	},
 ]);
 
 const App = () => {

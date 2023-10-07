@@ -1,6 +1,6 @@
-import DashboardSideBar from "./vendor_sidebar";
-import ToggleLightDarkMode from "./buttons/toggle_light_dark_mode";
 import { ListItem } from "./buttons";
-import VendorNavbar from "./vendor_navbar";
+import ToggleLightDarkMode from "./buttons/toggle-light-dark-mode";
+import VendorNavbar from "./vendor-navbar";
+import DashboardSideBar from "./vendor-sidebar";
 
 export {DashboardSideBar,ToggleLightDarkMode, ListItem,VendorNavbar}
