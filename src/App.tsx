@@ -3,7 +3,6 @@ import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setToDarkMode, setToLightMode } from './store/slices/appThemeSlice';
 import { DashboardHome } from './screens';
 import Authentication from './screens/authentication';
-import PopularProducts from './components/PopularProducts';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
