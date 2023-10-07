@@ -17,7 +17,12 @@ const Avatar = ({ image, title, size }: AvatarProps) => {
 					className="min-h-[50px] max-h-32 aspect-square object-cover object-center rounded-full shadow"
 				/>
 			) : (
-				<div>{image.split('').slice(0, 2)}</div>
+				<div
+					style={{ height: size, width: size }}
+					className="border dark:border-gray-600 bg-gray-100 dark:bg-shade-400 flex items-center justify-center rounded-full"
+				>
+					<p className="w-fit">{image.split('').slice(0, 2)}</p>
+				</div>
 			)}
 		</div>
 	);
