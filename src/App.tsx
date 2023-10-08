@@ -4,6 +4,7 @@ import { setToDarkMode, setToLightMode } from './store/slices/appThemeSlice';
 import { DashboardHome } from './screens';
 import Authentication from './screens/authentication';
 import Overview from './components/Overview';
+import ProductViews from './components/ProductViews';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -43,6 +44,10 @@ const routes = createBrowserRouter([
 				element: <DashboardHome />,
 				children: [
 					// all pages in the dashboard can go here
+					{
+						path: '',
+						element: <ProductViews />,
+					},
 				],
 			},
 			{
