@@ -1,4 +1,4 @@
-export interface IconTypes {
+interface IconTypes {
     className?: string;
     onClick?: any
 }
