@@ -1,5 +1,4 @@
 import React from 'react';
-import { useAppSelector } from '../store/hooks/index';
 import {
 	Bar,
 	BarChart,
@@ -13,12 +12,10 @@ import {
 import { BiSolidSquareRounded } from 'react-icons/bi';
 import {
 	NameType,
-	Payload,
 	ValueType,
 } from 'recharts/types/component/DefaultTooltipContent';
 
 const ProductViews = () => {
-	const darkMode = useAppSelector((state) => state.theme.darkMode);
 	const data = [
 		{
 			name: 'Day1',
@@ -73,7 +70,7 @@ const ProductViews = () => {
 				</div>
 			</header>
 			<ResponsiveContainer height={400} width={'100%'}>
-				<BarChart barGap={'fit'} data={data} width={150} height={80}>
+				<BarChart data={data} width={150} height={100}>
 					<Bar dataKey="pv" maxBarSize={40}>
 						{data.map((entry, index) => (
 							<Cell
