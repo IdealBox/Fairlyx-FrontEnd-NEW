@@ -41,7 +41,9 @@ const routes = createBrowserRouter([
 			{
 				path: '/dashboard',
 				element: <DashboardHome />,
-				children: [{ path: '', element: <Overview /> }],
+				children: [
+					// all pages in the dashboard can go here
+				],
 			},
 			{
 				path: '/authentication',
