@@ -7,9 +7,6 @@ import { useAppSelector } from '../../store/hooks';
 
 const ProTips = () => {
 
-	// get current app theme from redux store
-	const isDarkMode = useAppSelector((state) => state.theme.darkMode);
-
     return (
         <div>
             <div className="bg-white dark:bg-app-neutral-700 p-6 max-h-fit rounded-lg overflow-hidden shadow-lg">
@@ -23,7 +20,7 @@ const ProTips = () => {
                         <div className="flex">
                             <div className="outline outline-gray-200 rounded-full w-16 h-16 me-3">
                                 <div className="m-5">
-                                    <TbCalendarTime size='1.5rem' color={`${isDarkMode ? 'white' : 'black'}`} />
+                                    <TbCalendarTime size='1.5rem' className="dark:text-white" />
                                 </div>
                             </div>
                             <div className="">
@@ -40,7 +37,7 @@ const ProTips = () => {
                         <div className="flex">
                             <div className="bg-gray-200 dark:bg-gray-800 rounded-full w-16 h-16 me-3">
                                 <div className="m-3">
-                                    <BsArrowRightShort size='2.5rem' color={`${isDarkMode ? 'white' : 'black'}`} />
+                                    <BsArrowRightShort size='2.5rem' className="dark:text-white" />
                                 </div>
                             </div>
                             <div className="">
@@ -59,7 +56,7 @@ const ProTips = () => {
                         <div className="flex">
                             <div className="outline outline-gray-200 rounded-full w-16 h-16 me-3">
                                 <div className="m-5">
-                                    <LiaPencilRulerSolid size='1.5rem' color={`${isDarkMode ? 'white' : 'black'}`} />
+                                    <LiaPencilRulerSolid size='1.5rem' className="dark:text-white" />
                                 </div>
                             </div>
                             <div className="">
@@ -76,7 +73,7 @@ const ProTips = () => {
                         <div className="flex">
                             <div className="outline outline-gray-200 rounded-full w-16 h-16 me-3">
                                 <div className="m-5">
-                                    <BsCameraVideo size='1.5rem' color={`${isDarkMode ? 'white' : 'black'}`} />
+                                    <BsCameraVideo size='1.5rem' className="dark:text-white" />
                                 </div>
                             </div>
                             <div className="">
@@ -95,7 +92,7 @@ const ProTips = () => {
                         <div className="flex">
                             <div className="outline outline-gray-200 rounded-full w-16 h-16 me-3">
                                 <div className="m-5">
-                                    <BsTelephone size='1.5rem' color={`${isDarkMode ? 'white' : 'black'}`} />
+                                    <BsTelephone size='1.5rem' className="dark:text-white" />
                                 </div>
                             </div>
                             <div className="">
@@ -112,7 +109,7 @@ const ProTips = () => {
                         <div className="flex">
                             <div className="outline outline-gray-200 rounded-full w-16 h-16 me-3">
                                 <div className="m-5">
-                                    <MdOutlineLibraryAddCheck size='1.5rem' color={`${isDarkMode ? 'white' : 'black'}`} />
+                                    <MdOutlineLibraryAddCheck size='1.5rem' className="dark:text-white" />
                                 </div>
                             </div>
                             <div className="">
