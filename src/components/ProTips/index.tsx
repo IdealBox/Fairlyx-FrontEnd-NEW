@@ -12,7 +12,7 @@ const ProTips = () => {
 
     return (
         <div>
-            <div className="bg-white dark:bg-app-neutral-700 p-6 max-w-fit max-h-fit rounded-lg overflow-hidden shadow-lg">
+            <div className="bg-white dark:bg-app-neutral-700 p-6 max-h-fit rounded-lg overflow-hidden shadow-lg">
                 <div className="flex text-xl font-semibold mb-5">
                     <div className="bg-emerald-300/50 w-3 h-8 rounded mr-3"></div>
                     <h1 className="dark:text-white">Pro tips</h1>

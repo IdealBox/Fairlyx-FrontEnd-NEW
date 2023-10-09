@@ -6,12 +6,13 @@ import ToggleLightDarkMode from '../buttons/toggle-light-dark-mode'
 function DashboardMobileSideBar({onClick}:any) {
     const [selectedItem, setSelected] = useState("home")
     return (
-        <div className='flex h-screen w-full  bg-white sm:min-w-[340px] absolute top-0 left-0 z-10 sm:max-w-[340px] p-6 gap-1 flex-col'>
+        <div className='flex h-screen w-full bg-white dark:bg-app-neutral-700 lg:min-w-[340px] absolute top-0 left-0 z-10 lg:max-w-[340px] p-6 gap-1 flex-col'>
             <div className='flex w-full justify-between' onClick={()=>{
                 onClick()
             }}>
-                <CloseIcon className='sm:hidden flex mt-1 w-14' />
-                <img src='logo.svg' className='w-9' /></div>
+                <CloseIcon className='sm:hidden dark:text-gray-200 flex mt-1 w-14' />
+                <img src='logo.svg' className='w-9' />
+            </div>
             <ListItem isMobile={true} onClick={() => {
                 setSelected("home")
             }} selectedItem={selectedItem} item='home' text='Home' className='font-[600] !flex text-gray-600 mt-6' iconLeft={<HomeIcon />} />

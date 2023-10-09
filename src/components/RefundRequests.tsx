@@ -2,7 +2,7 @@ import React from 'react';
 import { PiBasket } from 'react-icons/pi';
 const RefundRequests = () => {
 	return (
-		<div className="max-w-xs py-5 flex flex-col gap-y-8 bg-white dark:bg-app-neutral-700 rounded-xl p-5">
+		<div className="w-full py-5 flex flex-col gap-y-8 bg-white dark:bg-app-neutral-700 rounded-xl p-5">
 			<header className="flex items-center justify-between">
 				<div>
 					<div>
