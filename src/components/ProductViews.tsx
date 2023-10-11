@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	Bar,
 	BarChart,
@@ -14,8 +14,14 @@ import {
 	NameType,
 	ValueType,
 } from 'recharts/types/component/DefaultTooltipContent';
+import Dropdown from './forms/Dropdown';
 
 const ProductViews = () => {
+	const [selectedValue, setSelectedValue] = useState({
+		id: '1',
+		type: 'nothing',
+		value: 'Last 7 days',
+	});
 	const data = [
 		{
 			name: 'Day1',
@@ -60,13 +66,14 @@ const ProductViews = () => {
 					Product views
 				</h1>
 				<div>
-					<select
-						className="py-2 px-4 border rounded-xl text-gray-500 caret-slate-400"
-						name="slect"
-						id="select"
-					>
-						<option value="0">Last 7 days</option>
-					</select>
+					<Dropdown
+						selectedValue={selectedValue}
+						data={[
+							{ value: 'Last 7 days', id: '1', type: '' },
+							{ value: 'Last 14 days', id: '2', type: '' },
+						]}
+						setSelectedValue={setSelectedValue}
+					/>
 				</div>
 			</header>
 			<ResponsiveContainer height={400} width={'100%'}>
