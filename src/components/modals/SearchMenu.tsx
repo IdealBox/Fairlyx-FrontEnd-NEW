@@ -2,11 +2,11 @@ import { BiChevronRight } from "react-icons/bi"
 import { CloseIcon } from "../icons"
 import { HiArrowLeft } from "react-icons/hi2"
 import { RiCloseCircleFill } from "react-icons/ri"
-export function SearchMenu({ onClick, setSearchText, searchText, searchMenu, setSearchMenu }: any) {
+export function SearchMenu({ onClick, setSearchText, searchText, searchMenu, setSearchMenu }: SearchModalTypes) {
     return (
         <div onClick={() => {
             onClick()
-        }} className=" bg-white -z-0 absolute sm:pt-16 p-5 flex flex-col gap-4 left-0 sm:left-auto sm:-ml-2 shadow-lg rounded-xl sm:w-[350px] top-3 w-full">
+        }} className=" bg-white dark:bg-app-neutral-500 -z-0 absolute sm:pt-16 p-5 flex flex-col gap-4 left-0 sm:left-auto sm:-ml-2 shadow-xl shadow-[#0000004d] rounded-xl sm:w-[350px] top-3 w-full">
             <div className={`sm:bg-gray-100 border-2 p-1 border-primary-1 flex z-[1] sm:hidden items-center rounded-xl`}>
                 <HiArrowLeft onClick={() => {
                     setSearchText("")
