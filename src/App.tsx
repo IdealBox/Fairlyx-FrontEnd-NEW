@@ -44,14 +44,17 @@ const routes = createBrowserRouter([
 				element: <DashboardHome />,
 				children: [
 					// all pages in the dashboard can go here
-					{
-						path: '',
-						element: <ProductViews />,
-					},
+					// {
+					// 	path: '',
+					// 	element: <ProductViews />,
+					// },
 				],
+				// loader:()=>{
+
+				// }
 			},
 			{
-				path: '/authentication',
+				path: '/auth',
 				element: <Authentication />,
 				children: [],
 			},

@@ -5,7 +5,7 @@ import { CloseIcon } from "../icons";
 
 export function ProfileMenu({ onClick }: any) {
     return (
-        <div className=" sm:w-[250px] p-3 flex flex-col gap-6 absolute sm:left-auto left-0 w-full sm:right-4 top-0 h-screen sm:h-auto sm:bg-transparent bg-gray-100 sm:top-[70px]">
+        <div className=" sm:w-[250px] p-3 flex flex-col gap-6 absolute sm:left-auto left-0 w-full sm:right-4 top-0 h-screen sm:h-auto sm:bg-transparent sm:top-[70px]">
             <div className='flex w-full sm:hidden justify-between' onClick={() => {
                 onClick()
             }}>
@@ -18,7 +18,7 @@ export function ProfileMenu({ onClick }: any) {
             </div>
             <div onClick={() => {
                 onClick()
-            }} className="rounded-xl bg-white p-6 gap-1 w-full flex flex-col shadow-xl">
+            }} className="rounded-xl bg-white p-6 gap-1 w-full dark:bg-app-neutral-600 flex flex-col shadow-[#00000057] shadow-xl">
                 <ListItem onClick={() => { }} isMobile={true} className="bg-white !p-2 text-[12px] !gap-2 hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none" text="Profile" />
                 <ListItem onClick={() => { }} isMobile={true} className="bg-white !p-2 text-[12px] !gap-2 hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none" text="Edit Profile" />
                 <div className="border-t"></div>
