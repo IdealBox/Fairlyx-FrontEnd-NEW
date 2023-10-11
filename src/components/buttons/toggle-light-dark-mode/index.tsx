@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { SunIcon, MoonIcon } from '../../icons'
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { setToDarkMode, setToLightMode } from '../../../store/slices/appThemeSlice';

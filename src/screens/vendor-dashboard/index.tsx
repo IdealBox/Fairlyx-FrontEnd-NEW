@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom';
 import { VendorNavbar, DashboardSideBar, ProTips } from '../../components'
 function DashboardHome() {
   return (
@@ -8,9 +9,10 @@ function DashboardHome() {
             <div>
               <ProTips />
               {/* all other components */}
+					    <Outlet />
             </div>
         </div>
     </div>
   )
 }
-export default DashboardHome
+export default DashboardHome;
