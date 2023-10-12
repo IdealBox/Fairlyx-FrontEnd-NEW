@@ -1,5 +1,5 @@
 // import { Outlet } from 'react-router-dom';
-import { VendorNavbar, DashboardSideBar } from '../../components';
+import { VendorNavbar, DashboardSideBar, ProTips } from '../../components';
 import Overview from '../../components/Overview';
 import ProductViews from '../../components/ProductViews';
 import PopularProducts from '../../components/PopularProducts';
@@ -47,6 +47,7 @@ function DashboardHome() {
 					<div className="flex gap-3 w-full flex-col">
 						<Overview />
 						<ProductViews />
+						<ProTips />
 						<GetMoreCustomers />
 					</div>
 					<div className="flex w-full sm:min-w-[300px] gap-3 flex-col">
