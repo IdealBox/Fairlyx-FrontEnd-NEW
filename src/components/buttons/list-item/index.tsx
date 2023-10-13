@@ -9,7 +9,7 @@ function ListItem({ iconLeft, iconRight, isMobile, isDropdown = true, text, clas
                 {iconLeft && iconLeft}
                 {text && !isMobile ? <div className={`text-${textColor} hidden xl:flex`}>{text}</div> : <div className={`text-${textColor} flex`}>{text}</div>}
             </div>
-            {iconRight && !isMobile ? <div className={`${selectedItem === item && isDropdown ? "rotate-180 hidden xl:flex" : "hidden xl:flex"}`}>{iconRight}</div> : <div className={`${selectedItem == item && isDropdown ? "rotate-180 flex" : "flex"}`}>{iconRight}</div>}
+            {iconRight && !isMobile ? <div className={`${selectedItem === item && isDropdown ? "-rotate-90 hidden xl:flex" : "hidden xl:flex"}`}>{iconRight}</div> : <div className={`${selectedItem == item && isDropdown ? "rotate-180 flex" : "flex"}`}>{iconRight}</div>}
         </button>
     )
 }
