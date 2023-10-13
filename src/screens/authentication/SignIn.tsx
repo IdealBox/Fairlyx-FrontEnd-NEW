@@ -28,7 +28,7 @@ function SignIn({ setAuthScreen }: AuthScreenTypes) {
         <LockIcon className='text-gray-600' />
         <input type="password" onChange={(e) => {
           setPassword(e.target.value)
-        }} className='w-full p-3 outline-none bg-transparent' placeholder='your email' />
+        }} className='w-full p-3 outline-none bg-transparent' placeholder='your password' />
       </div>
       {validEmail && password.length >= 6 ? <button onClick={() => {
         setTimeout(() => {

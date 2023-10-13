@@ -14,7 +14,7 @@ function OtpScreen({ setAuthScreen }: AuthScreenTypes) {
       setValidOtp(false)
     }
     setOtp(enteredOtp);
-  };
+  }; 
   return (
     <div className='w-[300px] text-[14px] flex gap-5 flex-col mx-auto'>
       <div className='font-[600] text-[40px]'>Sign Up</div>
@@ -23,7 +23,7 @@ function OtpScreen({ setAuthScreen }: AuthScreenTypes) {
       {validOtp ? <button onClick={() => {
         setLoading(true)
         setTimeout(() => {
-          setAuthScreen("dashboard")
+          // router.push("dashboard")
         }, 2000)
       }} className={`bg-primary-1 p-3 font-[600] rounded-xl text-white w-full flex items-center justify-center gap-3`}>{loading && <LoaderIcon className="animate-spin" />}Continue</button> :
         <button className={`bg-secondary-3 p-3 font-[600] rounded-xl text-white w-full`}>Continue</button>}

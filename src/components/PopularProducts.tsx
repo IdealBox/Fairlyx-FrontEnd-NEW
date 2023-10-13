@@ -38,7 +38,7 @@ interface PopularProductProps {
 
 const PopularProducts = ({ products }: PopularProductProps) => {
 	return (
-		<div className="max-w-xs py-5 flex flex-col gap-y-5 bg-white dark:bg-app-neutral-700 rounded-xl p-5">
+		<div className=" py-5 w-full flex flex-col gap-y-5 bg-white dark:bg-app-neutral-700 rounded-xl p-5">
 			<header className="flex items-center justify-between">
 				<div>
 					<div>

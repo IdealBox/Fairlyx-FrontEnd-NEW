@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	Bar,
 	BarChart,
 	Cell,
-	ResponsiveContainer,
 	Tooltip,
 	TooltipProps,
 	XAxis,
@@ -14,8 +13,15 @@ import {
 	NameType,
 	ValueType,
 } from 'recharts/types/component/DefaultTooltipContent';
+import Dropdown from './forms/Dropdown';
+import AutoSizer from 'react-virtualized-auto-sizer';
 
 const ProductViews = () => {
+	const [selectedValue, setSelectedValue] = useState({
+		id: '1',
+		type: 'nothing',
+		value: 'Last 7 days',
+	});
 	const data = [
 		{
 			name: 'Day1',
@@ -60,35 +66,42 @@ const ProductViews = () => {
 					Product views
 				</h1>
 				<div>
-					<select
-						className="py-2 px-4 border rounded-xl text-gray-500 caret-slate-400"
-						name="slect"
-						id="select"
-					>
-						<option value="0">Last 7 days</option>
-					</select>
+					<Dropdown
+						selectedValue={selectedValue}
+						data={[
+							{ value: 'Last 7 days', id: '1', type: '' },
+							{ value: 'Last 14 days', id: '2', type: '' },
+						]}
+						setSelectedValue={setSelectedValue}
+					/>
 				</div>
 			</header>
-			<ResponsiveContainer height={400} width={'100%'}>
-				<BarChart data={data} width={150} height={100}>
-					<Bar dataKey="pv" maxBarSize={40}>
-						{data.map((entry, index) => (
-							<Cell
-								className="hover:bg-transparent"
-								cursor="pointer"
-								fill={colorBars(entry.pv)}
-								key={`cell-${index}`}
-							/>
-						))}
-					</Bar>
-					<XAxis axisLine={false} tickLine={false} />
-					<YAxis axisLine={false} tickLine={false} />
-					<Tooltip
-						cursor={{ fill: 'transparent' }}
-						content={<CustomToolTip />}
-					/>
-				</BarChart>
-			</ResponsiveContainer>
+			<div className="h-80 py-5 w-full">
+				<AutoSizer>
+					{({ height, width }: { height: number; width: number }) => {
+						return (
+							<BarChart data={data} width={width} height={height}>
+								<Bar dataKey="pv" maxBarSize={40}>
+									{data.map((entry, index) => (
+										<Cell
+											className="hover:bg-transparent"
+											cursor="pointer"
+											fill={colorBars(entry.pv)}
+											key={`cell-${index}`}
+										/>
+									))}
+								</Bar>
+								<XAxis axisLine={false} tickLine={false} />
+								<YAxis axisLine={false} tickLine={false} />
+								<Tooltip
+									cursor={{ fill: 'transparent' }}
+									content={<CustomToolTip />}
+								/>
+							</BarChart>
+						);
+					}}
+				</AutoSizer>
+			</div>
 		</div>
 	);
 };
