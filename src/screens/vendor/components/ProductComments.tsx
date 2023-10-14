@@ -1,8 +1,8 @@
 import React from 'react';
-import Avatar from './Avatar';
 import { BiMessageAltDetail } from 'react-icons/bi';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { FiLink2 } from 'react-icons/fi';
+import Avatar from '../../../components/Avatar';
 
 const ProductComments = () => {
 	return (
@@ -15,8 +15,8 @@ const ProductComments = () => {
 				</div>
 			</header>
 			<div className="divide-y dark:divide-gray-700">
-				{[1, 2, 3].map((val) => (
-					<SingleComment />
+				{[1, 2, 3].map((val, index) => (
+					<SingleComment key={index} />
 				))}
 			</div>
 			<button className="place-self-center border hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-900 rounded-xl px-4 py-2 text-gray-600 dark:text-gray-50 font-semibold w-full">
