@@ -6,6 +6,7 @@ import Authentication from './screens/authentication';
 import ProductViews from './screens/vendor/components/ProductViews';
 import VendorPage from './screens/vendor';
 import Dashboard from './screens/vendor/components/Dashboard';
+import ProductsPage from './screens/vendor/products';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -47,7 +48,7 @@ const routes = createBrowserRouter([
 					},
 					{
 						path: 'products',
-						element: <>Products</>,
+						element: <ProductsPage />,
 					},
 					{
 						path: 'income',

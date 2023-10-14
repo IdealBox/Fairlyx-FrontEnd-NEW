@@ -1,4 +1,3 @@
-// import { Outlet } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { VendorNavbar, DashboardSideBar } from '../../components';
 function VendorPage() {
