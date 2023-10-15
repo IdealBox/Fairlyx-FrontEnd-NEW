@@ -1,4 +1,5 @@
 import React from 'react'
+import { IconTypes } from './interface'
 
 function DiamondIcon({ className }: IconTypes) {
   return (

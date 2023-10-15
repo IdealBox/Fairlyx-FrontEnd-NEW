@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Avatar from './Avatar';
+
 import { HiArrowLongRight, HiOutlineShoppingBag } from 'react-icons/hi2';
 import { AiOutlineArrowUp } from 'react-icons/ai';
 import { TbWaveSine } from 'react-icons/tb';
 import { RiErrorWarningFill } from 'react-icons/ri';
-import Dropdown from './forms/Dropdown';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import {
 	LineChart,
@@ -14,6 +13,9 @@ import {
 	YAxis,
 	CartesianGrid,
 } from 'recharts';
+
+import Avatar from '../../../components/Avatar';
+import Dropdown from '../../../components/forms/Dropdown';
 
 const Overview = () => {
 	const [selectedValue, setSelectedValue] = useState({

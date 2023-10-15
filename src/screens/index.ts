@@ -1,4 +1,3 @@
+import VendorPage from './vendor/index';
 
-import DashboardHome from "./vendor-dashboard";
-
-export {DashboardHome}
+export { VendorPage as DashboardHome };

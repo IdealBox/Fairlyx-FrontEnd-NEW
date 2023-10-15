@@ -13,8 +13,8 @@ import {
 	NameType,
 	ValueType,
 } from 'recharts/types/component/DefaultTooltipContent';
-import Dropdown from './forms/Dropdown';
 import AutoSizer from 'react-virtualized-auto-sizer';
+import Dropdown from '../../../components/forms/Dropdown';
 
 const ProductViews = () => {
 	const [selectedValue, setSelectedValue] = useState({
