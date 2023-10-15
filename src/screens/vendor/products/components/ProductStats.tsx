@@ -156,7 +156,7 @@ const ProductStats = () => {
               <div className="flex gap-3">
                 <div className="w-24">Status</div>
                 {true ? (
-                  <div className="p-1 px-2 rounded bg-secondary-4 text-primary-2">
+                  <div className="p-1 px-2 rounded bg-[#32cf7b14] text-primary-2">
                     Active
                   </div>
                 ) : (
@@ -195,7 +195,7 @@ const ProductStats = () => {
           <div className="w-[50px]">Status</div>
           <div className="w-[50px] hidden lg:flex">Price</div>
           <div className="w-[150px]">Sales</div>
-          <div className="w-[60px]">Views</div>
+          <div className="w-[60px] hidden md:flex">Views</div>
           <div className="w-[100px] hidden lg:flex">Likes</div>
         </div>
         {Array(5)
@@ -224,7 +224,7 @@ const ProductStats = () => {
               </div>
               <div className="w-[50px] flex items-start">
                 {true ? (
-                  <div className="p-1 px-2 rounded bg-secondary-4 text-primary-2">
+                  <div className="p-1 px-2 rounded bg-[#32cf7b1a] text-primary-2">
                     Active
                   </div>
                 ) : (
@@ -268,7 +268,7 @@ const ProductStats = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[60px] flex items-start">
+              <div className="w-[60px]  hidden lg:flex items-start">
                 <div className="flex gap-1 items-center">
                   <div className="rounded-lg bg-gray-200 p-1 px-2">48K</div>
                   <div className="w-3 bg-primary-1 rounded h-4"></div>

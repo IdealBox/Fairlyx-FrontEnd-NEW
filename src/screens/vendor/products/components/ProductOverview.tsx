@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 import Dropdown from "../../../../components/forms/Dropdown";
+import { BsBag, BsGraphDown, BsInfo } from "react-icons/bs";
+import { AiOutlineArrowUp } from "react-icons/ai";
+import { MdPayment } from "react-icons/md";
+import { CiWavePulse1 } from "react-icons/ci";
 
 const ProductOverview = () => {
   const [selectedValue, setSelectedValue] = useState({
@@ -29,10 +33,76 @@ const ProductOverview = () => {
         </div>
       </header>
 
-      <div className="flex gap-3">
-        <div className="w-full h-[250px] rounded-xl bg-secondary-4"></div>
-        <div className="w-full h-[250px] rounded-xl bg-secondary-3"></div>
-        <div className="w-full h-[250px] rounded-xl bg-secondary-2"></div>
+      <div className="flex gap-3 w-full sm:flex-col lg:flex-row overflow-scroll">
+        <div className="w-full flex flex-col p-9 rounded-xl bg-[#32cf7b34]">
+          <div className="flex justify-between">
+            <div>
+              <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center">
+                <BsGraphDown className="text-white" />
+              </div>
+              <div className="flex gap-2 items-center text-[14px]">
+                Earning
+                <BsInfo className="bg-black p-1 w-5 h-5 text-white rounded-full" />
+              </div>
+              <div className="text-[50px] leading-[60px] font-bold">128K</div>
+            </div>
+            <div>
+              <CiWavePulse1 className="w-24 text-primary-2 h-24" />
+            </div>
+          </div>{" "}
+          <div className="p-1 bg-gray-200 flex gap-2 rounded">
+            <div className="text-primary-2 flex gap-1 items-center">
+              <AiOutlineArrowUp className="w-5 h-5" /> 55.8%
+            </div>
+            this week
+          </div>
+        </div>
+        <div className="w-full flex flex-col p-9 h-[250px] rounded-xl bg-[#31cef932]">
+          <div className="flex justify-between">
+            <div>
+              <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center">
+                <BsBag className="text-white" />
+              </div>
+              <div className="flex gap-2 items-center text-[14px]">
+                Customer
+                <BsInfo className="bg-black p-1 w-5 h-5 text-white rounded-full" />
+              </div>
+              <div className="text-[50px] leading-[60px] font-bold">512</div>
+            </div>
+            <div>
+              <CiWavePulse1 className="w-24 text-primary-3 h-24" />
+            </div>
+          </div>
+          <div className="p-1 bg-gray-200 flex gap-2 rounded">
+            <div className="text-primary-3 flex gap-1 items-center">
+              <AiOutlineArrowUp className="w-5 h-5" /> 55.8%
+            </div>
+            this week
+          </div>
+        </div>
+        <div className="w-full h-[250px] flex flex-col p-9 rounded-xl bg-[#8f2cff2f]">
+          <div className="flex justify-between">
+            <div>
+              <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center">
+                <MdPayment className="text-white" />
+              </div>
+              <div className="flex gap-2 items-center text-[14px]">
+                Payout
+                <BsInfo className="bg-black p-1 w-5 h-5 text-white rounded-full" />
+              </div>
+              <div className="text-[50px] leading-[60px] font-bold">64K</div>
+            </div>
+            <div>
+              <CiWavePulse1 className="w-24 h-24" />
+            </div>
+          </div>
+          <div className="p-1 bg-gray-200 flex gap-2 rounded">
+            <div className="text-primary-2 flex gap-1 items-center">
+              <AiOutlineArrowUp className="w-5 h-5" /> 55.8%
+            </div>
+            this week
+          </div>
+        </div>
       </div>
     </div>
   );
