@@ -22,7 +22,7 @@ function DashboardSideBar() {
 	];
 	return (
 		<div className="sm:flex h-full bg-white dark:bg-app-neutral-700 xl:min-w-[340px] hidden xl:max-w-[340px] p-6 gap-1 flex-col">
-			<img src="logo.svg" className="w-14" alt="" />
+			<img src="/logo.svg" className="w-14" alt="" />
 			<ListItem
 				onClick={() => {
 					setSelected('home');
