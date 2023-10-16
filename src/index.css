@@ -6,3 +6,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .category-parent:hover .edit{
+        @apply  !flex;
+      }
+    
+}
