@@ -21,7 +21,7 @@ function DashboardSideBar() {
 		'products-scheduled',
 	];
 	return (
-		<div className="sm:flex h-full bg-white dark:bg-app-neutral-700 xl:min-w-[340px] hidden xl:max-w-[340px] p-6 gap-1 flex-col">
+		<div className="sm:flex h-full overflow-y-scroll bg-white dark:bg-app-neutral-700 xl:min-w-[340px] hidden xl:max-w-[340px] p-6 gap-1 flex-col">
 			<img src="/logo.svg" className="w-14" alt="" />
 			<ListItem
 				onClick={() => {
@@ -45,7 +45,7 @@ function DashboardSideBar() {
 				iconLeft={<DiamondIcon />}
 			/>
 			{product.includes(selectedItem) && (
-				<div className="w-[255px] flex flex-col gap-2 ml-auto">
+				<div className="w-[255px] xl:flex hidden flex-col gap-2 ml-auto">
 					<ListItem
 						onClick={() => {
 							setSelected('products-dashboard');
@@ -77,6 +77,15 @@ function DashboardSideBar() {
 						selectedItem={selectedItem}
 						item="products-released"
 						text="Released"
+						className="font-[600] text-gray-600"
+					/>
+					<ListItem
+						onClick={() => {
+							setSelected('products-comments');
+						}}
+						selectedItem={selectedItem}
+						item="products-comments"
+						text="Comments"
 						className="font-[600] text-gray-600"
 					/>
 					<ListItem
@@ -159,7 +168,5 @@ function DashboardSideBar() {
 		</div>
 	);
 }
-
-export default DashboardSideBar;
 
 export default DashboardSideBar;

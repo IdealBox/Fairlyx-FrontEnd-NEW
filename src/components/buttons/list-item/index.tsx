@@ -14,7 +14,7 @@ function ListItem({
 	const listStyle =
 		selectedItem === item
 			? `bg-gray-200 dark:bg-app-neutral-600 dark:text-white text-black shadow rounded-md shadow-[#00000060] flex justify-between items-center w-full p-3 rounded-xl ${className}`
-			: `flex justify-between items-center w-full p-3 hover:bg-gray-100 rounded-xl ${className}`;
+			: `flex justify-between items-center w-full p-3 hover:bg-gray-100 dark:hover:bg-[#ffffff05] rounded-xl ${className}`;
 	return (
 		<button
 			onClick={() => {
