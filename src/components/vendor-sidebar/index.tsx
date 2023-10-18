@@ -161,5 +161,3 @@ function DashboardSideBar() {
 }
 
 export default DashboardSideBar;
-
-export default DashboardSideBar;
