@@ -4,6 +4,7 @@ import ProductOverview from './ProductOverview';
 
 const Dashboard = () => {
 	return <div className="overflow-scroll gap-3 flex-col flex p-5">
+		<div className="font-bold text-2xl dark:text-white">Product dashboard</div>
 		<ProductOverview />
 		<ProductStats />
 	</div>;

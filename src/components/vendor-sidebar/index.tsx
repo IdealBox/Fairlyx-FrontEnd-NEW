@@ -95,6 +95,7 @@ function DashboardSideBar() {
           <ListItem
             onClick={() => {
               setSelected("products-released");
+              navigate("/vendor/products?tab=released");
             }}
             selectedItem={selectedItem}
             item="products-released"
