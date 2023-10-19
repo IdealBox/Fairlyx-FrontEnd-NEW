@@ -29,7 +29,7 @@ function ToggleLightDarkMode({ isSmallScreen }: ToggleLightDarkModeType) {
           isDarkMode
             ? "bg-gray-50 shadow-md bg-[#ffffff10] dark:text-gray-200"
             : " text-gray-400"
-        } rounded-full justify-center hidden xl:flex gap-2 p-2`}
+        } rounded-full justify-center dark:bg-[#ffffff10] hidden xl:flex gap-2 p-2`}
       >
         <MoonIcon />
         Dark

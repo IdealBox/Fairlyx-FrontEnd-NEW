@@ -10,7 +10,7 @@ interface PreviewCardTypes {
 const PreviewCard = ({
   price = "$98",
   cardBottomSection = "by Anonymous",
-  cardText,
+  cardText="Fleet - Travel shopping UI design kit",
   header = <HeaderComponent />,
   imageStyles,
 }: PreviewCardTypes) => {
@@ -23,7 +23,7 @@ const PreviewCard = ({
         alt=""
       />
       <div className="flex gap-2 justify-between">
-        {cardText && <div className="font-bold">{cardText}</div>}
+        {cardText && <div className="font-bold dark:text-white text-xl">{cardText}</div>}
         <button className="bg-secondary-4 rounded-md font-[800] p-2 px-4 ml-auto">
           $98
         </button>

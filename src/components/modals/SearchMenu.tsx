@@ -6,7 +6,6 @@ export function SearchMenu({
 	onClick,
 	setSearchText,
 	searchText,
-	searchMenu,
 	setSearchMenu,
 }: SearchModalTypes) {
 	return (
@@ -14,7 +13,7 @@ export function SearchMenu({
 			onClick={() => {
 				onClick();
 			}}
-			className=" bg-white dark:bg-app-neutral-500 -z-0 absolute sm:pt-16 p-5 flex flex-col gap-4 left-0 sm:left-auto sm:-ml-2 shadow-xl shadow-[#0000004d] rounded-xl sm:w-[350px] top-3 w-full"
+			className=" bg-white dark:bg-app-neutral-700 -z-0 absolute sm:pt-16 p-5 flex flex-col gap-4 left-0 sm:left-auto sm:-ml-2 shadow-xl shadow-[#0000004d] rounded-xl sm:w-[350px] top-3 w-full"
 		>
 			<div
 				className={`sm:bg-gray-100 border-2 p-1 border-primary-1 flex z-[1] sm:hidden items-center rounded-xl`}
@@ -32,7 +31,7 @@ export function SearchMenu({
 					onChange={(e) => {
 						setSearchText(e.target.value);
 					}}
-					className={`bg-transparent p-2 rounded-2xl flex w-full outline-none`}
+					className={`bg-transparent p-2 rounded-2xl dark:bg-app-neutral-800 flex w-full outline-none`}
 					placeholder="Search or type a command"
 				/>
 				<RiCloseCircleFill
@@ -55,10 +54,10 @@ export function SearchMenu({
 					>
 						<div className="min-w-[48px] h-12 bg-gray-400 rounded-xl"></div>
 						<div className="flex flex-col w-full">
-							<div className="text-gray-400 font-[600] text-[13px]">
+							<div className="text-gray-400 dark:text-gray-500 font-[600] text-[13px]">
 								Small caption
 							</div>
-							<div className="text-sm font-[600]">
+							<div className="text-sm dark:text-gray-300 font-[600]">
 								Put your text here
 							</div>
 						</div>
@@ -78,10 +77,10 @@ export function SearchMenu({
 					>
 						<div className="min-w-[48px] h-12 rounded-full border border-gray-400"></div>
 						<div className="flex flex-col w-full">
-							<div className="text-sm font-[600]">
+							<div className="text-sm dark:text-gray-300 font-[600]">
 								Put your text here
 							</div>
-							<div className="text-gray-400 font-[600] text-[13px]">
+							<div className="text-gray-400 dark:text-gray-500 font-[600] text-[13px]">
 								Small caption
 							</div>
 						</div>
