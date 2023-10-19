@@ -8,7 +8,7 @@ function AddProduct() {
       <DashboardSideBar />
       <div className="flex flex-col w-full">
         <VendorNavbar />
-        <div className="font-bold text-2xl pt-5 pl-5 dark:text-white">New Product</div>
+        <div className="font-bold text-5xl pt-5 pl-5 dark:text-white">New Product</div>
         <div className="flex p-4 lg:flex-row overflow-scroll flex-col items-start gap-4">
           <ProductsInputForm />
           <div className="w-full lg:flex hidden ">
