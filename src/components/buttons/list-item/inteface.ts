@@ -9,4 +9,5 @@ interface ListItemTypes {
 	onClick: Function;
 	isDropdown?: boolean;
 	isMobile?: boolean;
+	isRotatable?: boolean;
 }
