@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
-import { AiOutlineArrowUp } from 'react-icons/ai';
-import { BiLink } from 'react-icons/bi';
-import { FiMoreHorizontal } from 'react-icons/fi';
-import { MdDelete } from 'react-icons/md';
-import { PiPencil } from 'react-icons/pi';
-import { MessageIcon } from '../../../../components/icons';
-import ProductInfo from './ProductInfo';
-
-const ProductStatTable = () => {
-	
+import React, { useState } from "react";
+import { AiOutlineArrowUp } from "react-icons/ai";
+import { BiLink, BiStar } from "react-icons/bi";
+import { FiMoreHorizontal } from "react-icons/fi";
+import { MdDelete } from "react-icons/md";
+import { PiPencil } from "react-icons/pi";
+import { MessageIcon } from "../../../../components/icons";
+import ProductInfo from "./ProductInfo";
+import { BsFillStarFill } from "react-icons/bs";
+interface Props {
+  showLikes?: boolean;
+  showRating?: boolean;
+}
+const ProductStatTable = ({ showLikes, showRating = false }: Props) => {
   const [editSubMenu, setEditSubMenu] = useState("");
-	return <div className='w-full'>
-		<div className="flex sm:hidden py-3 flex-col">
+  return (
+    <div className="w-full">
+      <div className="flex sm:hidden py-3 flex-col">
         {Array(5)
           .fill(2)
           .map((e, index) => (
@@ -116,6 +120,14 @@ const ProductStatTable = () => {
                   <div className="w-9 bg-primary-1 rounded h-4"></div>
                 </div>
               </div>
+              {showRating && (
+                <div className="flex gap-3">
+                  <div className="w-24">Rating</div>
+                  <div className="flex gap-1 items-center">
+                    <BsFillStarFill className="text-yellow-500" /> 4.6(82)
+                  </div>
+                </div>
+              )}
               <div className="flex gap-3">
                 <div className="w-24">Sales</div>
                 <div className="flex items-center gap-1">
@@ -132,26 +144,27 @@ const ProductStatTable = () => {
       </div>
       <div className="sm:flex w-full hidden flex-col">
         <div className="flex gap-3 text-gray-600 p-2 w-full justify-between mt-5 text-[12px] md:text-[14px]">
-          <input type="checkbox" />
+          <input type="checkbox" className="w-4 h-4" />
           <div className="w-[200px]">Product</div>
           <div className="w-[50px]">Status</div>
           <div className="w-[50px] hidden lg:flex">Price</div>
+          {showRating && <div className="w-[100px] hidden lg:flex">Rating</div>}
           <div className="w-[150px]">Sales</div>
           <div className="w-[60px] hidden md:flex">Views</div>
-          <div className="w-[100px] hidden lg:flex">Likes</div>
+          {showLikes && <div className="w-[100px] hidden lg:flex">Likes</div>}
         </div>
         {Array(5)
           .fill(2)
           .map((e, index) => (
             <div
               key={index}
-              className="flex category-parent hover:bg-gray-100 border-y dark:hover:bg-[#ffffff10] dark:border-y-[#ffffff0f] border-y-[#00000007] p-2 rounded gap-3 w-full justify-between text-[12px] md:text-[14px]"
+              className="flex items-start category-parent hover:bg-gray-100 border-y dark:hover:bg-[#ffffff10] dark:border-y-[#ffffff0f] border-y-[#00000007] p-2 rounded gap-3 w-full justify-between text-[12px] md:text-[14px]"
             >
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="w-4 h-4" />
               </div>
 
-             <ProductInfo />
+              <ProductInfo />
               <div className="w-[50px] flex items-start">
                 {true ? (
                   <div className="p-1 px-2 rounded bg-[#32cf7b1a] text-primary-2">
@@ -189,10 +202,19 @@ const ProductStatTable = () => {
                   )}
                 </div>
               </div>
-              <div className="w-[50px] dark:text-white font-[600] hidden lg:flex">$98</div>
+              <div className="w-[50px] dark:text-white font-[600] hidden lg:flex">
+                $98
+              </div>
+              {showRating && (
+                <div className="w-[100px] items-center gap-2 dark:text-white font-[600] flex">
+                  <BsFillStarFill className="text-yellow-500" /> 4.6(82)
+                </div>
+              )}
               <div className="w-[150px] flex items-start">
                 <div className="flex items-center gap-1">
-                  <div className="p-1 px-2 bg-gray-200 dark:bg-app-neutral-600 dark:text-white rounded-lg">$3,000</div>
+                  <div className="p-1 px-2 bg-gray-200 dark:bg-app-neutral-600 dark:text-white rounded-lg">
+                    $3,000
+                  </div>
                   <div className="text-primary-2 flex gap-1 items-center">
                     <AiOutlineArrowUp className="w-5 h-5" /> 55.8%
                   </div>
@@ -200,20 +222,27 @@ const ProductStatTable = () => {
               </div>
               <div className="w-[60px]  hidden lg:flex items-start">
                 <div className="flex gap-1 items-center">
-                  <div className="rounded-lg bg-gray-200 dark:bg-app-neutral-600 dark:text-white p-1 px-2">48K</div>
+                  <div className="rounded-lg bg-gray-200 dark:bg-app-neutral-600 dark:text-white p-1 px-2">
+                    48K
+                  </div>
                   <div className="w-3 bg-primary-1 rounded h-4"></div>
                 </div>
               </div>
-              <div className="w-[100px] hidden lg:flex items-start">
-                <div className="flex gap-1 items-center">
-                  <div className="rounded-lg bg-gray-200 dark:bg-app-neutral-600 dark:text-white p-1 px-2">8</div>
-                  <div className="w-12 bg-primary-3 rounded h-4"></div>
+              {showLikes && (
+                <div className="w-[100px] hidden lg:flex items-start">
+                  <div className="flex gap-1 items-center">
+                    <div className="rounded-lg bg-gray-200 dark:bg-app-neutral-600 dark:text-white p-1 px-2">
+                      8
+                    </div>
+                    <div className="w-12 bg-primary-3 rounded h-4"></div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           ))}
       </div>
-	</div>;
+    </div>
+  );
 };
 
 export default ProductStatTable;
