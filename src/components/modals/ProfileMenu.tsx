@@ -30,39 +30,39 @@ export function ProfileMenu({ onClick }: any) {
 				onClick={() => {
 					onClick();
 				}}
-				className="rounded-xl bg-white p-6 gap-1 w-full dark:bg-app-neutral-600 flex flex-col shadow-[#00000057] shadow-xl"
+				className="rounded-xl bg-white dark:text-[#ffffff50] p-6 gap-1 w-full dark:bg-app-neutral-700 flex flex-col shadow-[#00000057] shadow-xl"
 			>
 				<ListItem
 					onClick={() => {}}
 					isMobile={true}
-					className="bg-white !p-2 text-[12px] !gap-2 hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
+					className="bg-white !p-2 text-[12px] !gap-2 dark:bg-app-neutral-700 dark:hover:bg-[#ffffff10] dark:text-[#ffffff70] hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
 					text="Profile"
 				/>
 				<ListItem
 					onClick={() => {}}
 					isMobile={true}
-					className="bg-white !p-2 text-[12px] !gap-2 hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
+					className="bg-white !p-2 text-[12px] !gap-2 dark:bg-app-neutral-700 dark:hover:bg-[#ffffff10] dark:text-[#ffffff70] hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
 					text="Edit Profile"
 				/>
 				<div className="border-t"></div>
 				<ListItem
 					onClick={() => {}}
 					isMobile={true}
-					className="bg-white !p-2 text-[12px] !gap-2 hover:bg-gray-100 items-center hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
+					className="bg-white !p-2 text-[12px] !gap-2 dark:bg-app-neutral-700 dark:hover:bg-[#ffffff10] dark:text-[#ffffff70] hover:bg-gray-100 items-center hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
 					iconLeft={<HiChartBarSquare className="w-6 h-6" />}
 					text="Analytics"
 				/>
 				<ListItem
 					onClick={() => {}}
 					isMobile={true}
-					className="bg-white !p-2 text-[12px] !gap-2 hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
+					className="bg-white !p-2 text-[12px] !gap-2 dark:bg-app-neutral-700 dark:hover:bg-[#ffffff10] dark:text-[#ffffff70] hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
 					iconLeft={<HiTicket className="w-6 h-6" />}
 					text="Affiliate center"
 				/>
 				<ListItem
 					onClick={() => {}}
 					isMobile={true}
-					className="bg-white !p-2 text-[12px] !gap-2 hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md !flex !items-center  shadow-none"
+					className="bg-white !p-2 text-[12px] !gap-2 dark:bg-app-neutral-700 dark:hover:bg-[#ffffff10] dark:text-[#ffffff70] hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md !flex !items-center  shadow-none"
 					iconLeft={<BiGrid className="w-6 h-6" />}
 					text="Explore authors"
 				/>
@@ -70,7 +70,7 @@ export function ProfileMenu({ onClick }: any) {
 				<ListItem
 					onClick={() => {}}
 					isMobile={true}
-					className="bg-white !p-2 text-[12px] !gap-2 hover:bg-gray-100 hover:text-black text-primary-4 font-[700] py-3 shadow-none"
+					className="bg-white !p-2 text-[12px] !gap-2 dark:bg-app-neutral-700 dark:hover:bg-[#ffffff10] dark:text-[#ffffff70] hover:bg-gray-100 hover:text-black text-primary-4 font-[700] py-3 shadow-none"
 					iconLeft={<BiBarChart className="w-6 h-6" />}
 					text="Upgrade to pro"
 				/>
@@ -78,13 +78,13 @@ export function ProfileMenu({ onClick }: any) {
 				<ListItem
 					onClick={() => {}}
 					isMobile={true}
-					className="bg-white !p-2 text-[12px] !gap-2 hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
+					className="bg-white !p-2 text-[12px] !gap-2 dark:bg-app-neutral-700 dark:hover:bg-[#ffffff10] dark:text-[#ffffff70] hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
 					text="Account setting"
 				/>
 				<ListItem
 					onClick={() => {}}
 					isMobile={true}
-					className="bg-white !p-2 text-[12px] !gap-2 hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
+					className="bg-white !p-2 text-[12px] !gap-2 dark:bg-app-neutral-700 dark:hover:bg-[#ffffff10] dark:text-[#ffffff70] hover:bg-gray-100 hover:text-black text-gray-500 font-[700] !rounded-md shadow-none"
 					text="Log out"
 				/>
 			</div>
