@@ -25,6 +25,7 @@ function ToggleLightDarkMode({ isSmallScreen }: ToggleLightDarkModeType) {
         onClick={() => {
           dispatch(setToDarkMode());
         }}
+        
         className={`${
           isDarkMode
             ? "bg-gray-50 shadow-md bg-[#ffffff10] dark:text-gray-200"
