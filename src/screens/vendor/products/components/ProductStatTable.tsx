@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import { BiLink, BiStar } from "react-icons/bi";
+import { BiLink } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 import { PiPencil } from "react-icons/pi";
