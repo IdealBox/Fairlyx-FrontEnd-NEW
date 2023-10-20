@@ -8,7 +8,7 @@ import RescheduleModals from "./RescheduleModals";
 
 const ScheduledProducts = () => {
   const [loading, setLoading] = useState(false);
-  const [showRescheduleModal, setShowRescheduleModal] = useState(true);
+  const [showRescheduleModal, setShowRescheduleModal] = useState(false);
   return (
     <div className="flex flex-col overflow-scroll gap-3 w-full dark:text-gray-400 pt-5 px-5">
       <div className="text-5xl font-bold">Scheduled</div>
@@ -29,7 +29,7 @@ const ScheduledProducts = () => {
           .map((_, index) => (
             <div
               key={index}
-              className="sm:grid hidden scheduled-products hover:bg-[#00000010]  grid-cols-2 p-1 w-full"
+              className="sm:grid hidden scheduled-products rounded hover:bg-[#00000010]  grid-cols-2 p-1 w-full"
             >
               <div className="flex gap-8 items-start">
                 <input type="checkbox" className="w-5 h-5" />
@@ -68,7 +68,7 @@ const ScheduledProducts = () => {
             .map((_, index) => (
               <div
                 key={index}
-                className="flex gap-2 border-y py-5 flex-col w-full"
+                className="flex gap-2 rounded border-y py-5 flex-col w-full"
               >
                 <div className="flex gap-3 w-full items-start">
                   <img
@@ -133,7 +133,9 @@ const ScheduledProducts = () => {
           </button>
         </div>
       </div>
-      {showRescheduleModal && <RescheduleModals />}
+      {showRescheduleModal && <RescheduleModals onClick={()=>{
+		setShowRescheduleModal(false)
+	  }} />}
     </div>
   );
 };
