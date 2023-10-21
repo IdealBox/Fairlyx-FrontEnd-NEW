@@ -10,22 +10,29 @@ import {
 	UserIcon,
 } from '../icons';
 import { ListItem } from '../buttons';
+import { useNavigate } from 'react-router-dom';
 import ToggleLightDarkMode from '../buttons/toggle-light-dark-mode';
+import { BsPlusCircle } from 'react-icons/bs';
 
 function DashboardSideBar() {
 	const [selectedItem, setSelected] = useState('home');
 	const product = [
+		'products',
 		'products-dashboard',
 		'products-drafts',
 		'products-released',
+		'products-comments',
 		'products-scheduled',
 	];
+	// const router = useRouter()
+	const navigate = useNavigate();
 	return (
-		<div className="sm:flex h-full bg-white dark:bg-app-neutral-700 xl:min-w-[340px] hidden xl:max-w-[340px] p-6 gap-1 flex-col">
+		<div className="sm:flex h-full overflow-y-scroll bg-white dark:bg-app-neutral-700 xl:min-w-[340px] hidden xl:max-w-[340px] p-6 gap-1 flex-col">
 			<img src="/logo.svg" className="w-14" alt="" />
 			<ListItem
 				onClick={() => {
 					setSelected('home');
+					navigate('/vendor');
 				}}
 				selectedItem={selectedItem}
 				item="home"
@@ -35,20 +42,35 @@ function DashboardSideBar() {
 			/>
 			<ListItem
 				onClick={() => {
-					setSelected('products-dashboard');
+					if (selectedItem === 'products') {
+						setSelected('df');
+					} else {
+						setSelected('products');
+					}
 				}}
 				selectedItem={selectedItem}
-				item="products"
+				item=""
 				text="Products"
-				iconRight={<ChevronDownIcon className="" />}
+				iconRight={
+					<div className="flex gap-4 items-center">
+						<BsPlusCircle
+							className="w-5 h-5"
+							onClick={() => {
+								navigate('/vendor/add-product');
+							}}
+						/>
+						<ChevronDownIcon className="" />
+					</div>
+				}
 				className="font-[600] text-gray-600"
 				iconLeft={<DiamondIcon />}
 			/>
 			{product.includes(selectedItem) && (
-				<div className="w-[255px] flex flex-col gap-2 ml-auto">
+				<div className="w-[255px] xl:flex hidden flex-col gap-2 ml-auto">
 					<ListItem
 						onClick={() => {
 							setSelected('products-dashboard');
+							navigate('/vendor/products');
 						}}
 						selectedItem={selectedItem}
 						item="products-dashboard"
@@ -63,6 +85,7 @@ function DashboardSideBar() {
 						selectedItem={selectedItem}
 						item="products-drafts"
 						text="Drafts"
+						isRotatable={false}
 						iconRight={
 							<div className="w-6 h-6 font-bold flex items-center justify-center rounded-lg bg-secondary-1">
 								2
@@ -73,18 +96,32 @@ function DashboardSideBar() {
 					<ListItem
 						onClick={() => {
 							setSelected('products-released');
+							navigate('/vendor/products?tab=released');
 						}}
 						selectedItem={selectedItem}
 						item="products-released"
+						isRotatable={false}
 						text="Released"
 						className="font-[600] text-gray-600"
 					/>
 					<ListItem
 						onClick={() => {
+							setSelected('products-comments');
+							navigate('/vendor/products?tab=comments');
+						}}
+						selectedItem={selectedItem}
+						item="products-comments"
+						text="Comments"
+						className="font-[600] text-gray-600"
+					/>
+					<ListItem
+						onClick={() => {
 							setSelected('products-scheduled');
+							navigate('/vendor/products?tab=scheduled');
 						}}
 						selectedItem={selectedItem}
 						item="products-scheduled"
+						isRotatable={false}
 						text="Scheduled"
 						iconRight={
 							<div className="w-6 h-6 font-bold flex items-center justify-center rounded-lg bg-purple-300">
@@ -148,6 +185,7 @@ function DashboardSideBar() {
 					text="Help & getting started"
 					className="font-[600] text-gray-600"
 					iconLeft={<QuestionIcon />}
+					isRotatable={false}
 					iconRight={
 						<div className="w-6 h-6 font-bold flex items-center justify-center rounded-lg bg-purple-300">
 							8

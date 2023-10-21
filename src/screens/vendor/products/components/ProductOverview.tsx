@@ -50,7 +50,7 @@ const ProductOverview = () => {
               <CiWavePulse1 className="w-24 text-primary-2 h-24" />
             </div>
           </div>{" "}
-          <div className="p-1 bg-gray-200 flex gap-2 rounded">
+          <div className="p-1 bg-gray-200 dark:bg-[#ffffff10] flex gap-2 w-[160px] rounded">
             <div className="text-primary-2 flex gap-1 items-center">
               <AiOutlineArrowUp className="w-5 h-5" /> 55.8%
             </div>
@@ -73,7 +73,7 @@ const ProductOverview = () => {
               <CiWavePulse1 className="w-24 text-primary-3 h-24" />
             </div>
           </div>
-          <div className="p-1 bg-gray-200 flex gap-2 rounded">
+          <div className="p-1 bg-gray-200 dark:bg-[#ffffff10] flex gap-2 w-[160px] rounded">
             <div className="text-primary-3 flex gap-1 items-center">
               <AiOutlineArrowUp className="w-5 h-5" /> 55.8%
             </div>
@@ -96,7 +96,7 @@ const ProductOverview = () => {
               <CiWavePulse1 className="w-24 h-24" />
             </div>
           </div>
-          <div className="p-1 bg-gray-200 flex gap-2 rounded">
+          <div className="p-1 bg-gray-200 dark:bg-[#ffffff10] flex gap-2 w-[160px] rounded">
             <div className="text-primary-2 flex gap-1 items-center">
               <AiOutlineArrowUp className="w-5 h-5" /> 55.8%
             </div>

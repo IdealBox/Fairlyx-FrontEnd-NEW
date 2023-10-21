@@ -34,7 +34,7 @@ function VendorNavbar() {
 					className="text-gray-500 flex sm:hidden cursor-pointer mx-2"
 				/>
 				<div
-					className={`sm:bg-gray-100 dark:bg-app-neutral-600 ${
+					className={`sm:bg-gray-100 dark:bg-app-neutral-800  dark:text-white ${
 						searchMenu || searchText.length > 0 ? 'border-2 ' : ''
 					} p-1 border-primary-1 hidden z-[1] sm:flex items-center rounded-xl`}
 				>
