@@ -4,7 +4,7 @@ import MarketProductItem from './MarketProductItem';
 const ProductStatTable = () => {
 	const products: ProductType[] = [
 		{
-			title: 'Bento Matte 3D',
+			title: 'Bento Matte 3D Illustration',
 			category: 'UI design kit',
 			imageUrl:
 				'https://images.unsplash.com/photo-1534215754734-18e55d13e346?auto=format&fit=crop&q=80&w=1408&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -59,18 +59,13 @@ const ProductStatTable = () => {
 		},
 	];
 	return (
-		<div className="w-full">
-			<div className="flex flex-col py-3 sm:hidden">
-				{products.map((product, key) => (
-					<MarketProductItem key={key} product={product} />
-				))}
-			</div>
-			<table className="hidden sm:table table-auto mt-5 w-full">
-				<thead className="text-left [&>*]:font-medium text-gray-500 py-2">
+		<table className="table table-auto mt-5 w-full">
+			<thead className="text-left  text-gray-500 dark:text-gray-400">
+				<tr className="hidden sm:table-row [&>*]:py-3 [&>*]:font-light">
 					<th>
 						<input
 							type="checkbox"
-							className="h-5 aspect-square border-none rounded-lg"
+							className="h-5 aspect-square rounded-lg bg-transparent"
 						/>
 					</th>
 					<th>Product</th>
@@ -78,15 +73,15 @@ const ProductStatTable = () => {
 					<th>Price</th>
 					<th>Sales</th>
 					<th>Views</th>
-					<th>Likes</th>
-				</thead>
-				<tbody className="divide-y divide-gray-100">
-					{products.map((product, key) => (
-						<MarketProductItem product={product} />
-					))}
-				</tbody>
-			</table>
-		</div>
+					<th className="hidden md:table-cell">Likes</th>
+				</tr>
+			</thead>
+			<tbody className="divide-y divide-gray-100 dark:divide-gray-700">
+				{products.map((product, key) => (
+					<MarketProductItem key={key} product={product} />
+				))}
+			</tbody>
+		</table>
 	);
 };
 

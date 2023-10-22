@@ -29,7 +29,7 @@ const ProductInfo = ({ product, imageSize, imageOrientation }: Props) => {
 					<span className="sm:hidden text-gray-800 bg-shade-100">
 						{product.price}
 					</span>
-					<span className="flex-1 text-gray-500">
+					<span className="flex-1 text-gray-500 dark:text-gray-400 py-2">
 						{product.category}
 					</span>
 				</div>
