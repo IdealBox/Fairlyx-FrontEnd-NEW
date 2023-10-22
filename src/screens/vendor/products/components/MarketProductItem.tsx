@@ -11,9 +11,10 @@ import ProductItemMenu from './ProductItemMenu';
 
 interface Props {
 	product: ProductType;
+	tab: string;
 }
 
-const MarketProductItem = ({ product }: Props) => {
+const MarketProductItem = ({ product, tab }: Props) => {
 	const [showEditSubMenu, setEditSubMenu] = useState(false);
 	const handleShowSubMenu = () => {
 		setEditSubMenu((state) => !state);
@@ -101,20 +102,22 @@ const MarketProductItem = ({ product }: Props) => {
 
 			<tr
 				onBlur={handleMouseLeave}
-				className="group/item relative hidden sm:table-row w-full hover:bg-gray-100 dark:hover:bg-[#ffffff10] py-4 rounded text-xs md:text-sm [&>*]:py-4 px-2 [&>*]:align-top "
+				className="group/item relative hidden sm:table-row w-full hover:bg-gray-100 dark:hover:bg-[#ffffff10] py-4 rounded-md text-xs md:text-sm [&>*]:py-4 px-2 [&>*]:align-top "
 			>
-				<td className="align-top text-gray-200">
+				<td className="align-top text-gray-200 px-4">
 					<input
 						type="checkbox"
 						className="h-5 aspect-square bg-transparent"
 					/>
 				</td>
 
-				<td>
-					<ProductInfo product={product} />
+				<td className="max-w-[50%]">
+					<div className="">
+						<ProductInfo product={product} />
+					</div>
 				</td>
 
-				{true && (
+				{tab === 'market' && (
 					<React.Fragment>
 						<td>
 							{product.status === 'active' ? (
@@ -161,6 +164,27 @@ const MarketProductItem = ({ product }: Props) => {
 									{product.likes}k
 								</div>
 								<div className="hidden lg:block w-12 bg-primary-3 rounded h-4"></div>
+							</div>
+						</td>
+					</React.Fragment>
+				)}
+				{tab === 'traffic-sources' && (
+					<React.Fragment>
+						<td>
+							<div className="h-4 flex item-center gap-0.5 [&>*]:rounded-sm [&>*]:shadow">
+								<div className="h-full w-1/12 bg-secondary-2"></div>
+								<div className="h-full w-2/5 bg-secondary-3"></div>
+								<div className="h-full w-1/2 bg-secondary-5"></div>
+							</div>
+						</td>
+					</React.Fragment>
+				)}
+				{tab === 'viewers' && (
+					<React.Fragment>
+						<td>
+							<div className="h-4 flex item-center gap-0.5 [&>*]:rounded-sm [&>*]:shadow">
+								<div className="h-full w-1/12 bg-secondary-3"></div>
+								<div className="h-full w-1/2 bg-secondary-5"></div>
 							</div>
 						</td>
 					</React.Fragment>
