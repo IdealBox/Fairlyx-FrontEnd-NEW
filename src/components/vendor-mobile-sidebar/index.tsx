@@ -11,7 +11,7 @@ function DashboardMobileSideBar({onClick}:any) {
                 onClick()
             }}>
                 <CloseIcon className='sm:hidden dark:text-gray-200 flex mt-1 w-14' />
-                <img src='logo.svg' className='w-9' />
+                <img src='/logo.svg' className='w-9' alt='' />
             </div>
             <ListItem isMobile={true} onClick={() => {
                 setSelected("home")

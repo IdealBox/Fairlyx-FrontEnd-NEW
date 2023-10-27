@@ -1,5 +1,5 @@
 import React from 'react';
-import { PopularProductType } from '../interfaces/productInterfaces';
+import { PopularProductType } from '../../../interfaces/productInterfaces';
 
 const popularProducts: PopularProductType[] = [
 	{
@@ -54,8 +54,8 @@ const PopularProducts = ({ products }: PopularProductProps) => {
 					<h1>Earning</h1>
 				</div>
 				<div className="flex flex-col gap-y-2 pt-4">
-					{products.map((prod) => (
-						<ProductItem product={prod} />
+					{products.map((prod, index) => (
+						<ProductItem key={index} product={prod} />
 					))}
 				</div>
 			</div>
@@ -75,7 +75,9 @@ const ProductItem = ({ product }: { product: PopularProductType }) => {
 		<div className="flex items-center justify-between">
 			<div className="py-2 flex gap-x-4">
 				<img
-					src={product.imageUrl || require('../tatia.jpg')}
+					src={
+						product.imageUrl || require('../../../assets/tatia.jpg')
+					}
 					className="max-h-[3.5rem] aspect-square object-cover object-center rounded-xl"
 					alt=""
 				/>
