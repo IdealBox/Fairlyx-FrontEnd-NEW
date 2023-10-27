@@ -85,6 +85,7 @@ function DashboardSideBar() {
             selectedItem={selectedItem}
             item="products-drafts"
             text="Drafts"
+            isRotatable={false}
             iconRight={
               <div className="w-6 h-6 font-bold flex items-center justify-center rounded-lg bg-secondary-1">
                 2
@@ -99,12 +100,14 @@ function DashboardSideBar() {
             }}
             selectedItem={selectedItem}
             item="products-released"
+            isRotatable={false}
             text="Released"
             className="font-[600] text-gray-600"
           />
           <ListItem
             onClick={() => {
               setSelected("products-comments");
+              navigate("/vendor/products?tab=comments");
             }}
             selectedItem={selectedItem}
             item="products-comments"
@@ -114,9 +117,11 @@ function DashboardSideBar() {
           <ListItem
             onClick={() => {
               setSelected("products-scheduled");
+              navigate("/vendor/products?tab=scheduled");
             }}
             selectedItem={selectedItem}
             item="products-scheduled"
+            isRotatable={false}
             text="Scheduled"
             iconRight={
               <div className="w-6 h-6 font-bold flex items-center justify-center rounded-lg bg-purple-300">
@@ -180,6 +185,7 @@ function DashboardSideBar() {
           text="Help & getting started"
           className="font-[600] text-gray-600"
           iconLeft={<QuestionIcon />}
+          isRotatable={false}
           iconRight={
             <div className="w-6 h-6 font-bold flex items-center justify-center rounded-lg bg-purple-300">
               8
