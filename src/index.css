@@ -7,10 +7,11 @@
 @tailwind utilities;
 
 @layer components {
-	.category-parent:hover .edit {
-		@apply !flex;
-	}
-	.scheduled-products:hover .options {
-		@apply !flex dark:hover:bg-app-neutral-800 dark:hover:text-white;
-	}
+  .category-parent:hover .edit{
+    @apply  !flex;
+  }
+  .scheduled-products:hover .options{
+    @apply  opacity-100 dark:hover:bg-app-neutral-800 dark:hover:text-white;
+  }
+    
 }
