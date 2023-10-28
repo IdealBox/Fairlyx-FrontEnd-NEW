@@ -102,12 +102,13 @@ function VendorNavbar() {
 						<NotificationIcon className=" dark:text-gray-200" />
 					</div>
 
-					<div
+					{/* <div
 						className="w-10 h-10 rounded-full bg-gray-500 "
-						onClick={() => {
+						
+					></div> */}
+					<img src='/profile.jpg' className='w-10 h-10 rounded-full object-cover' onClick={() => {
 							setMobileMenu(!mobileMenu);
-						}}
-					></div>
+						}} alt='' />
 					{mobileMenu && (
 						<ProfileMenu
 							onClick={() => {

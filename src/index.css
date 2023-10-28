@@ -13,7 +13,7 @@
     @apply  !flex;
   }
   .scheduled-products:hover .options{
-    @apply  !flex dark:hover:bg-app-neutral-800 dark:hover:text-white;
+    @apply  opacity-100 dark:hover:bg-app-neutral-800 dark:hover:text-white;
   }
     
 }
