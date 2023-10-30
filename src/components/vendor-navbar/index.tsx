@@ -12,7 +12,7 @@ function VendorNavbar() {
   const [mobileNav, setMobileNav] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [searchMenu, setSearchMenu] = useState(false);
-  const [showMessagingMenu, setShowMessagingMenu] = useState(false);
+  const [showMessagingMenu, setShowMessagingMenu] = useState("");
   const [searchText, setSearchText] = useState("");
   return (
     <div className="flex w-full bg-white dark:bg-app-neutral-700 items-center justify-between px-7 py-3">
@@ -100,11 +100,11 @@ function VendorNavbar() {
             <div className="w-3 h-3 absolute border-2 ml-3 border-white dark:border-app-neutral-700 rounded-full bg-orange-600"></div>
             <MessageIcon
               onClick={() => {
-                setShowMessagingMenu(!showMessagingMenu);
+                setShowMessagingMenu("messages");
               }}
               className="cursor-pointer dark:text-gray-200"
             />
-            {showMessagingMenu && (
+            {showMessagingMenu === "messages" && (
               <HeaderModal
                 data={[]}
                 modalText="Messages"
@@ -116,7 +116,21 @@ function VendorNavbar() {
           </div>
           <div className="flex">
             <div className="w-3 h-3 absolute border-2 ml-3 border-white dark:border-app-neutral-700 rounded-full bg-orange-600"></div>
-            <NotificationIcon className=" dark:text-gray-200" />
+            <NotificationIcon
+              onClick={() => {
+                setShowMessagingMenu("notification");
+              }}
+              className="cursor-pointer dark:text-gray-200"
+            />
+            {showMessagingMenu === "notification" && (
+              <HeaderModal
+                data={[]}
+                modalText="Notification"
+                setShowModal={setShowMessagingMenu}
+                showModal={showMessagingMenu}
+                buttonText="See all notifications"
+              />
+            )}
           </div>
 
           {/* <div
