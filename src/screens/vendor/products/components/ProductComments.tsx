@@ -28,48 +28,7 @@ const ProductComments = () => {
         {Array(4)
           .fill(1)
           .map((_, index) => (
-            <div
-              key={index}
-              className="grid border-y py-4 dark:border-y-white/5 border-y-black/10 scheduled-products rounded hover:bg-[#00000010] gap-7 grid-cols-1 md:grid-cols-2 p-1 w-full"
-            >
-              <div className="flex gap-8 items-start">
-                <input type="checkbox" className="w-4 h-4" />
-                <div className="flex gap-3 w-full items-start">
-                  <img
-                    alt=""
-                    src="/guitar.jpg"
-                    className="rounded-full h-12 w-12 object-cover"
-                  />
-                  <div className="flex flex-col">
-                    <div className="font-bold">Akoneh Silas</div>
-                    <div className="text-sm md:hidden flex gap-2">
-                      <span className="text-gray-400">on</span>Product title
-                    </div>
-                    <div className="text-gray-500 text-sm">
-                      I'm unable to place my order
-                    </div>
-                    <div className="md:opacity-0 opacity-100 flex pt-3 hover:!bg-transparent options items-center gap-7">
-                      <TbRotateClockwise className="w-5 h-5 cursor-pointer text-gray-500 dark:text-white" />
-                      <BsHeart className="w-4 h-4 cursor-pointer text-gray-500 dark:text-white" />
-                      <MdDelete className="w-5 h-5 cursor-pointer text-gray-500 dark:text-white" />
-                      <BiSmile className="w-5 h-5 cursor-pointer text-gray-500 dark:text-white" />
-                    </div>
-                  </div>
-                  <div className="ml-auto text-gray-500 text-sm">8h</div>
-                </div>
-              </div>
-              <div className="md:flex hidden gap-3 items-start w-full">
-                <img
-                  alt=""
-                  src="/guitar.jpg"
-                  className="rounded-lg h-16 w-16 object-cover"
-                />
-                <div className="flex flex-col">
-                  <div className="font-bold">Geometric pattern</div>
-                  <div className="text-gray-500 text-sm">UI design kit</div>
-                </div>
-              </div>
-            </div>
+            <CommentRow index={index} />
           ))}
         {
           <button
@@ -114,3 +73,76 @@ const ProductComments = () => {
 };
 
 export default ProductComments;
+
+export const CommentRow = ({ index }: any) => {
+  const [replying, setReplying] = useState(false);
+  return (
+    <div
+      key={index}
+      className="grid border-y py-4 dark:border-y-white/5 border-y-black/10 scheduled-products rounded hover:bg-[#00000010] gap-7 grid-cols-1 md:grid-cols-2 p-1 w-full"
+    >
+      <div className="flex gap-8 items-start">
+        <input type="checkbox" className="w-4 h-4" />
+        <div className="flex gap-3 w-full items-start">
+          <img
+            alt=""
+            src="/guitar.jpg"
+            className="rounded-full h-12 w-12 object-cover"
+          />
+          <div className="flex flex-col">
+            <div className="font-bold">Akoneh Silas</div>
+            <div className="text-sm md:hidden flex gap-2">
+              <span className="text-gray-400">on</span>Product title
+            </div>
+            <div className="text-gray-500 text-sm">
+              I'm unable to place my order
+            </div>
+            {!replying ? (
+              <div className="md:opacity-0 opacity-100 flex pt-3 hover:!bg-transparent options items-center gap-7">
+                <TbRotateClockwise
+                  onClick={() => {
+                    setReplying(true);
+                  }}
+                  className="w-5 h-5 cursor-pointer text-gray-500 dark:text-white"
+                />
+                <BsHeart className="w-4 h-4 cursor-pointer text-gray-500 dark:text-white" />
+                <MdDelete className="w-5 h-5 cursor-pointer text-gray-500 dark:text-white" />
+                <BiSmile className="w-5 h-5 cursor-pointer text-gray-500 dark:text-white" />
+              </div>
+            ) : (
+              <div className="flex py-2 gap-4">
+                <div className="border-l border-b absolute -ml-9 border-b-black/40 dark:border-b-white/40 border-l-black/40 dark:border-l-white/40 rounded-bl h-6 w-[33px]"></div>
+                <img
+                  alt=""
+                  src="/guitar.jpg"
+                  className="rounded-full h-10 w-10 object-cover"
+                />
+                <div className="flex flex-col gap-2">
+                  <input type="text" className="bg-transparent text-gray-600 dark:text-white/70 outline-none" placeholder="leave something to reply" />
+                  <div className="flex gap-3">
+                    <button className="rounded-xl bg-primary-1 text-white/60 p-2 px-4">Reply</button>
+                    <button className="rounded-xl text-white bg-app-neutral-700 p-2 px-4" onClick={()=>{
+                      setReplying(false)
+                    }}>Cancel</button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="ml-auto text-gray-500 text-sm">8h</div>
+        </div>
+      </div>
+      <div className="md:flex hidden gap-3 items-start w-full">
+        <img
+          alt=""
+          src="/guitar.jpg"
+          className="rounded-lg h-16 w-16 object-cover"
+        />
+        <div className="flex flex-col">
+          <div className="font-bold">Geometric pattern</div>
+          <div className="text-gray-500 text-sm">UI design kit</div>
+        </div>
+      </div>
+    </div>
+  );
+};
