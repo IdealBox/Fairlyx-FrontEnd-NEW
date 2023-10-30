@@ -5,8 +5,8 @@ import DashboardMobileSideBar from "../vendor-mobile-sidebar";
 import { ProfileMenu, SearchMenu } from "../modals";
 import { RiCloseCircleFill } from "react-icons/ri";
 import { HiArrowLeft } from "react-icons/hi2";
-import { BiDotsHorizontal } from "react-icons/bi";
 import HeaderModal from "../HeaderModal";
+import { useNavigate } from "react-router-dom";
 
 function VendorNavbar() {
   const [mobileNav, setMobileNav] = useState(false);
@@ -14,6 +14,7 @@ function VendorNavbar() {
   const [searchMenu, setSearchMenu] = useState(false);
   const [showMessagingMenu, setShowMessagingMenu] = useState("");
   const [searchText, setSearchText] = useState("");
+  const navigate = useNavigate()
   return (
     <div className="flex w-full bg-white dark:bg-app-neutral-700 items-center justify-between px-7 py-3">
       {mobileNav && (
@@ -92,7 +93,12 @@ function VendorNavbar() {
       </div>
       {!searchMenu && (
         <div className="flex items-center gap-6">
-          <button className="hidden lg:flex text-white bg-primary-1 gap-1 rounded-lg px-3 py-2 items-center border-none justify-between">
+          <button
+            onClick={() => {
+              navigate("/vendor/add-product");
+            }}
+            className="hidden lg:flex text-white bg-primary-1 gap-1 rounded-lg px-3 py-2 items-center border-none justify-between"
+          >
             <PlusIcon />
             Create
           </button>

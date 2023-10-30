@@ -19,16 +19,16 @@ const HeaderModal = ({
 }: HeaderTypes) => {
   return (
     <>
-      <div className="absolute mt-14 z-30 shadow-2xl right-3 bg-white rounded-xl p-4 w-[350px] flex flex-col gap-2">
-        <div className="flex justify-between pb-3 items-center">
+      <div className="absolute mt-14 z-30 shadow-2xl right-3 dark:bg-app-neutral-600 bg-white rounded-xl p-4 w-[350px] flex flex-col gap-2">
+        <div className="flex dark:text-white font-bold justify-between pb-3 items-center">
           {modalText}
-          <BiDotsHorizontal className="cursor-pointer" />
+          <BiDotsHorizontal className="cursor-pointer rounded-full dark:bg-gray-200/10 bg-gray-600/10 w-8 h-8 p-1" />
         </div>
         <div
           onClick={() => {
             setShowModal("");
           }}
-          className="flex gap-2 hover:bg-gray-200 p-1 rounded-lg text-xs"
+          className="flex gap-2 dark:hover:bg-white/10 hover:bg-gray-200 p-1 rounded-lg text-xs"
         >
           <img
             src="/profile.jpg"
@@ -39,7 +39,7 @@ const HeaderModal = ({
 
           <div className="flex w-full flex-col gap-1 cursor-pointer">
             <div className="flex justify-between">
-              <div className="font-bold">Jarret Waerli</div>
+              <div className="font-bold dark:text-white">Jarret Waerli</div>
               <div className="flex items-center gap-2 text-gray-400">
                 {showModal === "messages" ? "03:30PM" : "3h"}
                 <div className="w-3 h-3 rounded-full bg-primary-1"></div>
