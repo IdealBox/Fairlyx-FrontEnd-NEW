@@ -10,6 +10,7 @@ import ProductsPage from "./screens/vendor/products";
 import PreviewCard from "./screens/vendor/products/components/PreviewCard";
 import BottomSection from "./screens/vendor/products/components/BottomSection";
 import AddProduct from "./screens/vendor/AddProduct";
+import Promote from "./screens/vendor/Promote";
 
 const MyApp = () => {
   const dispatch = useAppDispatch();
@@ -50,13 +51,18 @@ const routes = createBrowserRouter([
           {
             path: "",
             element: <Dashboard />,
-          },{
+          },
+          {
             path: "add-product",
             element: <AddProduct />,
           },
           {
             path: "products",
             element: <ProductsPage />,
+          },
+          {
+            path: "promote",
+            element: <Promote />,
           },
           {
             path: "income",

@@ -167,6 +167,7 @@ function DashboardSideBar() {
 			<ListItem
 				onClick={() => {
 					setSelected('promote');
+					navigate('/vendor/promote');
 				}}
 				selectedItem={selectedItem}
 				item="promote"
