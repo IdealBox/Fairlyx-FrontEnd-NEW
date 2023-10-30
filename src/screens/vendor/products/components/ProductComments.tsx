@@ -12,7 +12,7 @@ const ProductComments = () => {
   const [showRescheduleModal, setShowRescheduleModal] = useState(false);
   return (
     <div className="flex flex-col overflow-scroll gap-3 w-full dark:text-gray-400 pt-5 px-5">
-      <div className="md:text-5xl text-2xl font-bold">Comments</div>
+      <div className=" text-3xl font-bold">Comments</div>
       <div className="dark:bg-app-neutral-700 bg-white p-3 rounded-lg max-w-[1200px]">
         <HeaderComponent headerText="Product Comments" rightItem={<></>} />
         <div className="sm:grid hidden gap-7 text-gray-500 grid-cols-1 md:grid-cols-2 p-1 py-5 w-full">
