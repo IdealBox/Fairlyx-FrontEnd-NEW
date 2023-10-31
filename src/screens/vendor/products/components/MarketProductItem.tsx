@@ -50,7 +50,7 @@ const MarketProductItem = ({ product }: Props) => {
                 {showEditSubMenu && <MobileProductItemMenu />}
               </div>
             </div>
-            {searchParams.get("pt") === "market" ? (
+            {searchParams.get("pt") === "market" || searchParams.get("tab") === "released" ? (
               <div className="mt-4 flex flex-col gap-2">
                 <div className="flex [&>*]:flex-1 gap-3">
                   <div className="text-gray-500">Status</div>
@@ -129,7 +129,7 @@ const MarketProductItem = ({ product }: Props) => {
           </div>
         </td>
 
-        {searchParams.get("pt") === "market" && (
+        {(searchParams.get("pt") === "market" || searchParams.get("tab") === "released") && (
           <React.Fragment>
             <td>
               {product.status === "active" ? (
@@ -202,7 +202,7 @@ const MarketProductItem = ({ product }: Props) => {
           </React.Fragment>
         )}
 
-        <td className="invisible group-hover/item:visible edit gap-4 mt-9 -ml-14 absolute z-40 left-1/2">
+        <td className="invisible absolute group-hover/item:visible edit gap-4 mt-9 -ml-14 absolute z-40 left-1/2">
           <div className="flex items-center justify-center gap-4">
             <button className="focus:outline-none">
               <PiPencil className="border w-7 h-7 bg-white dark:bg-[#ffffff20] dark:border-none dark:text-white cursor-pointer rounded-full p-1" />
