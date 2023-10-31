@@ -1,5 +1,6 @@
 import React from "react";
 import { BiComment, BiDotsHorizontal } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 interface HeaderTypes {
   modalText?: string;
   leftSectionColor?: string;
@@ -17,6 +18,7 @@ const HeaderModal = ({
   setShowModal,
   buttonText = "ButtonText",
 }: HeaderTypes) => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="absolute mt-14 z-30 shadow-2xl right-3 dark:bg-app-neutral-600 bg-white rounded-xl p-4 w-[350px] flex flex-col gap-2">
@@ -26,6 +28,8 @@ const HeaderModal = ({
         </div>
         <div
           onClick={() => {
+            if (showModal === "notification") {
+            }
             setShowModal("");
           }}
           className="flex gap-2 dark:hover:bg-white/10 hover:bg-gray-200 p-1 rounded-lg text-xs"
@@ -35,7 +39,13 @@ const HeaderModal = ({
             alt=""
             className="w-9 h-9 rounded-full object-cover"
           />
-          <div className="absolute">{showModal === "messages" ? "" : <BiComment className="bg-primary-4 rounded-full w-5 h-5 p-1 mt-4 text-white border-2 border-white ml-4" />}</div>
+          <div className="absolute">
+            {showModal === "messages" ? (
+              ""
+            ) : (
+              <BiComment className="bg-primary-4 rounded-full w-5 h-5 p-1 mt-4 text-white border-2 border-white ml-4" />
+            )}
+          </div>
 
           <div className="flex w-full flex-col gap-1 cursor-pointer">
             <div className="flex justify-between">
@@ -51,7 +61,14 @@ const HeaderModal = ({
             </div>
           </div>
         </div>
-        <button className="bg-primary-1 text-white/90 font-bold p-3 w-full text-center rounded-xl">
+        <button
+          onClick={() => {
+            if (showModal === "notification") {
+              navigate("/vendor/notifications");
+            }
+          }}
+          className="bg-primary-1 text-white/90 font-bold p-3 w-full text-center rounded-xl"
+        >
           {buttonText}
         </button>
       </div>
