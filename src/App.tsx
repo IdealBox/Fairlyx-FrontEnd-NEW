@@ -12,6 +12,7 @@ import BottomSection from "./screens/vendor/products/components/BottomSection";
 import AddProduct from "./screens/vendor/AddProduct";
 import Promote from "./screens/vendor/Promote";
 import NotificationsPage from "./screens/vendor/notifications";
+import SettingsScreen from "./screens/vendor/settings";
 
 const MyApp = () => {
   const dispatch = useAppDispatch();
@@ -64,13 +65,18 @@ const routes = createBrowserRouter([
           {
             path: "promote",
             element: <Promote />,
-          },{
+          },
+          {
             path: "notifications",
             element: <NotificationsPage />,
           },
           {
             path: "income",
             element: <>Income</>,
+          },
+          {
+            path: "settings",
+            element: <SettingsScreen />,
           },
         ],
       },

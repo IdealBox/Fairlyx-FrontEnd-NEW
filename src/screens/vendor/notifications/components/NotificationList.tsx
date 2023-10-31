@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { HeaderComponent } from "../../../../components";
-import { BiCheck, BiDotsHorizontal, BiLoaderCircle } from "react-icons/bi";
+import { BiCheck, BiDotsHorizontal } from "react-icons/bi";
 import CommentComponent from "./CommentComponent";
 import { FiSettings } from "react-icons/fi";
 import LoadMoreButton from "./LoadMore";
+import { useNavigate } from "react-router-dom";
 
 const NotificationList = () => {
   const comments = [
@@ -36,6 +37,7 @@ const NotificationList = () => {
     },
   ];
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate()
   return (
     <div className="bg-white dark:bg-app-neutral-700 rounded-xl w-full p-5">
       <HeaderComponent
@@ -65,6 +67,7 @@ const NotificationList = () => {
                 <div
                   onClick={() => {
                     setShowModal(!showModal);
+                    navigate("/vendor/settings?tab=basics")
                   }}
                   className="flex gap-3 text-gray-500 p-2 cursor-pointer rounded-lg items-center hover:bg-black/5 dark:hover:bg-white/5"
                 >
