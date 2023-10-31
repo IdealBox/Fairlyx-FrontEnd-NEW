@@ -24,6 +24,7 @@ const CommentComponent = ({
   const [comment, setComment] = useState("");
   return (
     <div className="w-full flex hover:bg-black/5 rounded-xl dark:hover:bg-white/5 border-y border-y-black/10 items-start dark:text-white gap-2 p-3">
+
       <div className="">
         <img
           src={image}
@@ -89,6 +90,7 @@ const CommentComponent = ({
                   }}
                   placeholder="Leave something to reply"
                   className="w-full outline-none bg-gray-200 dark:bg-white/5 p-1 rounded text-xs"
+
                 />
               </div>
               <div className="flex gap-2">
