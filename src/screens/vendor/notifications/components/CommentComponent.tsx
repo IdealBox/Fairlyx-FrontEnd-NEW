@@ -23,7 +23,7 @@ const CommentComponent = ({
   const [isLiked, setIsLiked] = useState(liked);
   const [comment, setComment] = useState("");
   return (
-    <div className="w-full flex border-y border-y-black/10 items-start dark:text-white gap-2 p-3">
+    <div className="w-full flex hover:bg-black/5 rounded-xl dark:hover:bg-white/5 border-y border-y-black/10 items-start dark:text-white gap-2 p-3">
       <div className="">
         <img
           src={image}
@@ -88,7 +88,7 @@ const CommentComponent = ({
                     setComment(e.target.value);
                   }}
                   placeholder="Leave something to reply"
-                  className="w-full outline-none text-xs"
+                  className="w-full outline-none bg-gray-200 dark:bg-white/5 p-1 rounded text-xs"
                 />
               </div>
               <div className="flex gap-2">
@@ -97,7 +97,7 @@ const CommentComponent = ({
                     onClick={() => {
                       setShowComment(false);
                     }}
-                    className="bg-primary-1/60 rounded-lg text-xs p-2 px-3 text-white/90"
+                    className="bg-primary-1/60 cursor-not-allowed rounded-lg text-xs p-2 px-3 text-white/90"
                   >
                     Reply
                   </button>
@@ -115,7 +115,7 @@ const CommentComponent = ({
                   onClick={() => {
                     setShowComment(false);
                   }}
-                  className="border rounded-lg text-xs p-2 px-3 text-black/90"
+                  className="border rounded-lg dark:text-white/70 dark:border-white/10 text-xs p-2 px-3 text-black/90"
                 >
                   Cancel
                 </button>

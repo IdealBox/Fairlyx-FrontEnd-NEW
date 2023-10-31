@@ -29,6 +29,7 @@ const HeaderModal = ({
         <div
           onClick={() => {
             if (showModal === "notification") {
+              navigate("/vendor/notifications");
             }
             setShowModal("");
           }}
