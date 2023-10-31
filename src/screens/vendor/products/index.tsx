@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard';
 import ReleasedProducts from './components/ReleasedProducts';
 import DraftProducts from './components/DraftProducts';
 import ScheduledProducts from './components/ScheduledProducts';
+import ProductComments from './components/ProductComments';
 
 const ProductsPage = () => {
 	const [searchParams] = useSearchParams();
@@ -15,6 +16,8 @@ const ProductsPage = () => {
 			return <ReleasedProducts />;
 		case 'scheduled':
 			return <ScheduledProducts />;
+		case 'comments':
+			return <ProductComments />;
 		default:
 			return <Dashboard />;
 	}

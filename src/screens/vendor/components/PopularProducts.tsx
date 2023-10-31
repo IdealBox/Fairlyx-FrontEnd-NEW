@@ -4,28 +4,28 @@ import { PopularProductType } from '../../../interfaces/productInterfaces';
 const popularProducts: PopularProductType[] = [
 	{
 		title: 'Crypter NFT',
-		type: 'UI kit',
+		category: 'UI kit',
 		status: 'active',
 		imageUrl: '',
 		price: '345.54',
 	},
 	{
 		title: 'Bento matte 3D',
-		type: 'illustration 1.0',
+		category: 'illustration 1.0',
 		status: 'inactive',
 		imageUrl: '',
 		price: '445.54',
 	},
 	{
 		title: 'Excellent material',
-		type: '3D chair',
+		category: '3D chair',
 		status: 'active',
 		imageUrl: '',
 		price: '345.54',
 	},
 	{
 		title: 'Fleet-travel',
-		type: 'shopping kit',
+		category: 'shopping kit',
 		status: 'active',
 		imageUrl: '',
 		price: '345.54',
@@ -86,7 +86,7 @@ const ProductItem = ({ product }: { product: PopularProductType }) => {
 						{product.title}
 					</h1>
 					<p className="text-gray-600 font-semibold dark:text-gray-50">
-						{product.type}
+						{product.category}
 					</p>
 				</div>
 			</div>
