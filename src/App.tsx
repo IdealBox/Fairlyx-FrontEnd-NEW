@@ -65,6 +65,13 @@ const routes = createBrowserRouter([
           {
             path: "promote",
             element: <Promote />,
+          },{
+            path: "notifications",
+            element: <NotificationsPage />,
+          },
+          {
+            path: "notifications",
+            element: <NotificationsPage />,
           },
           {
             path: "notifications",
