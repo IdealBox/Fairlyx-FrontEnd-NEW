@@ -74,6 +74,10 @@ const routes = createBrowserRouter([
             element: <NotificationsPage />,
           },
           {
+            path: "notifications",
+            element: <NotificationsPage />,
+          },
+          {
             path: "income",
             element: <>Income</>,
           },

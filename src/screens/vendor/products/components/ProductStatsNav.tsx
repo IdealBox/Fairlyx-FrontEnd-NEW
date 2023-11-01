@@ -1,20 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { SearchIcon } from '../../../../components/icons';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ProductStatsNav = () => {
-	const [searchParams] = useSearchParams();
 	const [productStatTab, setProductStatTab] = useState('market');
-	useEffect(() => {
-		if (
-			searchParams.get('pt') === 'viewers' ||
-			searchParams.get('pt') === 'traffic-sources'
-		) {
-			setProductStatTab(searchParams.get('pt') as string);
-		} else {
-			setProductStatTab('market');
-		}
-	}, [searchParams.get('pt')]);
 
 	const navigate = useNavigate();
 	return (
@@ -32,9 +21,18 @@ const ProductStatsNav = () => {
 				</div>
 			</div>
 			<select className="flex lg:hidden dark:bg-app-neutral-600 dark:text-white p-3 w-full rounded-lg md:w-56">
-				<option>Market</option>
-				<option>Traffic Sources</option>
-				<option>Viewers</option>
+				<option onClick={() => {
+						setProductStatTab('market');
+						navigate('/vendor/products?pt=market');
+					}}>Market</option>
+				<option onClick={() => {
+						setProductStatTab('traffic-sources');
+						navigate('/vendor/products?pt=traffic-sources');
+					}}>Traffic Sources</option>
+				<option onClick={() => {
+						setProductStatTab('viewers');
+						navigate('/vendor/products?pt=viewers');
+					}}>Viewers</option>
 			</select>
 			<div className="lg:flex hidden gap-6">
 				<div

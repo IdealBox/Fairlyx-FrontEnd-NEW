@@ -26,7 +26,7 @@ const ProductInfo = ({ product, imageSize, imageOrientation }: Props) => {
 					{product.title}
 				</h1>
 				<div className="flex items-center gap-2 text-xs font-medium">
-					<span className="sm:hidden text-gray-800 bg-shade-100">
+					<span className="sm:hidden text-gray-800 p-1 rounded bg-black/10 dark:bg-white/10">
 						{product.price}
 					</span>
 					<span className="flex-1 text-gray-500 dark:text-gray-400 py-2">
