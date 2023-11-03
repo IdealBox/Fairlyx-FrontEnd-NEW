@@ -5,10 +5,19 @@ import { PiDotOutlineFill } from 'react-icons/pi';
 
 import Avatar from '../../../../components/Avatar';
 import ChatDetailModal from '../../components/ChatDetailModal';
+import { useAppDispatch } from '../../../../store/hooks';
+import { selectChat } from '../../../../store/slices/chatSlice';
 
 const ChatList = () => {
 	const [selectedChat, setSelectedChat] = useState<{ user: string }>();
 	const [showChatDetail, setShowChatDetail] = useState(false);
+	const dispatch = useAppDispatch();
+	const chats = [
+		{ user: 'Kimboh Lovette' },
+		{ user: 'Londe Tunde' },
+		{ user: 'Nsong Stella' },
+		{ user: 'Weke Bertila' },
+	];
 
 	return (
 		<div className="w-full flex flex-col min-h-screen">
@@ -25,25 +34,28 @@ const ChatList = () => {
 				</button>
 			</header>
 			<div className="w-full overflow-scroll flex-1">
-				<Chat
-					onSelect={(chat) => {
-						setSelectedChat(chat);
-						setShowChatDetail(true);
-					}}
-					chatData={{ user: 'Kimboh Lovette' }}
-				/>
-				<Chat chatData={{ user: 'Londe Tunde' }} />
-				<Chat chatData={{ user: 'Nsong Stella' }} />
-				<Chat chatData={{ user: 'Weke Bertila' }} />
+				{chats.map((chat, key) => (
+					<Chat
+						key={key}
+						onSelect={(chat) => {
+							setSelectedChat(chat);
+							dispatch(selectChat(chat));
+							setShowChatDetail(true);
+						}}
+						chatData={chat}
+					/>
+				))}
 			</div>
-			{showChatDetail && (
-				<ChatDetailModal
-					onCloseModal={() => {
-						setShowChatDetail(false);
-					}}
-					chat={selectedChat as { user: string }}
-				/>
-			)}
+			<div className="lg:hidden">
+				{showChatDetail && (
+					<ChatDetailModal
+						onCloseModal={() => {
+							setShowChatDetail(false);
+						}}
+						chat={selectedChat as { user: string }}
+					/>
+				)}
+			</div>
 		</div>
 	);
 };

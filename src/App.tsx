@@ -7,6 +7,7 @@ import Dashboard from './screens/vendor/components/Dashboard';
 import ProductsPage from './screens/vendor/products';
 import AddProduct from './screens/vendor/AddProduct';
 import Promote from './screens/vendor/Promote';
+import MessagingCenter from './screens/vendor/messaging';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -61,6 +62,10 @@ const routes = createBrowserRouter([
 					{
 						path: 'income',
 						element: <>Income</>,
+					},
+					{
+						path: 'messaging',
+						element: <MessagingCenter />,
 					},
 				],
 			},
