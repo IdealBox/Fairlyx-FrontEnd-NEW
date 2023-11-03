@@ -1,17 +1,12 @@
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { setToDarkMode, setToLightMode } from './store/slices/appThemeSlice';
-import { DashboardHome } from './screens';
 import Authentication from './screens/authentication';
-import ProductViews from './screens/vendor/components/ProductViews';
 import VendorPage from './screens/vendor';
 import Dashboard from './screens/vendor/components/Dashboard';
 import ProductsPage from './screens/vendor/products';
-import PreviewCard from './screens/vendor/products/components/PreviewCard';
-import BottomSection from './screens/vendor/products/components/BottomSection';
 import AddProduct from './screens/vendor/AddProduct';
 import Promote from './screens/vendor/Promote';
-import MessagingCenter from './screens/vendor/messaging';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -66,10 +61,6 @@ const routes = createBrowserRouter([
 					{
 						path: 'income',
 						element: <>Income</>,
-					},
-					{
-						path: 'messaging',
-						element: <MessagingCenter />,
 					},
 				],
 			},

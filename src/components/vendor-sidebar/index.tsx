@@ -70,7 +70,7 @@ function DashboardSideBar() {
 					<ListItem
 						onClick={() => {
 							setSelected('products-dashboard');
-							navigate('/vendor/products');
+							navigate('/vendor/products?pt=market');
 						}}
 						selectedItem={selectedItem}
 						item="products-dashboard"
@@ -81,6 +81,8 @@ function DashboardSideBar() {
 					<ListItem
 						onClick={() => {
 							setSelected('products-drafts');
+							
+							navigate('/vendor/products?tab=draft');
 						}}
 						selectedItem={selectedItem}
 						item="products-drafts"
