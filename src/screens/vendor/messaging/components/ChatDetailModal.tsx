@@ -11,7 +11,7 @@ interface ChatProps {
 const ChatDetailModal = ({ chat, onCloseModal }: ChatProps) => {
 	return (
 		<div className="absolute top-0 left-0 w-full h-full p-4 bg-app-neutral-50">
-			<div className="h-full bg-white rounded-lg">
+			<div className="h-full bg-white rounded-lg grid grid-rows-[5rem_1fr]">
 				<header className="px-4 flex items-center justify-between shadow-sm py-5">
 					<h1 className="font-medium text-xl text-gray-800">
 						{chat.user}

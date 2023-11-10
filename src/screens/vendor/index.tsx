@@ -4,9 +4,9 @@ function VendorPage() {
 	return (
 		<div className="h-screen flex bg-gray-100 gap-1 fixed top-0 left-0 dark:bg-app-neutral-800 w-full">
 			<DashboardSideBar />
-			<div className="flex flex-col w-full">
+			<div className="grid grid-rows-[100px_1fr] w-full">
 				<VendorNavbar />
-				<div className="px-4 relative">
+				<div className="max-h-full overflow-y-auto">
 					<Outlet />
 				</div>
 			</div>

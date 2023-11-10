@@ -4,9 +4,10 @@ import { BsPersonCircle } from 'react-icons/bs';
 import { PiDotOutlineFill } from 'react-icons/pi';
 
 import Avatar from '../../../../components/Avatar';
-import ChatDetailModal from '../../components/ChatDetailModal';
+import ChatDetailModal from '../components/ChatDetailModal';
 import { useAppDispatch } from '../../../../store/hooks';
 import { selectChat } from '../../../../store/slices/chatSlice';
+import { SearchIcon } from '../../../../components/icons';
 
 const ChatList = () => {
 	const [selectedChat, setSelectedChat] = useState<{ user: string }>();
@@ -20,7 +21,7 @@ const ChatList = () => {
 	];
 
 	return (
-		<div className="w-full flex flex-col min-h-screen">
+		<div className="w-full h-full grid grid-rows-[5rem_1fr] gap-2 lg:max-w-sm">
 			<header className="mb-2">
 				<button className="w-full focus:outline-none rounded-full bg-gray-100 dark:bg-app-neutral-800 flex gap-2 py-2 px-4 text-gray-600 font-semibold">
 					<span className="flex-1 flex items-center justify-center gap-2 rounded-full shadow py-2 px-4 bg-white dark:bg-app-neutral-500 text-gray-800 dark:text-gray-100">
@@ -33,7 +34,7 @@ const ChatList = () => {
 					</span>
 				</button>
 			</header>
-			<div className="w-full overflow-scroll flex-1">
+			<div className="w-full">
 				{chats.map((chat, key) => (
 					<Chat
 						key={key}
@@ -45,6 +46,18 @@ const ChatList = () => {
 						chatData={chat}
 					/>
 				))}
+			</div>
+			<div className="absolute bottom-0 left-0 w-full py-2">
+				<div className="flex items-center py-2 px-4 bg-gray-100 rounded-lg">
+					<div className="pr-2">
+						<SearchIcon className="text-gray-600" />
+					</div>
+					<input
+						type="search"
+						className="focus:outline-none bg-transparent w-full text-sm"
+						placeholder="Search conversions"
+					/>
+				</div>
 			</div>
 			<div className="lg:hidden">
 				{showChatDetail && (
