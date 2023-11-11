@@ -59,14 +59,14 @@ const ChatList = () => {
 					))}
 				</div>
 			</div>
-			<div className="absolute bottom-0 left-0 w-full py-2">
-				<div className="flex items-center py-2 px-4 bg-gray-100 rounded-lg">
+			<div className="absolute bottom-0 left-0 w-full py-2 px-2">
+				<div className="flex items-center py-2 px-4 bg-gray-100 dark:bg-gray-900 rounded-lg">
 					<div className="pr-2">
 						<SearchIcon className="text-gray-600" />
 					</div>
 					<input
 						type="search"
-						className="focus:outline-none bg-transparent w-full text-sm"
+						className="focus:outline-none bg-transparent w-full text-sm text-gray-600 dark:text-gray-100"
 						placeholder="Search conversions"
 					/>
 				</div>

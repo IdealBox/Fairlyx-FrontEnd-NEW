@@ -4,8 +4,8 @@ import { RiDeleteBin5Line } from 'react-icons/ri';
 
 const ChatDropdownMenu = () => {
 	return (
-		<div className="py-2 bg-white rounded-xl shadow-2xl border border-gray-100 min-w-fit">
-			<ul className="text-gray-500 [&>*]:py-2 [&>*]:px-8 [&>*]:flex [&>*]:gap-3 [&>*]:items-center text-sm">
+		<div className="py-2 bg-white dark:bg-gray-900 dark:border-gray-700 rounded-xl shadow-2xl border border-gray-100 min-w-fit">
+			<ul className="text-gray-500 dark:text-gray-400 [&>*]:py-2 [&>*]:px-8 [&>*]:flex [&>*]:gap-3 [&>*]:items-center text-sm">
 				<li>
 					<BsCheckLg size={20} /> Mark as read
 				</li>
