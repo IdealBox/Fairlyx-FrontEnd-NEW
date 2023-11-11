@@ -24,15 +24,15 @@ const ChatDetail = ({ chat, onCloseModal }: ChatProps) => {
 					</h1>
 					<p className="text-xs text-slate-500 py-2">
 						Customer since:
-						<span className="font-semibold dark:text-gray-50">
+						<span className="font-semibold dark:text-gray-50 px-2">
 							Sep 12 2022
 						</span>
 						| Purchased
-						<span className="font-semibold dark:text-gray-50">
+						<span className="font-semibold dark:text-gray-50 px-2">
 							45 items
 						</span>
 						| Lifetime:
-						<span className="font-semibold dark:text-gray-50">
+						<span className="font-semibold dark:text-gray-50 px-2">
 							$12,575
 						</span>
 					</p>
