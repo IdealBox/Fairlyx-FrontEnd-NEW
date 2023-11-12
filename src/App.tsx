@@ -8,6 +8,7 @@ import ProductsPage from './screens/vendor/products';
 import AddProduct from './screens/vendor/AddProduct';
 import Promote from './screens/vendor/Promote';
 import MessagingCenter from './screens/vendor/messaging';
+import UpgradeToProPage from './screens/vendor/upgrade';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -66,6 +67,10 @@ const routes = createBrowserRouter([
 					{
 						path: 'messaging',
 						element: <MessagingCenter />,
+					},
+					{
+						path: 'upgrade-plan',
+						element: <UpgradeToProPage />,
 					},
 				],
 			},

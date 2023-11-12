@@ -43,7 +43,9 @@ const PlanCard = ({
 			</header>
 			<div className="py-8 border-y border-gray-100">
 				<div className="flex items-center gap-5">
-					<span className="font-bold text-4xl">{rate}%</span>
+					<span className="font-bold leading-loose text-5xl">
+						{rate}%
+					</span>
 					<div className="flex-1 flex items-center justify-between text-gray-500 font-medium">
 						<span className="text-xs max-w-[75%]">
 							of the monthly income you earn on the market.
@@ -70,7 +72,13 @@ const PlanCard = ({
 					})}
 				</ul>
 			</div>
-			<button className="bg-blue-600 text-gray-50 w-full py-2 font-semibold rounded-lg text-sm hover:bg-blue-700 mt-4">
+			<button
+				className={`${
+					planType === 'pro'
+						? 'bg-blue-600 hover:bg-blue-700 '
+						: 'hover:bg-blue-50 '
+				}" text-gray-50 w-full py-2 font-semibold rounded-lg text-sm mt-4"`}
+			>
 				{buttonText}
 			</button>
 		</div>
