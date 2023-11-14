@@ -12,6 +12,7 @@ import BottomSection from "./screens/vendor/products/components/BottomSection";
 import AddProduct from "./screens/vendor/AddProduct";
 import Promote from "./screens/vendor/Promote";
 import NotificationsPage from "./screens/vendor/notifications";
+import UpgradeToProPage from "./screens/vendor/upgradeToPro";
 
 const MyApp = () => {
   const dispatch = useAppDispatch();
@@ -67,6 +68,10 @@ const routes = createBrowserRouter([
           },{
             path: "notifications",
             element: <NotificationsPage />,
+          },
+          {
+            path: "upgrade",
+            element: <UpgradeToProPage />
           },
           {
             path: "income",
