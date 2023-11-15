@@ -20,7 +20,7 @@ const PlanCard = ({
 	recommended,
 }: Props) => {
 	return (
-		<div className="w-full p-8 bg-white max-w-md">
+		<div className="w-full px-8 xl:px-16 bg-white dark:bg-app-neutral-700 max-w-md">
 			<header className="mb-4">
 				<div className="flex items-center justify-start gap-4 my-2">
 					<h1
@@ -39,19 +39,23 @@ const PlanCard = ({
 						</span>
 					)}
 				</div>
-				<p className="text-sm text-gray-500 py-4">{caption}</p>
+				<p className="text-sm font-semibold text-gray-500 dark:text-gray-400 py-4">
+					{caption}
+				</p>
 			</header>
-			<div className="py-8 border-y border-gray-100">
+			<div className="py-8 border-y border-gray-100 dark:border-gray-800">
 				<div className="flex items-center gap-5">
-					<span className="font-bold leading-loose text-5xl">
+					<span className="font-bold text-6xl dark:text-gray-50">
 						{rate}%
 					</span>
-					<div className="flex-1 flex items-center justify-between text-gray-500 font-medium">
-						<span className="text-xs max-w-[75%]">
+					<div className="flex-1 flex items-center justify-between text-gray-500 dark:text-gray-300 font-medium">
+						<span className="text-sm font-semibold max-w-full sm:max-w-[80%]">
 							of the monthly income you earn on the market.
 						</span>
 
-						<PiWarningCircleFill />
+						<div className="hidden sm:block">
+							<PiWarningCircleFill />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -62,7 +66,7 @@ const PlanCard = ({
 							<li className="flex items-center gap-4">
 								<BsCheck2 className="text-green-400" />
 								<p
-									className="text-gray-800 text-sm font-medium"
+									className="text-gray-800 dark:text-gray-50 text-sm font-medium"
 									key={key}
 								>
 									{feature}

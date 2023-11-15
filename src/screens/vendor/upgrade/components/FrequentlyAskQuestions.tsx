@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { CiCircleMinus } from 'react-icons/ci';
 
 const FrequentlyAskQuestions = () => {
 	const frequentlyAskQuestions = [
@@ -25,27 +26,27 @@ const FrequentlyAskQuestions = () => {
 		},
 	];
 	return (
-		<div className="w-full">
-			<h1 className="leading-loose text-4xl font-semibold">
+		<div className="w-full py-8">
+			<h1 className="leading-loose text-4xl font-semibold text-gray-800 dark:text-gray-50">
 				Frequently Ask Questions
 			</h1>
 
-			<div className="w-full bg-white rounded-lg overflow-hidden sm:p-4 lg:p-8 flex">
-				<nav className="w-full max-w-sm">
+			<div className="w-full bg-white dark:bg-app-neutral-700 rounded-lg overflow-hidden sm:p-4 lg:p-8 flex gap-4 lg:gap-8">
+				<nav className="hidden md:block w-full max-w-sm">
 					<ul className="flex flex-col">
-						<li className="py-2 px-4 rounded-lg text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-200">
+						<li className="py-2 px-4 rounded-lg text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-800 hover:dark:text-gray-50 dark:hover:bg-gray-700  hover:bg-gray-200">
 							Getting started
 						</li>
-						<li className="py-2 px-4 rounded-lg text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-200">
+						<li className="py-2 px-4 rounded-lg text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-800 hover:dark:text-gray-50 dark:hover:bg-gray-700  hover:bg-gray-200">
 							Login & Signup
 						</li>
-						<li className="py-2 px-4 rounded-lg text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-200">
+						<li className="py-2 px-4 rounded-lg text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-800 hover:dark:text-gray-50 dark:hover:bg-gray-700  hover:bg-gray-200">
 							Billing & Payments
 						</li>
-						<li className="py-2 px-4 rounded-lg text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-200">
+						<li className="py-2 px-4 rounded-lg text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-800 hover:dark:text-gray-50 dark:hover:bg-gray-700  hover:bg-gray-200">
 							My payments
 						</li>
-						<li className="py-2 px-4 rounded-lg text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-200">
+						<li className="py-2 px-4 rounded-lg text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-800 hover:dark:text-gray-50 dark:hover:bg-gray-700  hover:bg-gray-200">
 							Accounts
 						</li>
 					</ul>
@@ -71,15 +72,19 @@ const QA = (qa: { question: string; answer: string }) => {
 	return (
 		<div>
 			<h3
-				className="select-none py-4 border-b text-gray-800 font-medium flex items-center justify-between"
+				className="select-none py-4 border-b border-gray-200 dark:border-gray-800 text-gray-800 dark:text-gray-300 font-medium flex items-center justify-between"
 				onClick={() => {
 					setShowDetails((state) => !state);
 				}}
 			>
 				<span>{qa.question}</span>
-				<AiOutlinePlusCircle />
+				{showDetails ? <CiCircleMinus /> : <AiOutlinePlusCircle />}
 			</h3>
-			{showDetails && <p className="py-4 text-gray-600">{qa.answer}</p>}
+			{showDetails && (
+				<p className="py-4 text-gray-600 dark:text-gray-400">
+					{qa.answer}
+				</p>
+			)}
 		</div>
 	);
 };
