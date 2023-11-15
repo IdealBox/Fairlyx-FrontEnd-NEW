@@ -32,7 +32,7 @@ const FrequentlyAskQuestions = () => {
 			</h1>
 
 			<div className="w-full bg-white dark:bg-app-neutral-700 rounded-lg overflow-hidden sm:p-4 lg:p-8 flex gap-4 lg:gap-8">
-				<nav className="hidden md:block w-full max-w-sm">
+				<nav className="hidden lg:block w-full max-w-sm">
 					<ul className="flex flex-col">
 						<li className="py-2 px-4 rounded-lg text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-800 hover:dark:text-gray-50 dark:hover:bg-gray-700  hover:bg-gray-200">
 							Getting started

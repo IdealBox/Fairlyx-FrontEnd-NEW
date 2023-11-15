@@ -26,7 +26,7 @@ const UpgradeToProPage = () => {
 				<h1 className="leading-loose text-4xl font-semibold text-gray-900 dark:text-gray-50">
 					Upgrade to Pro
 				</h1>
-				<div className="w-full bg-white dark:bg-app-neutral-700 flex flex-col sm:flex-row sm:divide-x divide-gray-200 dark:divide-gray-800 rounded-lg overflow-hidden sm:p-4 lg:p-8">
+				<div className="w-full bg-white dark:bg-app-neutral-700 flex flex-col lg:flex-row lg:divide-x divide-gray-100 dark:divide-gray-800 rounded-lg overflow-hidden sm:p-4 lg:p-8">
 					<div className="flex-1">
 						<PlanCard {...planProps} />
 					</div>
