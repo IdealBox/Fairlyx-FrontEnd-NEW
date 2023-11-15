@@ -5,7 +5,7 @@ import FrequentlyAskQuestions from './components/FrequentlyAskQuestions';
 const planProps: Props = {
 	planType: 'pro',
 	caption: 'Pro shop and tools to set up your profile.',
-	recommended: false,
+	recommended: true,
 	rate: 12,
 	features: [
 		'Extended shop profile',
@@ -31,7 +31,12 @@ const UpgradeToProPage = () => {
 						<PlanCard {...planProps} />
 					</div>
 					<div className="flex-1">
-						<PlanCard {...planProps} />
+						<PlanCard
+							{...planProps}
+							rate={8}
+							recommended={false}
+							planType="lte"
+						/>
 					</div>
 				</div>
 			</div>

@@ -79,9 +79,9 @@ const PlanCard = ({
 			<button
 				className={`${
 					planType === 'pro'
-						? 'bg-blue-600 hover:bg-blue-700 '
-						: 'hover:bg-blue-50 '
-				}" text-gray-50 w-full py-2 font-semibold rounded-lg text-sm mt-4"`}
+						? 'bg-blue-600 hover:bg-blue-700 text-gray-50 '
+						: 'hover:border-gray-400 text-gray-800 border border-gray-200 dark:text-gray-50 dark:border-gray-700 dark:hover:border-gray-500 '
+				}" w-full py-2 font-semibold rounded-lg text-sm mt-4"`}
 			>
 				{buttonText}
 			</button>
