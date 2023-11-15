@@ -45,11 +45,11 @@ const PlanCard = ({
 			</header>
 			<div className="py-8 border-y border-gray-100 dark:border-gray-800">
 				<div className="flex items-center gap-5">
-					<span className="font-bold text-6xl dark:text-gray-50">
+					<span className="font-bold text-6xl text-gray-800 dark:text-gray-50">
 						{rate}%
 					</span>
-					<div className="flex-1 flex items-center justify-between text-gray-500 dark:text-gray-300 font-medium">
-						<span className="text-sm font-semibold max-w-full sm:max-w-[80%]">
+					<div className="flex-1 flex items-center gap-2 justify-between text-gray-500 dark:text-gray-300 font-medium">
+						<span className="text-sm font-semibold">
 							of the monthly income you earn on the market.
 						</span>
 
