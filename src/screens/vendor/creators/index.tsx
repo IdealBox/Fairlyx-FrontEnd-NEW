@@ -20,8 +20,8 @@ const CreatorsPage = () => {
 			<h1 className="leading-loose text-4xl font-semibold text-gray-900 dark:text-gray-50">
 				Explore creators
 			</h1>
-			<div className="bg-white rounded-md p-4">
-				<header className="border-b border-gray-200 py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+			<div className="bg-white dark:bg-app-neutral-700 rounded-md p-4">
+				<header className="border-b border-gray-200 dark:border-gray-800 py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center">
 					<div className="flex flex-row [&>*]:flex-1 text-center text-sm text-gray-600 font-medium mb-5">
 						<div
 							onClick={() => {
@@ -30,7 +30,9 @@ const CreatorsPage = () => {
 								}
 							}}
 							className={`py-2 px-4 rounded-md ${
-								tab === 'popular' ? '' : 'bg-gray-200'
+								tab === 'popular'
+									? ''
+									: 'bg-gray-200 dark:bg-gray-700 dark:text-gray-300'
 							}`}
 						>
 							Popular
@@ -42,7 +44,9 @@ const CreatorsPage = () => {
 								}
 							}}
 							className={`py-2 px-4 rounded-md ${
-								tab === 'trending' ? '' : 'bg-gray-200'
+								tab === 'trending'
+									? ''
+									: 'bg-gray-200 dark:bg-gray-700 dark:text-gray-300'
 							}`}
 						>
 							Trending
@@ -69,7 +73,7 @@ const CreatorsPage = () => {
 					<p className="text-xs font-semibold text-gray-400">
 						Viewing 5 of 5000+ creators in the market
 					</p>
-					<div className="divide-y flex flex-col gap-4 [&>*]:pt-4">
+					<div className="divide-y dark:divide-gray-800 flex flex-col gap-4 [&>*]:pt-4">
 						{Array(5)
 							.fill(3)
 							.map((item, idx) => {
@@ -77,7 +81,7 @@ const CreatorsPage = () => {
 							})}
 					</div>
 
-					<button className="py-2 px-4 rounded-lg bg-slate-200 border border-gray-200 hover:shadow font-semibold text-gray-800 text-xs w-fit mx-auto">
+					<button className="py-2 px-4 rounded-lg bg-slate-200 dark:bg-app-neutral-800 border border-gray-200 dark:border-gray-700 hover:shadow font-semibold text-gray-800 dark:text-gray-50 text-xs w-fit mx-auto">
 						<LuLoader className="inline" />
 						<span className="pl-2">Load more</span>
 					</button>

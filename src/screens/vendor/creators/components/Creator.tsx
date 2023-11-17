@@ -16,25 +16,30 @@ const Creator = ({ index }: Props) => {
 						nameInitials={'KL'}
 					/>
 					<div>
-						<h2 className="font-bold text-gray-800">
+						<h2 className="font-bold text-gray-800 dark:text-gray-50">
 							Reed Parker
-							<span className="py-1 px-1.5 ml-2 bg-secondary-4 rounded-md">
+							<span className="py-1 px-1.5 ml-2 bg-secondary-4/70 rounded-md">
 								#{index}
 							</span>
 						</h2>
 
-						<p className="text-sm text-gray-500 py-1.5">
-							<span className="font-semibold">16</span> products
+						<p className="text-sm text-gray-500 dark:text-gray-400 py-1.5">
+							<span className="font-semibold dark:text-gray-500">
+								16
+							</span>{' '}
+							products
 							<span className="px-2 text-gray-400 text-xs">
 								|
 							</span>
-							<span className="font-semibold">3568</span>{' '}
+							<span className="font-semibold dark:text-gray-500">
+								3568
+							</span>{' '}
 							followers
 						</p>
 					</div>
 				</div>
 				<div className="hidden sm:flex items-center gap-2">
-					<button className="py-2 px-4 rounded-lg bg-slate-200 border hover:shadow font-semibold text-gray-800 text-xs">
+					<button className="py-2 px-4 rounded-lg bg-slate-200 dark:bg-app-neutral-800 border dark:border-gray-700 hover:shadow font-semibold text-gray-800 dark:text-gray-50 text-xs">
 						Follow
 					</button>
 					<button className="hidden lg:block py-2 px-4 rounded-lg bg-blue-500 hover:bg-blue-600 font-semibold text-white text-xs">
