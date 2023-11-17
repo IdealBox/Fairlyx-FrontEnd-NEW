@@ -4,7 +4,7 @@ import Avatar from '../../../../components/Avatar';
 const Message = () => {
 	return (
 		<div className="flex items-start gap-4 py-3">
-			<Avatar image="WB" size={30} />
+			<Avatar nameInitials="WB" size={30} />
 			<div className="">
 				<header className="flex gap-4 text-sm">
 					<h1 className="font-semibold text-gray-500 dark:text-gray-500">
