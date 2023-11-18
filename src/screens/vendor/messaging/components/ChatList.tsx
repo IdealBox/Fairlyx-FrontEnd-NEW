@@ -120,7 +120,7 @@ const Chat = ({ chatData, onSelect }: ChatProps) => {
 		>
 			<div className="relative">
 				<Avatar
-					image={chatData.user.slice(0, 2).toUpperCase()}
+					nameInitials={chatData.user.slice(0, 2).toUpperCase()}
 					size={60}
 				/>
 				{isOnline && (
