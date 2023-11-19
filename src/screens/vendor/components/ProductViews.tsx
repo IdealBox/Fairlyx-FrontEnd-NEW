@@ -25,7 +25,7 @@ const ProductViews = () => {
 					/>
 				</div>
 			</header>
-			<div className="h-80 py-5 w-full">
+			<div className="h-fit py-5 w-full">
 				<AppBarChart />
 			</div>
 		</div>

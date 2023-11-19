@@ -61,7 +61,7 @@ const AppBarChart = () => {
 	];
 	return (
 		<div className="py-5 flex flex-col gap-y-5 bg-white dark:bg-app-neutral-700 rounded-xl p-5">
-			<div className="h-80 py-5 w-full">
+			<div className="h-96 py-5 w-full">
 				<AutoSizer>
 					{({ height, width }: { height: number; width: number }) => {
 						return (

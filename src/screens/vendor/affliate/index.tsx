@@ -3,6 +3,7 @@ import PopularProducts from '../components/PopularProducts';
 import AffiliateOverview from './components/AffiliateOverview';
 import CreateLink from './components/CreateLink';
 import Performance from './components/Performance';
+import ProductAnalytics from './components/ProductAnalytics';
 
 const AffiliateCenterPage = () => {
 	return (
@@ -17,6 +18,9 @@ const AffiliateCenterPage = () => {
 					</div>
 					<div className="mt-2">
 						<Performance />
+					</div>
+					<div className="mt-2">
+						<ProductAnalytics />
 					</div>
 				</div>
 				<div className="flex flex-col gap-2">
