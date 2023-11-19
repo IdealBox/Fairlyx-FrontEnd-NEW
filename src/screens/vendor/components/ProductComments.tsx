@@ -32,7 +32,7 @@ const SingleComment = () => {
 	return (
 		<div className="py-6 flex gap-x-2">
 			<div className="">
-				<Avatar size={50} image="KL" />
+				<Avatar size={50} nameInitials="KL" />
 			</div>
 			<div className="flex-1">
 				<div>

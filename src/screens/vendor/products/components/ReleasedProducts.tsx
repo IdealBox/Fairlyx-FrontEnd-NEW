@@ -15,7 +15,7 @@ const ReleasedProducts = () => {
   const [loading, setLoading] = useState(false);
   return (
     <div className="flex flex-col overflow-scroll gap-3 w-full dark:text-gray-400 pt-5 px-5">
-      <div className="text-5xl font-bold">Released</div>
+      <div className="text-3xl font-bold">Released</div>
       <div className="dark:bg-app-neutral-700 bg-white p-3 rounded-lg max-w-[1200px]">
         <HeaderComponent
           headerText="Products"

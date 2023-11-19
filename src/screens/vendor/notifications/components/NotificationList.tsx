@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { HeaderComponent } from "../../../../components";
-import { BiDotsHorizontal } from "react-icons/bi";
+import { BiCheck, BiDotsHorizontal } from "react-icons/bi";
 import CommentComponent from "./CommentComponent";
+import { FiSettings } from "react-icons/fi";
+import LoadMoreButton from "./LoadMore";
+import { useNavigate } from "react-router-dom";
 
 const NotificationList = () => {
   const comments = [
@@ -16,7 +19,7 @@ const NotificationList = () => {
     },
     {
       commentText: "Interesting This Looks good",
-      isLiked: true,
+      isLiked: false,
       authorName: "Hansel",
       userName: "Laurhist",
       commentTitle: "Fascinating discoveries",
@@ -33,6 +36,8 @@ const NotificationList = () => {
       image: "/profile.jpg",
     },
   ];
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate()
   return (
     <div className="bg-white dark:bg-app-neutral-700 rounded-xl w-full p-5">
       <HeaderComponent
@@ -42,7 +47,35 @@ const NotificationList = () => {
             <select className="rounded dark:bg-white/5 dark:text-white/60 text-xs p-2 px-4">
               <option>Recent</option>
             </select>
-            <BiDotsHorizontal />
+            <BiDotsHorizontal
+              className="w-6 h-6 cursor-pointer"
+              onClick={() => {
+                setShowModal(!showModal);
+              }}
+            />
+            {showModal && (
+              <div className="bg-white dark:bg-app-neutral-700 text-base shadow-2xl font-medium border rounded-xl p-4 absolute mt-[150px] w-[250px] -ml-[150px]">
+                <div
+                  onClick={() => {
+                    setShowModal(!showModal);
+                  }}
+                  className="flex gap-3 text-gray-500 p-2 cursor-pointer rounded-lg items-center hover:bg-black/5 dark:hover:bg-white/5"
+                >
+                  <BiCheck />
+                  Mark all as read
+                </div>
+                <div
+                  onClick={() => {
+                    setShowModal(!showModal);
+                    navigate("/vendor/settings?tab=basics")
+                  }}
+                  className="flex gap-3 text-gray-500 p-2 cursor-pointer rounded-lg items-center hover:bg-black/5 dark:hover:bg-white/5"
+                >
+                  <FiSettings />
+                  Go to settings
+                </div>
+              </div>
+            )}
           </div>
         }
       />
@@ -58,6 +91,7 @@ const NotificationList = () => {
           liked={elem.isLiked}
         />
       ))}
+      <LoadMoreButton />
     </div>
   );
 };
