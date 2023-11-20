@@ -20,7 +20,7 @@ const ProductStats = ({
 }: Props) => {
 	const [loading, setLoading] = useState(false);
 	return (
-		<div className="bg-white rounded-lg dark:bg-app-neutral-700 max-w-[1200px] p-3 w-full">
+		<div className="bg-white rounded-lg dark:bg-app-neutral-700 p-3 w-full">
 			{showHeader && <ProductStatsNav />}
 
 			<ProductStatTable />
