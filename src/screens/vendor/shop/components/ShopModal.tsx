@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import Avatar from '../../../components/Avatar';
 import { CiTwitter } from 'react-icons/ci';
 import { TiSocialPinterest } from 'react-icons/ti';
 import { IoLogoInstagram } from 'react-icons/io5';
-import Dropdown from '../../../components/forms/Dropdown';
 import { FiFilter } from 'react-icons/fi';
+import ProductCard from './ProductCard';
+import Avatar from '../../../../components/Avatar';
+import Dropdown from '../../../../components/forms/Dropdown';
+import { LuLoader } from 'react-icons/lu';
 
 const ShopModal = () => {
 	const [selectedValue, setSelectedValue] = useState({
@@ -13,8 +15,8 @@ const ShopModal = () => {
 		type: '',
 	});
 	return (
-		<div className="bg-white rounded-lg p-4 ">
-			<header className="divide-y">
+		<div className="bg-white dark:bg-app-neutral-700 rounded-lg p-4">
+			<header className="divide-y dark:divide-gray-800">
 				<div>
 					<div className="flex flex-col md:flex-row  md:items-center gap-y-5 mb-5">
 						<div className="flex-1 flex items-start gap-4">
@@ -25,22 +27,22 @@ const ShopModal = () => {
 								/>
 							</div>
 							<div>
-								<h2 className="py-2 text-xl font-semibold text-gray-800">
+								<h2 className="py-2 text-xl font-semibold text-gray-800 dark:text-gray-100 ">
 									Chelsie Haley
 								</h2>
 								<p className="text-gray-500 text-sm font-medium">
-									Drem big. Think different. Do hard things!
+									Dream big. Think different. Do hard things!
 								</p>
 							</div>
 						</div>
 						<div className="flex items-start justify-between flex-wrap gap-2 text-2xl">
-							<button className="px-2 py-2 rounded-lg text-gray-600 hover:bg-gray-200 focus:outline-none">
+							<button className="px-2 py-2 rounded-lg text-gray-600 hover:bg-gray-200 dark:hover:bg-app-neutral-600 focus:outline-none">
 								<CiTwitter />
 							</button>
-							<button className="px-2 py-2 rounded-lg text-gray-600 hover:bg-gray-200 focus:outline-none">
+							<button className="px-2 py-2 rounded-lg text-gray-600 hover:bg-gray-200 dark:hover:bg-app-neutral-600 focus:outline-none">
 								<IoLogoInstagram />
 							</button>
-							<button className="px-2 py-2 rounded-lg text-gray-600 hover:bg-gray-200 focus:outline-none">
+							<button className="px-2 py-2 rounded-lg text-gray-600 hover:bg-gray-200 dark:hover:bg-app-neutral-600 focus:outline-none">
 								<TiSocialPinterest />
 							</button>
 							<button className="py-2 px-4 rounded-lg text-sm font-semibold bg-blue-500 hover:bg-blue-600 focus:outline-none text-white">
@@ -51,17 +53,17 @@ const ShopModal = () => {
 				</div>
 				<nav className="py-4 flex flex-col sm:flex-row sm:justify-between gap-y-4">
 					<div className="flex items-center justify-between flex-wrap">
-						<button className="py-2 px-4 rounded-lg text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+						<button className="py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-app-neutral-600 hover:text-gray-700">
 							Products
 						</button>
-						<button className="py-2 px-4 rounded-lg text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+						<button className="py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-app-neutral-600 hover:text-gray-700">
 							Followers
 						</button>
-						<button className="py-2 px-4 rounded-lg text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+						<button className="py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-app-neutral-600 hover:text-gray-700">
 							Following
 						</button>
 					</div>
-					<div className="flex items-center gap-2 text-gray-600">
+					<div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
 						<div className="flex-1">
 							<Dropdown
 								data={[
@@ -85,12 +87,25 @@ const ShopModal = () => {
 								setSelectedValue={setSelectedValue}
 							/>
 						</div>
-						<button className="p-2 rounded-lg border border-gray-200 hover:bg-gray-200 focus:outline-none">
+						<button className="p-2 rounded-lg border border-gray-200 dark:border-gray-800 hover:bg-gray-200 dark:hover:bg-app-neutral-600 focus:outline-none">
 							<FiFilter />
 						</button>
 					</div>
 				</nav>
-			</header>{' '}
+			</header>
+			<div className="gap-5 py-4 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
+				{Array(12)
+					.fill(2)
+					.map((item, key) => (
+						<ProductCard key={key} />
+					))}
+			</div>
+			<div className="flex justify-center items-center">
+				<button className="py-2 px-4 rounded-lg bg-slate-200 dark:bg-app-neutral-800 border border-gray-200 dark:border-gray-700 hover:shadow font-semibold text-gray-800 dark:text-gray-50 text-xs w-fit mx-auto">
+					<LuLoader className="inline" />
+					<span className="pl-2">Load more</span>
+				</button>
+			</div>
 		</div>
 	);
 };
