@@ -6,7 +6,7 @@ import { FiFilter } from 'react-icons/fi';
 import ProductCard from './ProductCard';
 import Avatar from '../../../../components/Avatar';
 import Dropdown from '../../../../components/forms/Dropdown';
-import { LuLoader } from 'react-icons/lu';
+import { LuLoader, LuPlus } from 'react-icons/lu';
 
 const ShopModal = () => {
 	const [selectedValue, setSelectedValue] = useState({
@@ -20,11 +20,14 @@ const ShopModal = () => {
 				<div>
 					<div className="flex flex-col md:flex-row  md:items-center gap-y-5 mb-5">
 						<div className="flex-1 flex items-start gap-4">
-							<div>
+							<div className="h-fit w-fit relative">
 								<Avatar
 									size={72}
 									imageSrc="https://media.istockphoto.com/id/1411162580/photo/edgy-young-black-woman-with-trendy-braided-hairstyle-against-an-orange-studio-background.webp?s=612x612&w=is&k=20&c=m78wES_kuLChgwGQNQqnArLWIp-OqMtcnq9C21Bl_GQ="
 								/>
+								<div className="absolute -bottom-0.5 right-1 rounded-full bg-blue-500 text-white h-fit w-fit border-2 border-gray-50 dark:border-gray-800">
+									<LuPlus />
+								</div>
 							</div>
 							<div>
 								<h2 className="py-2 text-xl font-semibold text-gray-800 dark:text-gray-100 ">
