@@ -3,9 +3,17 @@ import { BsArrowRight } from 'react-icons/bs';
 import { FaPen, FaStar } from 'react-icons/fa';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 
-const ProductCard = () => {
+interface Props {
+	onSelect: () => void;
+}
+const ProductCard = ({ onSelect }: Props) => {
 	return (
-		<div className="group p-4 rounded-lg flex flex-col gap-4">
+		<div
+			onClick={() => {
+				onSelect();
+			}}
+			className="group p-4 rounded-lg flex flex-col gap-4"
+		>
 			<div className="relative overflow-hidden rounded-lg h-fit">
 				<div className="absolute top-0 left-0 h-full w-full bg-gray-900/20 group-hover:bg-gray-900/60 grid place-items-center">
 					<div className="hidden group-hover:flex items-center gap-3 w-fit">

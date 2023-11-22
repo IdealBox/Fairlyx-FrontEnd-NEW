@@ -7,6 +7,8 @@ import ProductCard from './ProductCard';
 import Avatar from '../../../../components/Avatar';
 import Dropdown from '../../../../components/forms/Dropdown';
 import { LuLoader, LuPlus } from 'react-icons/lu';
+import { useAppDispatch } from '../../../../store/hooks';
+import { selectItem } from '../../../../store/slices/productSlice';
 
 const ShopModal = () => {
 	const [selectedValue, setSelectedValue] = useState({
@@ -14,6 +16,8 @@ const ShopModal = () => {
 		value: 'Most recent',
 		type: '',
 	});
+
+	const dispatch = useAppDispatch();
 	return (
 		<div className="bg-white dark:bg-app-neutral-700 rounded-lg p-4">
 			<header className="divide-y dark:divide-gray-800">
@@ -100,7 +104,12 @@ const ShopModal = () => {
 				{Array(12)
 					.fill(2)
 					.map((item, key) => (
-						<ProductCard key={key} />
+						<ProductCard
+							onSelect={() => {
+								dispatch(selectItem(item));
+							}}
+							key={key}
+						/>
 					))}
 			</div>
 			<div className="flex justify-center items-center">
