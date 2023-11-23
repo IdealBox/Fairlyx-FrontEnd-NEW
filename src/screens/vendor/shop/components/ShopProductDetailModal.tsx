@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
+
 import { BsDownload, BsStarFill } from 'react-icons/bs';
 import { FaHeart } from 'react-icons/fa';
-import { FiFilter } from 'react-icons/fi';
+import { FiFigma } from 'react-icons/fi';
+import { GoShareAndroid } from 'react-icons/go';
 import { MdClose, MdOutlineArrowForward } from 'react-icons/md';
-import Avatar from '../../../../components/Avatar';
 import { IoCheckmarkSharp } from 'react-icons/io5';
-import ProductCard from './ProductCard';
+
+import Avatar from '../../../../components/Avatar';
 import { useAppDispatch } from '../../../../store/hooks';
 import { selectItem } from '../../../../store/slices/productSlice';
+import ProductCard from './ProductCard';
+import ShopProdComments from './ShopProdComments';
 
 interface Props {
 	onClose: () => void;
 }
 const ShopProductDetailModal = ({ onClose }: Props) => {
+	const [tab, setTab] = useState<'product' | 'comments'>('product');
 	const dispatch = useAppDispatch();
 	return (
 		<div className="fixed top-0 left-0 bg-gray-100 w-full h-full z-[1000] p-4 sm:px-8 overflow-y-scroll">
@@ -29,16 +34,42 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 					<MdClose />
 				</button>
 			</div>
-			<div className="w-full grid place-items-center mt-8">
-				<div className="bg-white p-4 w-full max-w-5xl rounded-md">
+			<div className="w-full flex items-start justify-center rounded-lg mt-8 max-w-6xl mx-auto bg-white">
+				<div
+					className={`bg-white p-4 w-full rounded-md ${
+						tab === 'comments' ? 'flex-1' : ''
+					}`}
+				>
 					<div>
 						<header>
 							<nav className="py-4 flex flex-col sm:flex-row sm:justify-between gap-y-4">
-								<div className="flex items-center justify-between flex-wrap">
-									<button className="py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-app-neutral-600 hover:text-gray-700">
+								<div className="flex items-center gap-4 flex-wrap">
+									<button
+										onClick={() => {
+											if (tab !== 'product') {
+												setTab('product');
+											}
+										}}
+										className={`py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-400  hover:text-gray-700 font-semibold ${
+											tab === 'product'
+												? 'bg-gray-200 text-gray-800 dark:bg-app-neutral-600'
+												: ''
+										}`}
+									>
 										Products
 									</button>
-									<button className="py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-app-neutral-600 hover:text-gray-700">
+									<button
+										onClick={() => {
+											if (tab !== 'comments') {
+												setTab('comments');
+											}
+										}}
+										className={`py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-400  hover:text-gray-700 font-semibold ${
+											tab === 'comments'
+												? 'bg-gray-200 text-gray-800 dark:bg-app-neutral-600'
+												: ''
+										}`}
+									>
 										Comments
 									</button>
 								</div>
@@ -155,7 +186,7 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 									</ul>
 								</div>
 							</div>
-							<div>
+							<div className="mt-2 border-t pt-8">
 								<header className="flex item-center justify-between">
 									<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-['m']before:rounded-lg before:w-4 before:aspect-[2/4] before:bg-secondary-2 before:rounded-sm flex items-center gap-2">
 										MOre like this
@@ -181,6 +212,25 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 						</div>
 					</div>
 				</div>
+				{tab === 'product' ? (
+					<div className="hidden sm:flex flex-col gap-2 px-5">
+						<Avatar
+							size={54}
+							imageSrc="https://media.istockphoto.com/id/1303539316/photo/one-beautiful-woman-looking-at-the-camera-in-profile.jpg?s=2048x2048&w=is&k=20&c=d0YfJV1OEmHAHuHCqGkZftvLhW2-Xp_30eO967BGXE8="
+						/>
+
+						<Avatar size={54} nameInitials={<FiFigma />} />
+						<Avatar size={54} nameInitials={<GoShareAndroid />} />
+					</div>
+				) : (
+					<div className="border-l w-2/5 h-full">
+						<ShopProdComments
+							onClose={() => {
+								setTab('product');
+							}}
+						/>
+					</div>
+				)}
 			</div>
 		</div>
 	);
