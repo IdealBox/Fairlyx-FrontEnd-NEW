@@ -3,6 +3,7 @@ import ShopModal from './components/ShopModal';
 import ShopProductDetailModal from './components/ShopProductDetailModal';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import { removeItem } from '../../../store/slices/productSlice';
+import ImageViewModal from './components/ImageViewModal';
 const ShopingPage = () => {
 	const selectedItem = useAppSelector(
 		(state) => state.productItem.selectedItem
@@ -29,6 +30,7 @@ const ShopingPage = () => {
 					/>
 				)}
 			</div>
+			<ImageViewModal />
 		</div>
 	);
 };
