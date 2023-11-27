@@ -37,7 +37,7 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 			<div className="w-full flex items-start justify-center rounded-lg mt-8 max-w-6xl mx-auto bg-white">
 				<div
 					className={`bg-white p-4 w-full rounded-md ${
-						tab === 'comments' ? 'flex-1' : ''
+						tab === 'comments' ? 'flex-1 hidden md:block' : ''
 					}`}
 				>
 					<div>
@@ -223,7 +223,7 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 						<Avatar size={54} nameInitials={<GoShareAndroid />} />
 					</div>
 				) : (
-					<div className="border-l w-2/5 h-full">
+					<div className="md:border-l w-full md:w-2/5 h-full">
 						<ShopProdComments
 							onClose={() => {
 								setTab('product');
