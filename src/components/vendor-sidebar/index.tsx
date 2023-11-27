@@ -27,7 +27,7 @@ function DashboardSideBar() {
 	// const router = useRouter()
 	const navigate = useNavigate();
 	return (
-		<div className="sm:flex h-full overflow-y-scroll bg-white dark:bg-app-neutral-700 xl:min-w-[340px] hidden xl:max-w-[340px] p-6 gap-1 flex-col">
+		<div className="sm:flex h-full overflow-y-scroll scrollbar-thin bg-white dark:bg-app-neutral-700 xl:min-w-[340px] hidden xl:max-w-[340px] p-6 gap-1 flex-col">
 			<img src="/logo.svg" className="w-14" alt="" />
 			<ListItem
 				onClick={() => {
@@ -81,7 +81,7 @@ function DashboardSideBar() {
 					<ListItem
 						onClick={() => {
 							setSelected('products-drafts');
-							
+
 							navigate('/vendor/products?tab=draft');
 						}}
 						selectedItem={selectedItem}

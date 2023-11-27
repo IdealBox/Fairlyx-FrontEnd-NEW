@@ -6,7 +6,7 @@ function VendorPage() {
 			<DashboardSideBar />
 			<div className="grid grid-rows-[100px_1fr] w-full">
 				<VendorNavbar />
-				<div className="max-h-full overflow-y-auto">
+				<div className="max-h-full overflow-y-scroll scrollbar-thin">
 					<Outlet />
 				</div>
 			</div>
