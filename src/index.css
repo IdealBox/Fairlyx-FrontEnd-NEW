@@ -11,7 +11,8 @@
     @apply  !flex;
   }
   .scheduled-products:hover .options{
-    @apply  opacity-100 dark:hover:text-white;
+    @apply  opacity-100 dark:hover:bg-app-neutral-800 duration-100 dark:hover:text-white;
   }
+  
     
 }
