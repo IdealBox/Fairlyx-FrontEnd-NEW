@@ -20,23 +20,29 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 	const [tab, setTab] = useState<'product' | 'comments'>('product');
 	const dispatch = useAppDispatch();
 	return (
-		<div className="fixed top-0 left-0 bg-gray-100 w-full h-full z-[1000] p-4 sm:px-8 overflow-y-scroll">
+		<div className="fixed top-0 left-0 bg-gray-100 dark:bg-app-neutral-800 w-full h-full z-[1000] p-4 sm:px-8 overflow-y-scroll">
 			<div className="flex items-center justify-between">
-				<button className="py-2 px-4 bg-white font-semibold text-sm text-gray-800 rounded-lg">
+				<button className="py-2 px-4 bg-white dark:bg-app-neutral-700 border border-transparent dark:border-gray-800 dark:text-gray-100 font-semibold text-sm text-gray-800 rounded-lg">
 					Edit product
 				</button>
 				<button
 					onClick={() => {
 						onClose();
 					}}
-					className="w-fit p-2 bg-white font-semibold text-gray-800 rounded-full text-xl"
+					className="w-fit p-2 bg-white dark:bg-app-neutral-700 border border-transparent dark:border-gray-800 dark:text-gray-100 font-semibold text-gray-800 rounded-full text-xl"
 				>
 					<MdClose />
 				</button>
 			</div>
-			<div className="w-full flex items-start justify-center rounded-lg mt-8 max-w-6xl mx-auto bg-white">
+			<div
+				className={`w-full flex items-start justify-center rounded-lg mt-8 max-w-6xl mx-auto ${
+					tab === 'comments'
+						? 'bg-white  dark:bg-app-neutral-700'
+						: ''
+				}`}
+			>
 				<div
-					className={`bg-white p-4 w-full rounded-md ${
+					className={`bg-white  dark:bg-app-neutral-700 p-4 w-full rounded-md ${
 						tab === 'comments' ? 'flex-1 hidden md:block' : ''
 					}`}
 				>
@@ -50,7 +56,7 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 												setTab('product');
 											}
 										}}
-										className={`py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-400  hover:text-gray-700 font-semibold ${
+										className={`py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-200  hover:text-gray-700 font-semibold ${
 											tab === 'product'
 												? 'bg-gray-200 text-gray-800 dark:bg-app-neutral-600'
 												: ''
@@ -64,7 +70,7 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 												setTab('comments');
 											}
 										}}
-										className={`py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-400  hover:text-gray-700 font-semibold ${
+										className={`py-2 px-4 rounded-lg text-sm text-gray-500 dark:text-gray-200  hover:text-gray-700 font-semibold ${
 											tab === 'comments'
 												? 'bg-gray-200 text-gray-800 dark:bg-app-neutral-600'
 												: ''
@@ -76,7 +82,9 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 								<div className="flex items-center justify-end gap-2 text-gray-600 dark:text-gray-400">
 									<button className="flex items-center gap-2 text-sm p-2 rounded-lg border border-gray-200 dark:border-gray-800 hover:bg-gray-200 dark:hover:bg-app-neutral-600 focus:outline-none">
 										<FaHeart className="text-red-400" />
-										<span>45</span>
+										<span className="dark:text-gray-100 font-medium text-sm">
+											45
+										</span>
 									</button>
 									<div className="">
 										<button className="flex items-center gap-4 py-2 px-4 rounded-lg text-sm bg-blue-500 hover:bg-blue-600 text-white font-semibold">
@@ -91,10 +99,10 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 						</header>
 						<div className="py-4">
 							<div>
-								<h1 className="font-semibold text-xl text-gray-800">
+								<h1 className="font-semibold text-xl text-gray-800 dark:text-gray-50 pb-2">
 									Fleet - Travel shopping UI design kit
 								</h1>
-								<h3 className="mb-5 text-gray-500 font-medium text-sm">
+								<h3 className="mb-5 text-gray-500 dark:text-gray-400 font-medium text-sm">
 									Elegant product mockup for your next project
 								</h3>
 								<div className="flex items-center flex-wrap gap-4">
@@ -106,21 +114,21 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 										<span className="text-sm">
 											<span
 												className="
-										text-gray-500 font-semibold text-xs px-1"
+										text-gray-500 dark:text-gray-400 font-semibold text-xs px-1"
 											>
 												by
 											</span>
-											<span className="text-gray-800 font-semibold">
+											<span className="text-gray-800 dark:text-gray-50 font-semibold">
 												Chelsie Haley
 											</span>
 										</span>
 									</div>
 									<div className="flex items-center">
 										<BsStarFill className="text-amber-500 inline" />
-										<span className="text-gray-800 font-semibold px-1 text-sm">
+										<span className="text-gray-800 dark:text-gray-50 font-semibold px-1 text-sm">
 											4.8
 										</span>
-										<span className="text-gray-500 font-medium text-sm">
+										<span className="text-gray-500 dark:text-gray-400 font-medium text-sm">
 											(59)
 										</span>
 									</div>
@@ -138,44 +146,48 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 										<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-['m']before:rounded-lg before:w-4 before:aspect-[2/4] before:bg-red-200 before:rounded-sm flex items-center gap-2">
 											Overview
 										</h1>
-										<p className="mt-5">
-											Lorem ipsum dolor sit amet
-											consectetur, adipisicing elit. Culpa
-											quas explicabo minus eligendi illum
-											natus itaque consequuntur laboriosam
-											iste ratione, sapiente alias libero
-											praesentium quo repellendus nulla
-											similique eveniet odio!
-										</p>
-										<p className="mt-5">
-											Lorem ipsum dolor sit amet
-											consectetur, adipisicing elit. Culpa
-											quas explicabo minus eligendi illum
-											natus itaque consequuntur laboriosam
-											iste ratione, sapiente alias libero
-											praesentium quo repellendus nulla
-											similique eveniet odio!
-										</p>
-										<p className="mt-5">
-											Lorem ipsum dolor sit amet
-											consectetur, adipisicing elit. Culpa
-											quas explicabo minus eligendi illum
-											natus itaque consequuntur
-											laboriosam.
-										</p>
+										<section className="[&>*]:mt-5 text-gray-600 dark:text-gray-200">
+											<p>
+												Lorem ipsum dolor sit amet
+												consectetur, adipisicing elit.
+												Culpa quas explicabo minus
+												eligendi illum natus itaque
+												consequuntur laboriosam iste
+												ratione, sapiente alias libero
+												praesentium quo repellendus
+												nulla similique eveniet odio!
+											</p>
+											<p>
+												Lorem ipsum dolor sit amet
+												consectetur, adipisicing elit.
+												Culpa quas explicabo minus
+												eligendi illum natus itaque
+												consequuntur laboriosam iste
+												ratione, sapiente alias libero
+												praesentium quo repellendus
+												nulla similique eveniet odio!
+											</p>
+											<p>
+												Lorem ipsum dolor sit amet
+												consectetur, adipisicing elit.
+												Culpa quas explicabo minus
+												eligendi illum natus itaque
+												consequuntur laboriosam.
+											</p>
+										</section>
 									</div>
 								</div>
 								<div>
-									<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-['m']before:rounded-lg before:w-4 before:aspect-[2/4] before:bg-secondary-2 before:rounded-sm flex items-center gap-2">
+									<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-['']before:w-4 before:aspect-[2/4] before:bg-secondary-2 before:rounded-sm flex items-center gap-2">
 										Features
 									</h1>
-									<ul className="divide-y">
+									<ul className="divide-y dark:divide-gray-800">
 										{Array(4)
 											.fill(1)
 											.map((item, key) => (
 												<li
 													key={key}
-													className="flex items-center gap-2 text-sm font-semibold text-gray-900 py-4"
+													className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-gray-200 py-4"
 												>
 													<IoCheckmarkSharp className="text-green-500" />
 													<span>
@@ -186,12 +198,12 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 									</ul>
 								</div>
 							</div>
-							<div className="mt-2 border-t pt-8">
+							<div className="mt-2 border-t dark:border-gray-800 pt-8">
 								<header className="flex item-center justify-between">
 									<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-['m']before:rounded-lg before:w-4 before:aspect-[2/4] before:bg-secondary-2 before:rounded-sm flex items-center gap-2">
 										More like this
 									</h1>
-									<button className="py-2 px-4 text-sm border rounded-lg font-medium">
+									<button className="py-2 px-4 text-sm border dark:border-gray-800 dark:text-gray-200 rounded-lg font-medium">
 										<span>View all</span>
 										<MdOutlineArrowForward className="ml-1 inline" />
 									</button>
@@ -223,7 +235,7 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 						<Avatar size={54} nameInitials={<GoShareAndroid />} />
 					</div>
 				) : (
-					<div className="md:border-l w-full md:w-2/5 h-full">
+					<div className="md:border-l dark:border-gray-800 pl-4 w-full md:w-2/5 h-full">
 						<ShopProdComments
 							onClose={() => {
 								setTab('product');
