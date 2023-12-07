@@ -4,7 +4,7 @@ import { BsArrowRightCircleFill } from 'react-icons/bs';
 
 const ShopFollowers = () => {
 	return (
-		<div className="py-5 flex flex-col divide-y">
+		<div className="py-5 flex flex-col divide-y dark:divide-gray-800">
 			{Array(4)
 				.fill(0)
 				.map((item, key) => (
@@ -20,7 +20,7 @@ export default ShopFollowers;
 
 const Follower = () => {
 	return (
-		<div className="flex items-center justify-between gap-4">
+		<div className="flex items-center justify-between gap-4 flex-wrap">
 			<div className="flex items-start gap-2">
 				<Avatar
 					size={56}

@@ -4,7 +4,7 @@ import { BsArrowRightCircleFill } from 'react-icons/bs';
 
 const ShopFollowing = () => {
 	return (
-		<div className="py-5 flex flex-col divide-y">
+		<div className="py-5 flex flex-col divide-y dark:divide-gray-800">
 			{Array(4)
 				.fill(0)
 				.map((item, key) => (

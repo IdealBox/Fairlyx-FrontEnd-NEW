@@ -26,8 +26,10 @@ const CheckBox = ({ checked, onSelected }: Props) => {
 			onClick={() => {
 				setChecked((state) => !check);
 			}}
-			className={`border rounded-md w-5 aspect-square text-white text-transparent flex items-center justify-center ${
-				check ? 'bg-blue-500 text-white' : ''
+			className={`rounded-md w-5 aspect-square text-white text-transparent flex items-center justify-center ${
+				check
+					? 'bg-blue-500 text-white'
+					: 'border-2 dark:border-gray-800'
 			}`}
 		>
 			{check && <MdOutlineCheck />}
