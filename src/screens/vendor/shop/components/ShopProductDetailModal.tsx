@@ -189,7 +189,7 @@ const ShopProductDetailModal = ({ onClose }: Props) => {
 							<div className="mt-2 border-t pt-8">
 								<header className="flex item-center justify-between">
 									<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-['m']before:rounded-lg before:w-4 before:aspect-[2/4] before:bg-secondary-2 before:rounded-sm flex items-center gap-2">
-										MOre like this
+										More like this
 									</h1>
 									<button className="py-2 px-4 text-sm border rounded-lg font-medium">
 										<span>View all</span>

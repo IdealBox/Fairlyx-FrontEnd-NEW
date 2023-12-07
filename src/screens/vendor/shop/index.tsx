@@ -30,7 +30,7 @@ const ShopingPage = () => {
 					/>
 				)}
 			</div>
-			<ImageViewModal />
+			{/* <ImageViewModal /> */}
 		</div>
 	);
 };
