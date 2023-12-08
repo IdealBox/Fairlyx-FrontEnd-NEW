@@ -12,6 +12,7 @@ import UpgradeToProPage from './screens/vendor/upgrade';
 import CreatorsPage from './screens/vendor/creators';
 import AffiliateCenterPage from './screens/vendor/affliate';
 import ShopingPage from './screens/vendor/shop';
+import Income from './screens/vendor/income';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -65,7 +66,7 @@ const routes = createBrowserRouter([
 					},
 					{
 						path: 'income',
-						element: <>Income</>,
+						element: <Income />,
 					},
 					{
 						path: 'messaging',
