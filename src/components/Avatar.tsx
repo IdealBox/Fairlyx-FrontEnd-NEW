@@ -1,29 +1,26 @@
 import React from 'react';
 interface AvatarProps {
-	image: string;
+	nameInitials?: string;
 	title?: string;
 	size?: number;
+	imageSrc?: string;
 }
-const Avatar = ({ image, title, size }: AvatarProps) => {
-	const imageUrlRegex = /(https?:\/\/.*\.(?:png|jpg))/i;
-	const isImageUrl = imageUrlRegex.test(image);
-	return (
-		<div className="flex flex-col items-center justify-center gap-4 w-fit">
-			{isImageUrl ? (
-				<img
-					src={image}
-					style={{ height: size, width: size }}
-					alt={title}
-					className="min-h-[50px] max-h-32 aspect-square object-cover object-center rounded-full shadow"
-				/>
-			) : (
-				<div
-					style={{ height: size, width: size }}
-					className="border dark:border-gray-600 bg-gray-100 dark:bg-shade-400 flex items-center justify-center rounded-full"
-				>
-					<p className="w-fit">{image.split('').slice(0, 2)}</p>
-				</div>
-			)}
+const Avatar = ({ nameInitials, imageSrc, title, size }: AvatarProps) => {
+	return imageSrc ? (
+		<div className="flex flex-col items-center justify-center w-fit aspect-square rounded-full overflow-hidden">
+			<img
+				src={imageSrc}
+				style={{ height: size, width: size }}
+				alt={title}
+				className="min-h-[50px] max-h-32 object-cover object-center"
+			/>
+		</div>
+	) : (
+		<div
+			style={{ height: size, width: size }}
+			className="border border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-shade-400 flex items-center justify-center rounded-full min-w-[24px] aspect-square text-sm w-fit"
+		>
+			<p className="w-fit">{nameInitials || 'FX'}</p>
 		</div>
 	);
 };

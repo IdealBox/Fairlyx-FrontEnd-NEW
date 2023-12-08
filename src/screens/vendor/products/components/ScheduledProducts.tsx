@@ -1,20 +1,34 @@
 import { useState } from "react";
-import { BiCalendar, BiDotsHorizontal, BiLoaderCircle } from "react-icons/bi";
-import { MdDelete } from "react-icons/md";
+import { BiCalendar, BiDotsHorizontal, BiGrid, BiLoaderCircle } from "react-icons/bi";
+import { MdDelete, MdList } from "react-icons/md";
 import { RiCheckDoubleLine } from "react-icons/ri";
 import { HeaderComponent } from "../../../../components";
 import { PiPencil } from "react-icons/pi";
 import RescheduleModals from "./RescheduleModals";
+import { SearchIcon } from "../../../../components/icons";
 
 const ScheduledProducts = () => {
   const [loading, setLoading] = useState(false);
   const [showRescheduleModal, setShowRescheduleModal] = useState(false);
   return (
     <div className="flex flex-col overflow-scroll gap-3 w-full dark:text-gray-400 pt-5 px-5">
-      <div className="text-5xl font-bold">Scheduled</div>
+      <div className="text-3xl font-bold">Scheduled</div>
       <div className="dark:bg-app-neutral-700 bg-white p-3 rounded-lg max-w-[1200px]">
-        <HeaderComponent headerText="Products" rightItem={<></>} />
-        <div className="sm:grid hidden grid-cols-2 p-1 border-b mb-5 py-5 w-full">
+      <div className="flex items-center gap-3">
+          <HeaderComponent headerText="Products" rightItem={<></>} />
+          <div className="flex bg-black/10 items-center rounded-lg dark:bg-white/5">
+            <SearchIcon className=" mx-2" />
+            <input
+              type="text"
+              placeholder="Search product"
+              className="outline-none bg-transparent p-2"
+            />
+          </div>
+          <div className="flex ml-auto gap-3 items-center">
+           
+          </div>
+        </div>
+        <div className="sm:grid hidden grid-cols-2 p-1 py-5 w-full">
           <div className="flex gap-8 items-center">
             <input type="checkbox" className="w-5 h-5" />
             Product
@@ -29,7 +43,7 @@ const ScheduledProducts = () => {
           .map((_, index) => (
             <div
               key={index}
-              className="sm:grid hidden scheduled-products rounded hover:bg-[#00000010]  grid-cols-2 p-1 w-full"
+              className="sm:grid hidden border-y py-2 border-y-black/10 dark:hover:bg-white/5 dark:border-y-white/5 scheduled-products rounded hover:bg-[#00000010]  grid-cols-2 p-1 w-full"
             >
               <div className="flex gap-8 items-start">
                 <input type="checkbox" className="w-5 h-5" />
@@ -54,7 +68,7 @@ const ScheduledProducts = () => {
                 <div className="text-gray-500 text-[12px]">
                   Apr 9, 2021 at 3:55 PM
                 </div>
-                <div className="hidden options items-center gap-3">
+                <div className="opacity-0 flex options items-center gap-3">
                   <BiCalendar className="rounded-full p-2 w-8 h-8 cursor-pointer dark:text-white dark:bg-app-neutral-800 bg-white" />
                   <PiPencil className="rounded-full p-2 w-8 h-8 cursor-pointer dark:text-white dark:bg-app-neutral-800 bg-white" />
                   <MdDelete className="rounded-full p-2 w-8 h-8 cursor-pointer dark:text-white dark:bg-app-neutral-800 bg-white" />

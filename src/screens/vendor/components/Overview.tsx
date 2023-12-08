@@ -146,7 +146,7 @@ const Overview = () => {
 							{[1, 2, 3].map(() => (
 								<div>
 									<Avatar
-										image="https://abegmusic.com/wp-content/uploads/2019/12/Tatiana-Manaois-No-Strings-Mp3-download-588x381.jpg"
+										imageSrc="https://abegmusic.com/wp-content/uploads/2019/12/Tatiana-Manaois-No-Strings-Mp3-download-588x381.jpg"
 										title="Tatiana Manoaous"
 										size={50}
 									/>

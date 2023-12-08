@@ -21,14 +21,23 @@ const GetMoreCustomers = () => {
 				</p>
 			</div>
 			<div className="btn-group flex items-center justify-evenly [&>*]:flex-1 gap-x-4 text-2xl">
-				<button className="py-2 px-4 rounded-lg border text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-900 shadow">
-					<RiFacebookLine className="mx-auto" />
+				<button className="flex items-center justify-center py-2 px-4 rounded-lg border text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-900 shadow">
+					<div className="flex text-center">
+						<RiFacebookLine className="md:mr-2" />
+						<p className="hidden md:block text-sm font-bold text-black dark:text-white">Facebook</p>
+					</div>
 				</button>
-				<button className="py-2 px-4 rounded-lg border text-gray-600 hover:bg-gray-100 shadow dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-900">
-					<CiTwitter className="mx-auto" />
+				<button className="flex items-center justify-center py-2 px-4 rounded-lg border text-gray-600 hover:bg-gray-100 shadow dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-900">
+					<div className="flex text-center">
+						<CiTwitter className="md:mr-2" />
+						<p className="hidden md:block text-sm font-bold text-black dark:text-white">Twitter</p>
+					</div>
 				</button>
-				<button className="py-2 px-4 rounded-lg border text-gray-600 hover:bg-gray-100 shadow dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-900">
-					<BiLogoInstagram className="mx-auto" />
+				<button className="flex items-center justify-center py-2 px-4 rounded-lg border text-gray-600 hover:bg-gray-100 shadow dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-900">
+					<div className="flex text-center">
+						<BiLogoInstagram className="md:mr-2" />
+						<p className="hidden md:block text-sm font-bold text-black dark:text-white">Instagram</p>
+					</div>
 				</button>
 			</div>
 		</div>
