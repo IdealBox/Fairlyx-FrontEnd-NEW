@@ -57,7 +57,6 @@ export default function Dropdown({
 	};
 
 	return (
-		<div>
 			<div className="bg-white dark:bg-app-neutral-500 border dark:border-transparent text-left relative rounded-lg w-full">
 				<button
 					ref={inputRef}
@@ -94,6 +93,5 @@ export default function Dropdown({
 					</div>
 				)}
 			</div>
-		</div>
 	);
 }

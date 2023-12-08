@@ -201,7 +201,7 @@ function DashboardSideBar() {
 				setSelected("df");
 			  } else {
 				setSelected("earning");
-				navigate("/vendor/products?tab=earning");
+				navigate("/vendor/income?tab=earning");
 			  }
         }}
         selectedItem={selectedItem}
@@ -216,7 +216,7 @@ function DashboardSideBar() {
           <ListItem
             onClick={() => {
               setSelected("earning");
-              navigate("/vendor/products?tab=earning");
+              navigate("/vendor/income?tab=earning");
             }}
             selectedItem={selectedItem}
             item="earning"
@@ -228,7 +228,7 @@ function DashboardSideBar() {
             onClick={() => {
 				setSelected("refunds");
   
-				navigate("/vendor/products?tab=refunds");
+				navigate("/vendor/income?tab=refunds");
 			  }}
 			  selectedItem={selectedItem}
 			  item="refunds"
@@ -241,7 +241,7 @@ function DashboardSideBar() {
             onClick={() => {
 				setSelected("payouts");
   
-				navigate("/vendor/products?tab=payouts");
+				navigate("/vendor/income?tab=payouts");
 			  }}
 			  selectedItem={selectedItem}
 			  item="payouts"
@@ -254,7 +254,7 @@ function DashboardSideBar() {
             onClick={() => {
 				setSelected("statements");
   
-				navigate("/vendor/products?tab=statements");
+				navigate("/vendor/income?tab=statements");
 			  }}
 			  selectedItem={selectedItem}
 			  item="statements"
