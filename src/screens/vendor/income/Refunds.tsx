@@ -28,7 +28,7 @@ const Refunds = () => {
   return (
     <div className="flex flex-col gap-3 w-full p-4">
       <div className="text-2xl dark:text-white/60 font-bold">Refunds</div>
-      <div className="flex bg-white flex-col rounded-xl gap-3 w-full">
+      <div className="flex bg-white dark:bg-app-neutral-700 flex-col rounded-xl gap-3 w-full">
         <div className=" dark:bg-app-neutral-700 rounded-xl w-full p-5 flex flex-col gap-5">
           <header className="flex flex-col sm:flex-row gap-3 sm:items-center justify-between">
             <div>
@@ -47,8 +47,8 @@ const Refunds = () => {
                 }}
                 className={
                   !toggle
-                    ? "p-2 px-4 rounded-lg bg-black/10"
-                    : "p-2 px-4 rounded-lg"
+                    ? "p-2 px-4 rounded-lg bg-black/10 dark:bg-white/10 dark:text-white/60"
+                    : "p-2 px-4 rounded-lg dark:text-white/40"
                 }
               >
                 Open Requests
@@ -59,8 +59,8 @@ const Refunds = () => {
                 }}
                 className={
                   toggle
-                    ? "p-2 px-4 rounded-lg bg-black/10"
-                    : "p-2 px-4 rounded-lg"
+                    ? "p-2 px-4 rounded-lg bg-black/10 dark:bg-white/10 dark:text-white/60"
+                    : "p-2 px-4 rounded-lg dark:text-white/40"
                 }
               >
                 Closed Requests
@@ -83,7 +83,7 @@ const Refunds = () => {
                 <div>UI design kit</div>
               </div>
             </div>
-            <div className="p-2 w-[140px] items-center justify-center hidden md:flex text-center rounded-lg bg-secondary-4">
+            <div className="p-2 w-[140px] text-black items-center justify-center hidden md:flex text-center rounded-lg bg-secondary-4">
               New Request
             </div>
             <div className=" w-[140px]">12 Sep</div>
@@ -97,18 +97,18 @@ const Refunds = () => {
             </div>
           </div>
         </div>
-        <div className="sm:hidden w-full px-5 justify-between flex gap-3">
+        <div className="sm:hidden w-full dark:text-white/50 px-5 justify-between flex gap-3">
           <div className="flex gap-2">
            Product
           </div>
           <div>Customer</div>
         </div>
-        <div className="sm:hidden w-full p-5 justify-between flex gap-3">
+        <div className="sm:hidden dark:text-white/50 w-full p-5 justify-between flex gap-3">
           <div className="flex gap-2">
             <img src="/guitar.jpg" className="w-20 rounded-xl h-20" alt="" />
             <div className="flex w-[140px] flex-col">
               <div>Bento Matte 3D illustraton</div>
-              <div className="p-1 w-[140px] text-center rounded-lg bg-secondary-4">
+              <div className="p-1 w-[140px] text-black text-center rounded-lg bg-secondary-4">
                 New Request
               </div>
             </div>
