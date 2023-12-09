@@ -11,7 +11,7 @@ import ProTips from './ProTips';
 
 const Dashboard = () => {
 	return (
-		<div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] overflow-scroll pl-2 pr-3 my-3 gap-3">
+		<div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] pl-2 pr-3 my-3 gap-3">
 			<div className="flex gap-3 flex-col">
 				<Overview />
 				<ProductViews />

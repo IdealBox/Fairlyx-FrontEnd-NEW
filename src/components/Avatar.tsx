@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 interface AvatarProps {
-	nameInitials?: string;
+	nameInitials?: string | ReactElement;
 	title?: string;
 	size?: number;
 	imageSrc?: string;
