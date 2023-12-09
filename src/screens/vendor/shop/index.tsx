@@ -1,6 +1,14 @@
 import React from 'react';
 import ShopModal from './components/ShopModal';
+import ShopProductDetailModal from './components/ShopProductDetailModal';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
+import { removeItem } from '../../../store/slices/productSlice';
 const ShopingPage = () => {
+	const selectedItem = useAppSelector(
+		(state) => state.productItem.selectedItem
+	);
+	const dispatch = useAppDispatch();
+
 	return (
 		<div className="h-full bg-gray-100 dark:bg-transparent">
 			<div className="max-h-[50%] w-full overflow-hidden">
@@ -12,6 +20,16 @@ const ShopingPage = () => {
 			<div className="-translate-y-28 px-4">
 				<ShopModal />
 			</div>
+			<div className="">
+				{selectedItem && (
+					<ShopProductDetailModal
+						onClose={() => {
+							dispatch(removeItem());
+						}}
+					/>
+				)}
+			</div>
+			{/* <ImageViewModal /> */}
 		</div>
 	);
 };
