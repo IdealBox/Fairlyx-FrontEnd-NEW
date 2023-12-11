@@ -23,7 +23,6 @@ const ShopModal = () => {
 
 	const [searchParams] = useSearchParams();
 	const tab = searchParams.get('tab');
-	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 
 	const [showFilterMenu, setShowFilterMenu] = useState(false);
