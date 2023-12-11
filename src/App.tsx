@@ -13,6 +13,7 @@ import CreatorsPage from './screens/vendor/creators';
 import AffiliateCenterPage from './screens/vendor/affliate';
 import ShopingPage from './screens/vendor/shop';
 import Income from './screens/vendor/income';
+import CustomersPage from './screens/vendor/customers';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -88,6 +89,7 @@ const routes = createBrowserRouter([
 						path: 'shop',
 						element: <ShopingPage />,
 					},
+					{ path: 'customers', element: <CustomersPage /> },
 				],
 			},
 			{
