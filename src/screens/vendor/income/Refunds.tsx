@@ -1,7 +1,4 @@
 import { useState } from "react";
-import AppBarChart from "./components/AppBarChart";
-import Overview from "./components/Overview";
-import Dropdown from "../../../components/forms/Dropdown";
 import { HeaderComponent } from "../../../components";
 import { CloseIcon } from "../../../components/icons";
 import { BiCheck } from "react-icons/bi";
