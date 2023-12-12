@@ -1,9 +1,10 @@
 import React from 'react';
 import { IconTypes } from './interface';
 
-function CloseIcon({ className }: IconTypes) {
+function CloseIcon({ className, onClick }: IconTypes) {
 	return (
 		<svg
+		onClick={onClick}
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
 			viewBox="0 0 24 24"
