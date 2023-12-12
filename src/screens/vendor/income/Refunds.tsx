@@ -131,7 +131,7 @@ const Refunds = () => {
         </div>
       </div>
       {showRefundModal && (
-        <div className="absolute top-0 left-0 w-full md:h-screen p-5 bg-white/30 backdrop-blur-sm dark:bg-white/10 z-70 flex md:items-center justify-center">
+        <div className="absolute top-0 left-0 w-full md:h-screen p-5 bg-black/30 backdrop-blur-sm dark:bg-white/10 z-70 flex md:items-center justify-center">
           <div
             onClick={() => {
               setShowRefundModal(false);
