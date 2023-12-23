@@ -15,16 +15,13 @@ const CheckBox = ({ checked, onSelected }: Props) => {
 		}
 	}, []);
 
-	useEffect(() => {
-		if (onSelected) {
-			onSelected(checked ? checked : false);
-		}
-	}, [checked]);
-
 	return (
 		<button
 			onClick={() => {
-				setChecked((state) => !check);
+				setChecked((state) => !state);
+				if (onSelected) {
+					onSelected(checked as boolean);
+				}
 			}}
 			className={`rounded-md w-5 aspect-square text-white text-transparent flex items-center justify-center ${
 				check

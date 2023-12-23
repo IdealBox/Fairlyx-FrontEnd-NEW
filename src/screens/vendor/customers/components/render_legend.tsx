@@ -1,6 +1,6 @@
 import { LegendProps } from 'recharts';
 
-export const renderLegend: any = (props: LegendProps) => {
+export const renderLegend = (props: LegendProps) => {
 	const { payload } = props;
 	return (
 		<ul className="hidden sm:flex w-full justify-between p-4">
