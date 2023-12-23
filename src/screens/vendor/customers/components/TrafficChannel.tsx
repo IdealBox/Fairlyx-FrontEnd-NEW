@@ -109,7 +109,7 @@ const TrafficChannel = () => {
 									style={{ fontSize: 12 }}
 								/>
 								<Legend
-									content={renderLegend}
+									content={renderLegend as any}
 									iconType="square"
 									iconSize={8}
 								/>
