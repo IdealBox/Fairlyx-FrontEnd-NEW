@@ -98,7 +98,7 @@ export const renderLegend: any = (props: LegendProps) => {
 		?.map((item) => item.payload?.value | 0)
 		.reduce((a, b) => a + b, 0);
 	return (
-		<div className="hidden sm:flex w-full justify-evenly items-end p-4">
+		<div className="flex w-full justify-between items-end p-4 max-w-sm mx-auto">
 			{payload &&
 				payload.map((entry, index) => (
 					<div
