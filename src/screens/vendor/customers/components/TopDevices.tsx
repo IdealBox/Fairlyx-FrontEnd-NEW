@@ -22,7 +22,10 @@ const TopDevices = () => {
 	];
 
 	return (
-		<div className="p-4 bg-white rounded-lg">
+		<div
+			className="p-4 bg-white dark:bg-app-neutral-700
+		 rounded-lg"
+		>
 			<header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 				<div>
 					<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-[''] before:w-4 before:aspect-[2/4] before:bg-red-200 before:rounded-sm flex items-center gap-2">
@@ -37,15 +40,16 @@ const TopDevices = () => {
 							<PieChart height={height} width={width}>
 								<Pie
 									data={data}
-									innerRadius={60}
-									outerRadius={80}
-									paddingAngle={-5}
+									innerRadius={50}
+									outerRadius={85}
+									paddingAngle={4 }
 									dataKey="value"
 								>
 									{data.map((entry, index) => (
 										<Cell
 											key={`cell-${index}`}
 											fill={selectColor(entry.name)}
+											strokeOpacity={0}
 										/>
 									))}
 								</Pie>
@@ -125,10 +129,10 @@ export const renderLegend: any = (props: LegendProps) => {
 								/>
 							)}
 						</div>
-						<span className="text-gray-800 text-xs font-semibold">
+						<span className="text-gray-800 dark:text-gray-300 text-xs font-semibold">
 							{entry.value}
 						</span>
-						<span className="text-gray-800 text-lg font-semibold">
+						<span className="text-gray-800 dark:text-gray-100 text-xl font-semibold">
 							{total
 								? `${Math.floor(
 										(entry.payload?.value * 100) / total

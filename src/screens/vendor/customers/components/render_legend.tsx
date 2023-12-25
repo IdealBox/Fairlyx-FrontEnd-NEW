@@ -14,7 +14,7 @@ export const renderLegend = (props: LegendProps) => {
 							style={{ backgroundColor: entry.color }}
 							className="h-3 aspect-square rounded-sm"
 						></span>
-						<span className="text-gray-800 text-xs font-semibold">
+						<span className="text-gray-800 dark:text-gray-300 text-xs font-semibold">
 							{entry.value}
 						</span>
 					</li>

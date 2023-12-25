@@ -28,7 +28,7 @@ const NewCustomers = () => {
 	];
 
 	return (
-		<div className="p-4 bg-white rounded-lg">
+		<div className="p-4 bg-white dark:bg-app-neutral-700 rounded-lg">
 			<header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 				<div>
 					<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-[''] before:w-4 before:aspect-[2/4] before:bg-red-200 before:rounded-sm flex items-center gap-2">
@@ -43,7 +43,7 @@ const NewCustomers = () => {
 							<PieChart height={height} width={width}>
 								<Pie
 									data={data}
-									innerRadius={60}
+									innerRadius={50}
 									outerRadius={80}
 									paddingAngle={4}
 									dataKey="value"
@@ -54,6 +54,7 @@ const NewCustomers = () => {
 											key={`cell-${index}`}
 											fill={selectColor(entry.name)}
 											radius={12}
+											strokeOpacity={0}
 										/>
 									))}
 								</Pie>
@@ -73,8 +74,8 @@ export default NewCustomers;
 const CustomTooltip = ({ active, payload }: TooltipProps<string, string>) => {
 	if (active && payload && payload.length) {
 		return (
-			<div className="bg-app-neutral-700 rounded-lg text-gray-100 p-2 text-xs">
-				<h3 className="font-semibold text-sm text-gray-100">
+			<div className="bg-app-neutral-700 dark:bg-white rounded-lg p-2 text-xs">
+				<h3 className="font-semibold text-sm text-gray-100 dark:text-gray-800">
 					{payload[0].name}
 				</h3>
 
@@ -89,7 +90,9 @@ const CustomTooltip = ({ active, payload }: TooltipProps<string, string>) => {
 							className="block h-3 w-3 rounded-sm"
 						></span>
 					</span>
-					<span className="">{payload[0].value}</span>
+					<span className="text-gray-100 dark:text-gray-600 font-semibold">
+						{payload[0].value}
+					</span>
 				</p>
 			</div>
 		);
@@ -121,7 +124,7 @@ const renderLegend: any = (props: LegendProps) => {
 								>
 									<FaSquare size={12} />
 								</div>
-								<span className="text-gray-800 text-xs font-semibold">
+								<span className="text-gray-800 dark:text-gray-100 text-xs font-semibold">
 									{entry.value}
 								</span>
 							</div>

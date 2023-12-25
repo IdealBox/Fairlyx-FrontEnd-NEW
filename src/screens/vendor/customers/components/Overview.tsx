@@ -28,7 +28,7 @@ const CustomerOverview = () => {
 	return (
 		<div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] pl-2 pr-3 my-3 gap-3">
 			<div className="flex flex-col gap-2">
-				<div className="p-4 bg-white rounded-lg">
+				<div className="p-4 bg-white dark:bg-app-neutral-700 rounded-lg">
 					<header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 						<div>
 							<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-[''] before:w-4 before:aspect-[2/4] before:bg-red-200 before:rounded-sm flex items-center gap-2">
@@ -54,15 +54,15 @@ const CustomerOverview = () => {
 					<div>
 						<div>
 							<div className="py-8 flex items-center flex-col sm:items-start gap-2">
-								<h1 className="text-gray-800 font-semibold text-2xl">
+								<h1 className="text-gray-800 dark:text-gray-50 font-semibold text-2xl">
 									{'1,494'} customers
 								</h1>
-								<div className="flex gap-2 text-xs font-medium">
-									<span className="flex gap-0.5 items-center text-primary-2 bg-primary-2/60 max-w-fit rounded-md  p-0.5  px-1">
+								<div className="flex gap-2 text-sm font-semibold">
+									<span className="flex gap-0.5 items-center text-primary-2 bg-primary-2/60 dark:bg-secondary-4/60 max-w-fit rounded-md  p-0.5  px-1">
 										<AiOutlineArrowUp />
 										<span className="">56%</span>
 									</span>
-									<span className="text-gray-600">
+									<span className="text-gray-600 dark:text-gray-400">
 										vs, Sep 8, 2021
 									</span>
 								</div>

@@ -52,7 +52,7 @@ const TopCountries = () => {
 		},
 	];
 	return (
-		<div className="p-4 bg-white rounded-lg">
+		<div className="p-4 bg-white dark:bg-app-neutral-700 rounded-lg">
 			<header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 				<div>
 					<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-[''] before:w-4 before:aspect-[2/4] before:bg-red-200 before:rounded-sm flex items-center gap-2">
@@ -72,7 +72,10 @@ const TopCountries = () => {
 								barSize={30}
 								margin={{ left: 5, right: 5 }}
 							>
-								<CartesianGrid stroke="#f5f5f5" />
+								<CartesianGrid
+									horizontal={false}
+									className="stroke-gray-100 dark:stroke-gray-800"
+								/>
 								<XAxis
 									padding={{ left: 50 }}
 									type="number"
@@ -88,7 +91,6 @@ const TopCountries = () => {
 									type="category"
 									axisLine={false}
 									tickLine={false}
-									className="text-xs text-blue-500"
 								/>
 
 								<Bar

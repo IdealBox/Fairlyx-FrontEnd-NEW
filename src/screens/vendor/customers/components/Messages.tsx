@@ -4,7 +4,7 @@ import moment from 'moment';
 
 const Messages = () => {
 	return (
-		<div className="p-4 bg-white rounded-lg">
+		<div className="p-4 bg-white dark:bg-app-neutral-700 rounded-lg">
 			<header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 				<div>
 					<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-[''] before:w-4 before:aspect-[2/4] before:bg-red-200 before:rounded-sm flex items-center gap-2">
@@ -12,7 +12,7 @@ const Messages = () => {
 					</h1>
 				</div>
 			</header>
-			<div className="py-4 flex flex-col divide-y divide-gray-200 [&>*]:py-4">
+			<div className="py-4 flex flex-col divide-y divide-gray-200 dark:divide-gray-800 [&>*]:py-4">
 				{Array(5)
 					.fill(1)
 					.map((item, key) => (
@@ -31,7 +31,7 @@ const Messages = () => {
 					))}
 			</div>
 			<div>
-				<button className="py-2 w-full border border-gray-200 focus:outline-none text-gray-800 rounded-md hover:bg-gray-100 font-semibold">
+				<button className="py-2 w-full border border-gray-200 dark:border-gray-700 focus:outline-none text-gray-800 dark:text-gray-200 rounded-md hover:bg-gray-100 dark:hover:bg-app-neutral-800 font-semibold">
 					View all messages
 				</button>
 			</div>
@@ -59,10 +59,10 @@ const Message = ({ text, user, sentAt }: MessageProps) => {
 			<div className="flex-1">
 				<div className="flex items-center justify-between px-1">
 					<div className="flex items-center gap-2">
-						<h1 className="text-gray-800 font-semibold text-sm">
+						<h1 className="text-gray-800 dark:text-gray-100 font-semibold text-sm">
 							{user.name}
 						</h1>
-						<span className="text-gray-500 font-medium text-sm">
+						<span className="text-gray-500 dark:text-gray-400 font-medium text-sm">
 							{user.userName}
 						</span>
 					</div>
@@ -71,7 +71,9 @@ const Message = ({ text, user, sentAt }: MessageProps) => {
 					</span>
 				</div>
 				<div>
-					<p className="text-gray-800 line-clamp-1 text-sm">{text}</p>
+					<p className="text-gray-800 dark:text-gray-300 line-clamp-1 text-sm">
+						{text}
+					</p>
 				</div>
 			</div>
 		</div>

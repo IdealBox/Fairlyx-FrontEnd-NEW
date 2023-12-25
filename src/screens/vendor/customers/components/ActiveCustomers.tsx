@@ -125,7 +125,7 @@ const ActiveCustomers = () => {
 		type: string;
 	}>({ id: '1', value: 'Last 30 days', type: '' });
 	return (
-		<div className="p-4 rounded-lg bg-white">
+		<div className="p-4 rounded-lg bg-white dark:bg-app-neutral-700">
 			<header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 				<div>
 					<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-[''] before:w-4 before:aspect-[2/4] before:bg-secondary-2 before:rounded-sm flex items-center gap-2">
@@ -157,21 +157,21 @@ const ActiveCustomers = () => {
 								<CartesianGrid vertical={false} />
 								<Line
 									dot={false}
-									strokeWidth={3}
+									strokeWidth={4}
 									type="monotone"
 									dataKey="uv"
 									stroke={colors.primary[1]}
 								/>
 								<Line
 									dot={false}
-									strokeWidth={3}
+									strokeWidth={4}
 									type="monotone"
 									dataKey="pv"
 									stroke={colors.secondary[4]}
 								/>
 								<Line
 									dot={false}
-									strokeWidth={3}
+									strokeWidth={4}
 									type="monotone"
 									dataKey="ps"
 									stroke={colors.primary[2]}
