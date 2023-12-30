@@ -10,6 +10,8 @@ import Promote from './screens/vendor/Promote';
 import MessagingCenter from './screens/vendor/messaging';
 import UpgradeToProPage from './screens/vendor/upgrade';
 import CreatorsPage from './screens/vendor/creators';
+import AffiliateCenterPage from './screens/vendor/affliate';
+import ShopingPage from './screens/vendor/shop';
 
 const MyApp = () => {
 	const dispatch = useAppDispatch();
@@ -76,6 +78,14 @@ const routes = createBrowserRouter([
 					{
 						path: 'creators',
 						element: <CreatorsPage />,
+					},
+					{
+						path: 'affiliate',
+						element: <AffiliateCenterPage />,
+					},
+					{
+						path: 'shop',
+						element: <ShopingPage />,
 					},
 				],
 			},
