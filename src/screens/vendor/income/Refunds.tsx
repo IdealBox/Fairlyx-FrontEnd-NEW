@@ -76,7 +76,6 @@ const Refunds = () => {
         </div>
         <div className="bg-white hidden sm:flex flex-col dark:text-white/80 dark:bg-app-neutral-700 p-5">
           <div className="flex justify-between pb-2 border-b dark:border-b-white/10 text-black/50 dark:text-white/60 gap-3">
-
             <div className=" w-[200px]">Product</div>
             <div className=" w-[120px] hidden md:flex">Status</div>
             <div className=" w-[140px]">Date</div>
@@ -132,7 +131,7 @@ const Refunds = () => {
         </div>
       </div>
       {showRefundModal && (
-        <div className="absolute top-0 left-0 w-full md:h-screen p-5 bg-white/30 backdrop-blur-sm dark:bg-white/10 z-70 flex md:items-center justify-center">
+        <div className="absolute top-0 left-0 w-full md:h-screen p-5 bg-black/30 backdrop-blur-sm dark:bg-white/10 z-70 flex md:items-center justify-center">
           <div
             onClick={() => {
               setShowRefundModal(false);
