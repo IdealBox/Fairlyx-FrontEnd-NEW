@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import Dropdown from '../../../../components/forms/Dropdown';
 import { BsBag, BsGraphDown, BsInfo } from 'react-icons/bs';
 import { AiOutlineArrowUp } from 'react-icons/ai';
 import { MdPayment } from 'react-icons/md';
-import { CiWavePulse1 } from 'react-icons/ci';
 
 const Overview = () => {
-	const [selectedValue, setSelectedValue] = useState({
-		value: 'All time',
-		id: '1',
-		type: '',
-	});
+
 	return (
 			<div className="grid bg-white dark:bg-app-neutral-700 dark:text-white/80 p-9 rounded-xl grid-cols-1 gap-3 sm:grid-cols-3">
 				<div className="flex flex-col rounded-xl">
