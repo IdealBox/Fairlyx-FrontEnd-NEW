@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { BsGraphUp, BsInfo } from "react-icons/bs";
+import { MdGraphicEq } from "react-icons/md";
+import { PiBezierCurve } from "react-icons/pi";
 import { CloseIcon } from "../../../components/icons";
 
 const Payouts = () => {
