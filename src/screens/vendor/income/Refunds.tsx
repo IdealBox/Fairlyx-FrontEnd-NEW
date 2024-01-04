@@ -76,6 +76,7 @@ const Refunds = () => {
         </div>
         <div className="bg-white hidden sm:flex flex-col dark:text-white/80 dark:bg-app-neutral-700 p-5">
           <div className="flex justify-between pb-2 border-b dark:border-b-white/10 text-black/50 dark:text-white/60 gap-3">
+
             <div className=" w-[200px]">Product</div>
             <div className=" w-[120px] hidden md:flex">Status</div>
             <div className=" w-[140px]">Date</div>
