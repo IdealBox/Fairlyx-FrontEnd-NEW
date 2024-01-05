@@ -41,6 +41,9 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
+	plugins: [
+		require('tailwind-scrollbar')({ nocompatible: true }),
+		require('@tailwindcss/container-queries'),
+	],
 	darkMode: 'class',
 };

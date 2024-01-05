@@ -33,7 +33,7 @@ const MyApp = () => {
 
 	return (
 		<main className={`font-inter ${isDarkMode ? 'dark' : ''}`}>
-			<div className="bg-app-neutral-600 dark:bg-app-neutral-800 min-h-screen w-full max-w-[1440px]">
+			<div className="bg-app-neutral-600 dark:bg-app-neutral-800 min-h-screen w-full">
 				<Outlet />
 			</div>
 		</main>
