@@ -4,7 +4,7 @@ import { useAppDispatch } from '../../../../store/hooks';
 import { selectCustomer } from '../../../../store/slices/customerSlice';
 import Avatar from '../../../../components/Avatar';
 import { BsPlus } from 'react-icons/bs';
-import { BiSolidMessageSquareDetail } from 'react-icons/bi';
+import { BiDotsHorizontal, BiSolidMessageSquareDetail } from 'react-icons/bi';
 import { MdOutlineMail } from 'react-icons/md';
 import { IoLinkOutline } from 'react-icons/io5';
 import { CiTwitter } from 'react-icons/ci';
@@ -22,7 +22,7 @@ const CustomerDetail = () => {
 					onClick={() => {
 						dispatch(selectCustomer(null));
 					}}
-					className="focus:outline-none text-gray-600 bg-gray-100 shadow-lg p-2 rounded-full"
+					className="focus:outline-none text-gray-600 bg-gray-100 dark:text-gray-200 dark:bg-gray-800 shadow-lg p-2 rounded-full"
 				>
 					<IoMdClose />
 				</button>
@@ -37,17 +37,20 @@ const CustomerDetail = () => {
 							/>
 						</div>
 						<div>
-							<h2 className="text-xl font-semibold text-gray-800">
+							<h2 className="text-xl font-semibold text-gray-800 dark:text-gray-50">
 								Chelsie Haley
 							</h2>
 							<h5 className="text-gray-400">@chelsie</h5>
 						</div>
 					</div>
 					<div className="flex items-center gap-2 *:flex-1  ">
-						<button className="bg-blue-500 py-2 rounded-lg px-4 text-white font-semibold">
-							Follow <BsPlus size={24} className="inline" />
+						<button className="border-2 shadow py-2 rounded-lg px-4 text-gray-800 font-semibold dark:bg-gray-900 dark:hover:bg-gray-950 border-gray-800 dark:text-white">
+							<span className="hidden @sm:inline-block">
+								Follow
+							</span>
+							<BsPlus size={24} className="inline" />
 						</button>
-						<button className="flex items-center gap-1  bg-blue-500 py-2 rounded-lg px-4 text-white font-semibold">
+						<button className="flex items-center gap-1  bg-blue-500 hover:bg-blue-600 py-2 rounded-lg px-4 text-white font-semibold">
 							Message
 							<BiSolidMessageSquareDetail
 								size={20}
@@ -58,12 +61,14 @@ const CustomerDetail = () => {
 				</div>
 				<div className="flex flex-col gap-8 pt-8">
 					<div className="flex flex-col gap-3 w-full">
-						<h1>Private notes</h1>
+						<h1 className="text-gray-800 dark:text-gray-100 font-semibold text-sm flex items-center gap-2">
+							Private notes <PiWarningCircleFill />
+						</h1>
 						<Editor />
 					</div>
 					<div>
-						<ul className="flex flex-col divide-y *:py-4 font-semibold">
-							<li className="flex items-center gap-4 text-gray-700">
+						<ul className="flex flex-col divide-y dark:divide-gray-800 *:py-4 font-semibold">
+							<li className="flex items-center gap-4 text-gray-700 dark:text-gray-200">
 								<MdOutlineMail
 									className="text-gray-500"
 									size={20}
@@ -71,7 +76,7 @@ const CustomerDetail = () => {
 								kimbohlovette@gmail.com
 							</li>
 							<li className="text-gray-500">
-								<ul className="flex items-center gap-8">
+								<ul className="flex items-center gap-8 dark:text-gray-400">
 									<li>
 										<CiTwitter size={28} />
 									</li>
@@ -86,9 +91,9 @@ const CustomerDetail = () => {
 									</li>
 								</ul>
 							</li>
-							<li className="flex items-center gap-4 text-gray-700">
+							<li className="flex items-center gap-4 text-gray-700 dark:text-gray-400">
 								<IoLinkOutline
-									className="text-gray-500"
+									className="text-gray-500 dark:text-gray-400"
 									size={20}
 								/>
 								robot.co
@@ -96,20 +101,32 @@ const CustomerDetail = () => {
 						</ul>
 					</div>
 					<div>
-						<h2 className="text-gray-800 flex items-center gap-4 font-semibold">
+						<h2 className="text-gray-800 dark:text-gray-100 flex items-center gap-4 font-semibold">
 							Purchase history <PiWarningCircleFill />
 						</h2>
-						<div className="py-8 divide-y">
-							<header className="pb-5 flex items-center justify-between text-gray-600 text-sm">
-								<div>Product</div>
-								<div>Price</div>
-							</header>
-							<div className="pt-4 flex flex-col gap-y-4">
-								{Array(4)
-									.fill(0)
-									.map((row, key) => (
-										<ProductRecord key={key} />
-									))}
+						<div className="w-full">
+							<table className="w-full">
+								<thead className="hidden sm:table-header-group">
+									<tr className="text-left font-normal text-gray-600">
+										<th>Product</th>
+										<th>Price</th>
+										<th className="hidden lg:table-cell">
+											Date
+										</th>
+									</tr>
+								</thead>
+								<tbody className="divide-y dark:divide-gray-800 [&_td]:py-4">
+									{Array(4)
+										.fill(0)
+										.map((rec, key) => (
+											<ProductRecord key={key} />
+										))}
+								</tbody>
+							</table>
+							<div className="grid place-items-center mt-4">
+								<button className="py-2 px-4 rounded-lg border border-gray-200 dark:border-gray-800 text-gray-800 dark:text-gray-100 dark:hover:bg-app-neutral-600 text-sm font-semibold hover:bg-gray-100">
+									Load more
+								</button>
 							</div>
 						</div>
 					</div>
@@ -123,26 +140,66 @@ export default CustomerDetail;
 
 const ProductRecord = () => {
 	return (
-		<div className="flex items-center justify-between hover:bg-gray-300 rounded-lg p-2 cursor-pointer">
-			<div className="flex gap-4">
-				<div className="max-h-fit">
-					<img
-						className="max-w-36 sm:max-w-14 rounded-lg object-center object-cover aspect-square"
-						src="https://images.unsplash.com/photo-1626544827763-d516dce335e2?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-					/>
+		<tr className="hover:bg-gray-200 dark:hover:bg-gray-700">
+			{/* Single data cell to display on mobile */}
+			<td className="sm:hidden">
+				<div className="flex gap-4 rounded-lg cursor-pointer">
+					<div>
+						<img
+							className="max-w-28 rounded-lg object-center object-cover aspect-square"
+							src="https://images.unsplash.com/photo-1626544827763-d516dce335e2?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						/>
+					</div>
+					<div className="flex-1 flex flex-col px-2">
+						<div className="flex items-center justify-between">
+							<h1 className="font-semibold text-gray-800 dark:text-gray-200">
+								Product title
+							</h1>
+							<button className="outline-none rounded-full p-1 hover:bg-gray-200 textgray-600">
+								<BiDotsHorizontal />
+							</button>
+						</div>
+						<a className="text-sm text-gray-500 font-medium block py-2">
+							ui8.net/product_link
+						</a>
+						<div>
+							<span className="px-2 py-1.5 text-gray-800 text-sm font-semibold bg-secondary-3 rounded-lg">
+								$30.54
+							</span>
+						</div>
+					</div>
 				</div>
-				<div>
-					<h1 className="font-semibold text-gray-800">
-						Product title
-					</h1>
-					<a className="text-sm text-gray-400 font-medium">
-						ui8.net/product/product_link
-					</a>
+			</td>
+			{/*-=========End of cell(s) to render on mobile======== */}
+
+			{/* ========Cells to show from tablet devices upward======== */}
+			<td className="hidden sm:table-cell">
+				<div className="flex gap-2 ">
+					<div>
+						<img
+							className="max-w-14 rounded-lg object-center object-cover aspect-square"
+							src="https://images.unsplash.com/photo-1626544827763-d516dce335e2?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+						/>
+					</div>
+					<div>
+						<h1 className="font-semibold text-gray-800 dark:text-gray-200">
+							Product title
+						</h1>
+						<a className="text-sm text-gray-500 font-medium py-1">
+							ui8.net/product/product_link
+						</a>
+					</div>
 				</div>
-			</div>
-			<span className="px-4 py-2 text-gray-800 font-semibold">
-				$30.54
-			</span>
-		</div>
+			</td>
+			<td className="hidden sm:table-cell">
+				<span className="px-2 py-1.5 text-gray-800 text-sm font-semibold bg-primary-2/80 rounded-lg">
+					$30.54
+				</span>
+			</td>
+			<td className="hidden lg:table-cell text-gray-600 dark:text-gray-400">
+				Jan 23, 2022
+			</td>
+			{/* ===End of cells to show from tablet devices upward== */}
+		</tr>
 	);
 };

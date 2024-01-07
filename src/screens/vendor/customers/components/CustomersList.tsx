@@ -15,7 +15,7 @@ const CustomersList = () => {
 
 	const dispatch = useAppDispatch();
 	return (
-		<div className="bg-white dark:bg-app-neutral-700 rounded-lg p-4">
+		<div className="bg-white dark:bg-app-neutral-700 rounded-lg p-4 relative">
 			<header className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
 				<div>
 					<h1 className="text-gray-800 dark:text-app-neutral-50 text-lg font-semibold before:content-[''] before:w-4 before:aspect-[2/4] before:bg-red-200 before:rounded-sm flex items-center gap-2">
@@ -56,7 +56,11 @@ const CustomersList = () => {
 				</div>
 			</header>
 			<div className="flex items-start gap-8">
-				<div className={`${!selectedCustomer ? 'flex-1' : 'w-1/3'} `}>
+				<div
+					className={`${
+						!selectedCustomer ? 'flex-1' : 'w-1/3 hidden md:block'
+					} `}
+				>
 					<table className="table-auto w-full my-5 text-left divide-y divide-gray-200 dark:divide-gray-800 border-spacing-y-4">
 						<thead>
 							<tr className="font-medium text-sm text-gray-600 dark:text-gray-400">
