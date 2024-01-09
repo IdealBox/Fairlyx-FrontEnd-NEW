@@ -6,7 +6,10 @@ import {
 	YAxis,
 	CartesianGrid,
 	Tooltip,
+	TooltipProps,
 } from 'recharts';
+import { colors } from '..';
+import { FaSquare } from 'react-icons/fa';
 
 const AppLineChart = () => {
 	const data = [
@@ -62,13 +65,17 @@ const AppLineChart = () => {
 							dot={false}
 							type="monotone"
 							dataKey="pv"
-							stroke="#8884d8"
-							strokeWidth={3}
+							stroke={colors.primary[1]}
+							strokeWidth={4}
 						/>
-						<XAxis tickLine={false} dataKey={'name'} />
+						<XAxis
+							tickLine={false}
+							dataKey={'name'}
+							padding={{ left: 5 }}
+						/>
 						<YAxis axisLine={false} tickLine={false} />
-						<CartesianGrid vertical={false} />
-						<Tooltip />
+						<CartesianGrid vertical={false} strokeWidth={0.5} />
+						<Tooltip cursor={false} content={<CustomToolTip />} />
 					</LineChart>
 				);
 			}}
@@ -77,3 +84,15 @@ const AppLineChart = () => {
 };
 
 export default AppLineChart;
+
+const CustomToolTip = ({ active, payload }: TooltipProps<string, string>) => {
+	return payload && active && payload.length ? (
+		<div className="py-2 px-4 rounded-lg border dark:border-gray-800 bg-app-neutral-600 dark:bg-app-neutral-700">
+			<h3 className="pb-0.5 font-semibold text-gray-200">Customers</h3>
+			<div className="flex items-center gap-2">
+				<FaSquare size={12} color={colors.secondary[4]} />
+				<span className="text-gray-200">{payload[0].value}</span>
+			</div>
+		</div>
+	) : null;
+};
